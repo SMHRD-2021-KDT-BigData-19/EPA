@@ -7,7 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="387218639784-ae1jch9aurgpjk22c0amliljj0ap16b8.apps.googleusercontent.com"> 
     <title>Document</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/53a8c415f1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./login.css">
@@ -115,7 +118,7 @@ h2 {
 <body>
     <div class="wrap">
         <div class="login">
-            <h2>ë¡ê·¸ì¸</h2>
+            <h2>로그인</h2>
         
             <div class="login_id">
                 <h4>ID</h4>
@@ -127,18 +130,30 @@ h2 {
             </div>
             <div class="login_etc">
                 <div class="checkbox">
-                <input type="checkbox" name="" id=""> ìí¸ ê¸°ìµíê¸°
+                <input type="checkbox" name="" id=""> 암호 기억하기
                 </div>
                 <div class="find_pw">
-                <a href="">ë¹ë°ë²í¸ ì°¾ê¸°</a>
+                <a href="">비밀번호 찾기</a>
+                </div>
             </div>
-            </div>
-            <a class="btn btn-social-icon btn-google">
-                <span class="fa fa-google"></span>
-              </a>
-                  </a>
-            <div class="submit">
-               <input type="submit" value="ë¡ê·¸ì¸">
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+			<script>
+			function onSignIn(googleUser) {
+			     var profile = googleUser.getBasicProfile();
+			     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+			     console.log('Name: ' + profile.getName());
+			     console.log('Image URL: ' + profile.getImageUrl());
+			     console.log('Email: ' + profile.getEmail()); 
+			
+			          var id_token = googleUser.getAuthResponse().id_token;
+			     console.log("ID Token:" + id_token);
+			   }
+               <!-- <a> class="btn btn-social-icon btn-google"
+                <span class="fa fa-google"></span> 
+               </a> -->
+            </script>
+            <dv class="submit">
+               <input type="submit" value="로그인">
             </div>
         </div>
     </div>
