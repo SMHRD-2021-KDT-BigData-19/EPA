@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>kr.board</groupId>
+	<groupId>kr.epa</groupId>
 	<artifactId>controller</artifactId>
-	<name>SpringMVC01</name>
+	<name>EPA</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -144,20 +144,7 @@
           <groupId>org.mybatis</groupId>
           <artifactId>mybatis</artifactId>
           <version>3.4.6</version>
-      </dependency>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+      </dependency>	
 		    
 	</dependencies>
     <build>
