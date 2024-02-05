@@ -23,6 +23,31 @@
 	
 	<context:component-scan base-package="kr.epa.controller" />
 	
-	
-	
-</beans:beans>
+	<!-- google api -->
+		<beans:bean id="googleClientID" class="java.lang.String">
+		 	<beans:constructor-arg value="387218639784-ae1jch9aurgpjk22c0amliljj0ap16b8.apps.googleusercontent.com"/>
+		 </beans:bean>
+		 <beans:bean id="googleClientSecret" class="java.lang.String">
+		 	<beans:constructor-arg value="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"/>
+		 </beans:bean>
+		  <beans:bean id="googleRedirectUrl" class="java.lang.String">
+		 	<beans:constructor-arg value="http://localhost:8080/epa/google/callback"/>
+		 </beans:bean>
+		 
+		  <beans:bean id="googleSns" class="kr.epa.swp.auth.SNS">
+			<beans:constructor-arg value="google"/>
+		    <beans:constructor-arg ref="googleClientID"/>
+		    <beans:constructor-arg ref="googleClientSecret"/>
+		    <beans:constructor-arg ref="googleRedirectUrl"/>
+		 </beans:bean>
+		 
+		 <beans:bean id="googleConnectionFactory" class="org.springframework.social.google.connect.GoogleConnectionFactory">
+			<beans:constructor-arg ref="googleClientID"/>
+		    <beans:constructor-arg ref="googleClientSecret"/>
+		 </beans:bean>
+		 
+		 <beans:bean id="googleOAuth2Parameters" class="org.springframework.social.Oauth2.OAuth2Parameters">
+			<beans:property name="scope" value = "http://www.googleapis.com/auth/userinfo.email"/>
+			<!--<beans:property name="scope" value = "http://www.googleapis.com/auth/userinfo.email"/> -->
+ 		    <beans:property name="redirectUri"  ref="googleRedirectUrl"/>
+		 </beans:bean>
