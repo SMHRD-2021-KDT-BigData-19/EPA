@@ -32,7 +32,7 @@
 	   </bean>
 	
 	<!-- mapper를 메모리에 올린다(scan)  -->
-	   <mybatis-spring:scan base-package="kr.board.mapper"/>
+	   <mybatis-spring:scan base-package="kr.epa.mapper"/>
 	   
 	
 	
