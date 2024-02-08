@@ -6,12 +6,11 @@
     
     <select id="memberLogin" parameterType="com.epa.entity.epa"
         resultType="com.epa.entity.epa">
-        select * from member where login_id=#{login_id} and login_id=#{login_id}
+        select * from MEM_TB where MEM_ID=#{MEM_ID} and MEM_PW=#{MEM_PW}
     </select>
-    
 
     <insert id="memberJoin">
-        INSERT INTO members(email, login_id, login_pw, nick, height, weight, birth, gender) VALUES 
-        (#{email}, #{login_id}, #{login_pw}, #{nick}, #{height}, #{weight}, #{birth}, #{gender})
+      insert into MEM_TB(MEM_EMAIL,MEM_ID,MEM_PW,MEM_NM,MEM_H,MEM_W,MEM_AGE,MEM_G) values (#{MEM_EMAIL},#{MEM_ID},#{MEM_PW},#{MEM_NM},#{MEM_H},#{MEM_W},#{MEM_AGE},#{MEM_G})
     </insert>
+
 </mapper>

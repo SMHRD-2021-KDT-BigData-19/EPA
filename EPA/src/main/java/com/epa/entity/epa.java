@@ -3,71 +3,62 @@ package com.epa.entity;
 import java.util.Date;
 
 public class epa {
-    private String email;
-    private String login_id;
-    private String login_pw;
-    private String nick;
-    private int height;
-    private int weight;
-    private Date birth;
-    private String gender;
-    
-    
-	public String getEmail() {
-		return email;
+	private String MEM_ID;
+	private String MEM_PW;
+	private String MEM_NM;
+	private String MEM_AGE;
+	private int MEM_H; //날짜형 타입의 데이터를 문자열로 담김
+	private int MEM_W;
+	private String MEM_G;
+	private String MEM_EMAIL;
+	public String getMEM_ID() {
+		return MEM_ID;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMEM_ID(String mEM_ID) {
+		MEM_ID = mEM_ID;
 	}
-	public String getLogin_id() {
-		return login_id;
+	public String getMEM_PW() {
+		return MEM_PW;
 	}
-	public void setLogin_id(String login_id) {
-		this.login_id = login_id;
+	public void setMEM_PW(String mEM_PW) {
+		MEM_PW = mEM_PW;
 	}
-	public String getLogin_pw() {
-		return login_pw;
+	public String getMEM_NM() {
+		return MEM_NM;
 	}
-	public void setLogin_pw(String login_pw) {
-		this.login_pw = login_pw;
+	public void setMEM_NM(String mEM_NM) {
+		MEM_NM = mEM_NM;
 	}
-	public String getNick() {
-		return nick;
+	public String getMEM_AGE() {
+		return MEM_AGE;
 	}
-	public void setNick(String nick) {
-		this.nick = nick;
+	public void setMEM_AGE(String mEM_AGE) {
+		MEM_AGE = mEM_AGE;
 	}
-	public int getHeight() {
-		return height;
+	public int getMEM_H() {
+		return MEM_H;
 	}
-	public void setHeight(int height) {
-		this.height = height;
+	public void setMEM_H(int mEM_H) {
+		MEM_H = mEM_H;
 	}
-	public int getWeight() {
-		return weight;
+	public int getMEM_W() {
+		return MEM_W;
 	}
-	public void setWeight(int weight) {
-		this.weight = weight;
+	public void setMEM_W(int mEM_W) {
+		MEM_W = mEM_W;
 	}
-	public Date getBirth() {
-		return birth;
+	public String getMEM_G() {
+		return MEM_G;
 	}
-	public void setBirth(Date birth) {
-		this.birth = birth;
+	public void setMEM_G(String mEM_G) {
+		MEM_G = mEM_G;
 	}
-	public String getGender() {
-		return gender;
+	public String getMEM_EMAIL() {
+		return MEM_EMAIL;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setMEM_EMAIL(String mEM_EMAIL) {
+		MEM_EMAIL = mEM_EMAIL;
 	}
+
 	
-	@Override
-	public String toString() {
-		return "epa [email=" + email + ", login_id=" + login_id + ", login_pw=" + login_pw + ", nick=" + nick
-				+ ", height=" + height + ", weight=" + weight + ", birth=" + birth + ", gender=" + gender + "]";
-	}
-    
-    
-    
 }
