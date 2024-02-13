@@ -42,10 +42,5 @@ public interface loginMapper {
 
 			public login readMemberWithIDPW(String mem_ID, String mem_PW);
 
-			
-
-			
-
-
-    
+		
 }
