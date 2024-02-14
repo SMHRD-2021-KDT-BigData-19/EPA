@@ -140,7 +140,7 @@ progress.levelpro2 {color:white!important;}
         <a href="./join.html">회원가입</a>
     </header>
     <div class="navbar">
-        <a href="${cpath}/"><img id="icon" src="${cpath}/resources/css/img/mainlogo.png" width="150" height="80"></a>
+        <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png"width="150" height="80"></img></a>
         <a href="./info.html">운동정보</a>
 	    <a href="./community.html">커뮤니티</a>
 	    <a href="./use.html">EPA이용방법</a>

@@ -56,7 +56,6 @@ a:hover {
     font-size: 18px;
     margin-top: 25px;
 }
-
 /* 운동정보 링크에 회색 배경색 적용 */
 .navbar a:nth-child(2):not(#icon):hover {
     background-color: #ddd;

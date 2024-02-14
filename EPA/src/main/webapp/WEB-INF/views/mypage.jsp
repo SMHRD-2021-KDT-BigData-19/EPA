@@ -19,7 +19,7 @@
     <a href="./join.html">회원가입</a>
 </header>
 <div class="navbar">
-    <a href="${cpath}/"><img id="icon" src="${cpath}/resources/css/img/mainlogo.png" width="150" height="80"></a>
+    <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png"width="150" height="80"></img></a>
     <a href="./info.html">운동정보</a>
     <a href="./community.html">커뮤니티</a>
     <a href="./use.html">EPA이용방법</a>
@@ -27,7 +27,7 @@
 </div>
 <div class="container">
 <div class="profile-card">
-    <img src="${cpath}/resources/css/img/사용자.png" alt="프로필 사진">
+    <img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
     <h2>헤어진 헬창님</h2>
     <h4 id="message">헤어진 기념 바프할거다.....</h4>
     <a href="./mypage_correction.html"><button>편집하기</button></a>

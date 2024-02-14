@@ -18,8 +18,7 @@
     <a href="${cpath}/join.do">회원가입</a>
 </header>
 <div class="navbar">
-    <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png"width="150" height="80"></img></a>
-    <a id="logo" href="main.do">EPA</a>
+    <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></img></a>
     <a href="${cpath}/info.do">운동정보</a>
     <a href="${cpath}/boardList.do">커뮤니티</a>
     <a href="${cpath}/use.do">EPA이용방법</a>
@@ -32,7 +31,7 @@
 <footer>
     <div class="inner">
       <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다</div>
-      <div class="footer-copyright">Copyrigh 2024 All ⓒ rights reserved</div>
+      <div class="footer-copyright">Copyright 2024 All ⓒ rights reserved</div>
       <div class="footer-contact">Designed by 바른자세</div>
     </div>
   </footer>

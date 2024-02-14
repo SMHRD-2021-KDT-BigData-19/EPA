@@ -79,7 +79,7 @@ font-family: 'NPSfontBold';
     <a href="./join.html">회원가입</a>
 </header>
 <div class="navbar">
-    <a href="${cpath}/"><img id="icon" src="${cpath}/resources/css/img/mainlogo.png" width="150" height="80"></a>
+    <a href="${cpath}/"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
     <a href="./info.html">운동정보</a>
     <a href="./community.html">커뮤니티</a>
     <a href="./use.html">EPA이용방법</a>
@@ -90,29 +90,29 @@ font-family: 'NPSfontBold';
 <div class="image-container">
     <div class="row">
         <div class="image-with-text">
-            <img src="${cpath}/resources/css/img/스쿼트.jpg" alt="Image 1">
+            <img src="${cpath}/resources/img/스쿼트.jpg" alt="Image 1">
             <p>스쿼트</p>
         </div>
         <div class="image-with-text">
-            <img src="${cpath}/resources/css/img/푸쉬업.jpg" alt="Image 2">
+            <img src="${cpath}/resources/img/푸쉬업.jpg" alt="Image 2">
             <p>푸쉬업</p>
         </div>
         <div class="image-with-text">
-            <img src="${cpath}/resources/css/img/싯업.jpg" alt="Image 3">
+            <img src="${cpath}/resources/img/싯업.jpg" alt="Image 3">
             <p>싯업</p>
         </div>
     </div>
     <div class="row">
         <div class="image-with-text">
-            <img src="${cpath}/resources/css/img/v업.jpg" alt="Image 4">
+            <img src="${cpath}/resources/img/v업.jpg" alt="Image 4">
             <p>v업</p>
         </div>
         <div class="image-with-text">
-            <img src="${cpath}/resources/css/img/레그레이즈.jpg" alt="Image 5">
+            <img src="${cpath}/resources/img/레그레이즈.jpg" alt="Image 5">
             <p>레그레이즈</p>
         </div>
         <div class="image-with-text">
-            <img src="${cpath}/resources/css/img/런지" alt="Image 6">
+            <img src="${cpath}/resources/img/런지.jpg" alt="Image 6">
             <p>런지</p>
         </div>
     </div>
