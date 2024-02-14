@@ -1,64 +1,90 @@
-package com.epa.entity;
-
-import java.util.Date;
-
-public class epa {
-	private String MEM_ID;
-	private String MEM_PW;
-	private String MEM_NM;
-	private String MEM_AGE;
-	private int MEM_H; //날짜형 타입의 데이터를 문자열로 담김
-	private int MEM_W;
-	private String MEM_G;
-	private String MEM_EMAIL;
-	public String getMEM_ID() {
-		return MEM_ID;
-	}
-	public void setMEM_ID(String mEM_ID) {
-		MEM_ID = mEM_ID;
-	}
-	public String getMEM_PW() {
-		return MEM_PW;
-	}
-	public void setMEM_PW(String mEM_PW) {
-		MEM_PW = mEM_PW;
-	}
-	public String getMEM_NM() {
-		return MEM_NM;
-	}
-	public void setMEM_NM(String mEM_NM) {
-		MEM_NM = mEM_NM;
-	}
-	public String getMEM_AGE() {
-		return MEM_AGE;
-	}
-	public void setMEM_AGE(String mEM_AGE) {
-		MEM_AGE = mEM_AGE;
-	}
-	public int getMEM_H() {
-		return MEM_H;
-	}
-	public void setMEM_H(int mEM_H) {
-		MEM_H = mEM_H;
-	}
-	public int getMEM_W() {
-		return MEM_W;
-	}
-	public void setMEM_W(int mEM_W) {
-		MEM_W = mEM_W;
-	}
-	public String getMEM_G() {
-		return MEM_G;
-	}
-	public void setMEM_G(String mEM_G) {
-		MEM_G = mEM_G;
-	}
-	public String getMEM_EMAIL() {
-		return MEM_EMAIL;
-	}
-	public void setMEM_EMAIL(String mEM_EMAIL) {
-		MEM_EMAIL = mEM_EMAIL;
-	}
-
+	package com.epa.entity;
 	
-}
+	import java.util.Date;
+	
+	
+	public class epa {
+		
+		public epa() {
+			
+		}
+		private String MEMID;
+		private String MEMPW;
+		private String MEMNM;
+		private Date MEMAGE;
+		private int MEMH;
+		private int MEMW;
+		private String MEMG;
+		private String MEMEMAIL;
+	
+		
+		
+		public String getMEMID() {
+			return MEMID;
+		}
+		public void setMEMID(String mEMID) {
+			MEMID = mEMID;
+		}
+		public String getMEMPW() {
+			return MEMPW;
+		}
+		public void setMEMPW(String mEMPW) {
+			MEMPW = mEMPW;
+		}
+		public String getMEMNM() {
+			return MEMNM;
+		}
+		public void setMEMNM(String mEMNM) {
+			MEMNM = mEMNM;
+		}
+		public Date getMEMAGE() {
+			return MEMAGE;
+		}
+		public void setMEMAGE(Date mEMAGE) {
+			MEMAGE = mEMAGE;
+		}
+		public int getMEMH() {
+			return MEMH;
+		}
+		public void setMEMH(int mEMH) {
+			MEMH = mEMH;
+		}
+		public int getMEMW() {
+			return MEMW;
+		}
+		public void setMEMW(int mEMW) {
+			MEMW = mEMW;
+		}
+		public String getMEMG() {
+			return MEMG;
+		}
+		public void setMEMG(String mEMG) {
+			MEMG = mEMG;
+		}
+		public String getMEMEMAIL() {
+			return MEMEMAIL;
+		}
+		public void setMEMEMAIL(String mEMEMAIL) {
+			MEMEMAIL = mEMEMAIL;
+		}
+	
+		
+		
+	    public epa(String MEMID, String MEMPW, String MEMNM, Date MEMAGE, int MEMH, int MEMW, String MEMG, String MEMEMAIL) {
+	        this.MEMID = MEMID;
+	        this.MEMPW = MEMPW;
+	        this.MEMNM = MEMNM;
+	        this.MEMAGE = MEMAGE;
+	        this.MEMH = MEMH;
+	        this.MEMW = MEMW;
+	        this.MEMG = MEMG;
+	        this.MEMEMAIL = MEMEMAIL;
+	    }
+		
+		
+	
+		
+	
+	
+		
+	}
