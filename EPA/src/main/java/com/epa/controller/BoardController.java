@@ -52,6 +52,10 @@ public class BoardController {
 	
 	
 	//	마이페이지 이동 경로
+	@RequestMapping("/login.do")
+	public void login() {
+	}
+	
 	@RequestMapping("/main.do")
 	public void main() {
 	}
