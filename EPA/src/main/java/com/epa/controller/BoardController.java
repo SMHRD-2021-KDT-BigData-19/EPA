@@ -48,5 +48,9 @@ public class BoardController {
 		
 		return "boardContent";
 	}
+	
+	@RequestMapping("/main.do")
+	public void main() {
+	}
 
 }

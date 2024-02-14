@@ -15,11 +15,6 @@ public class MemberControll {
 
 	/* 회원등록화면 */
 	
-	@RequestMapping("/join.do")
-	public void join() {
-		
-	}
-	
 	@RequestMapping("/joinInsert.do")
 	public String joinInsert(Member vo) {
 		mapper.joinInsert(vo);
