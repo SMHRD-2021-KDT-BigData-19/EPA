@@ -21,10 +21,10 @@ public class memberController {
 	@Autowired
 	private memberMapper mmapper;
 
-	@RequestMapping("/")
-	public String memJoinForm() {
-		return "main";
-	}
+//	@RequestMapping("/")
+//	public String memJoinForm() {
+//		return "main";
+//	}
 
 	@GetMapping("/join")
 	public String joinPage() {

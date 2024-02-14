@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 폰트 */
 @font-face {
     font-family: 'SejonghospitalBold';
@@ -30,7 +31,7 @@ a {
     transition: color 0.3s; 
   }
   
-  a:hover {
+a:hover {
     color: black; 
   }
  
@@ -38,30 +39,70 @@ a {
 /* 상단바 */
 .navbar {
     overflow: hidden;
-    background:  white;
+    background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     justify-content: flex-end;
     display: flex;
     font-family: 'SejonghospitalBold';
-    
 }
 
 .navbar a {
-    float: left;
     display: block;
     color: black;
     text-align: center;
     padding: 0px 16px;
     text-decoration: none;
     transition: background-color 0.3s;
-    margin-top: 10px;
-    font-size: 18PX;
+    font-size: 18px;
+    margin-top: 25px;
 }
 
-.navbar a:hover {
+/* 운동정보 링크에 회색 배경색 적용 */
+.navbar a:nth-child(2):not(#icon):hover {
     background-color: #ddd;
     color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
+
+/* 커뮤니티 링크에 회색 배경색 적용 */
+.navbar a:nth-child(3):not(#icon):hover {
+    background-color: #ddd;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* EPA이용방법 링크에 회색 배경색 적용 */
+.navbar a:nth-child(4):not(#icon):hover {
+    background-color: #ddd;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* 마이페이지 링크에 회색 배경색 적용 */
+.navbar a:nth-child(5):not(#icon):hover {
+    background-color: #ddd;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* 아이디가 "icon"인 이미지 링크에 hover 효과 적용하지 않음 */
+.navbar a#icon:hover {
+    background-color: transparent;
+}
+
+
 /* 로그인,회원가입 상단바 */
 header{
     text-align: right;
@@ -79,8 +120,8 @@ header{
 }
 /* 로고사진 */
 #icon{
-    margin-top: 5px;
-    margin-left: 20px;
+    margin-top: -30px;
+    margin-left: -1900px;
 }
 
 /* 마이페이지 프로필카드 */
@@ -162,7 +203,7 @@ progress {
     left: 170px; 
     width: 500px;
     height: 50px; 
-    background-image: linear-gradient(to right, red, red);
+    background-image: linear-gradient(to right, rgb(206, 224, 105), rgb(227, 236, 107));
     margin-left: 50px;
 }
 progress.progress1{
@@ -207,16 +248,16 @@ progress::-webkit-progress-value {background:#c2c2c2;} /* Chrome */
 progress::-moz-progress-bar {background: #eee;} /* Firefox */
 progress,
 progress[role] {
-	appearance: none; 
-	-moz-appearance: none; 
-	-webkit-appearance: none; 
-	border: none; 
-	background-size: auto; 
-	width: 500px; height: 50px; /* 높이값과 넓이값은 맘대로 조정 */
-	margin: 10px 0;}
+   appearance: none; 
+   -moz-appearance: none; 
+   -webkit-appearance: none; 
+   border: none; 
+   background-size: auto; 
+   width: 500px; height: 50px; /* 높이값과 넓이값은 맘대로 조정 */
+   margin: 10px 0;}
 progress[role]:after {background-image: none;}
 .progress1::-webkit-progress-value {background:green !important;}
-.progress2::-webkit-progress-value {background:red!important;}
+.progress2::-webkit-progress-value {background:yellowgreen !important;}
 /* IE10 이상 */
 progress {color:#c2c2c2;}
 progress.progress1 {color:white !important;}
@@ -230,24 +271,23 @@ progress.progress2 {color:white!important;}
     align-items: flex-start; /* 아이템을 위로 정렬 */
     margin-top: 50px; /* 버튼들을 아래로 내리기 위한 여백 */
     position: absolute; /* 절대 위치 지정 */
-    
+    margin-left: 70px;
 }
 
 .btn-3d {
     display: inline-block; /* 버튼을 가로로 나란히 정렬 */
     font-size: 22px;
-    padding: 20px 80px;
+    padding: 20px 30px;
     color: white;
-    margin: 0 20px; /* 각 버튼 사이의 간격 */
     border-radius: 6px;
     text-align: center;
     transition: top .01s linear;
     text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    margin-right : 30px;
+    margin-right : auto;
     min-width: 100px; 
     height: 30px;
     white-space: nowrap;    /* 텍스트 줄바꿈 방지*/
-    margin-left: -10px;
+    margin-left: 40px;
     font-family: 'NPSfontBold';
 }
 
@@ -264,7 +304,6 @@ progress.progress2 {color:white!important;}
     background-color: khaki;
     box-shadow: 0 0 0 1px khaki inset,
 }
-
 .btn-3d.khaki:active {
     box-shadow: 0 0 0 1px khaki inset,
           0 0 0 2px rgba(255,255,255,0.15) inset,
@@ -431,6 +470,5 @@ footer {
     color: #545e6f;
     margin: 0.6rem;
 }
-
 
 
