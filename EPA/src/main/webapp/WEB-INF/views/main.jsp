@@ -15,15 +15,15 @@
 <header>
     <a href="./login.html">로그인</a>
     <span>&nbsp;</span>
-    <a href="./join.html">회원가입</a>
+    <a href="${cpath}/join.do">회원가입</a>
 </header>
 <div class="navbar">
     <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png"width="150" height="80"></img></a>
-    <a id="logo" href="main.html">EPA</a>
-    <a href="./info.html">운동정보</a>
-    <a href="./community.html">커뮤니티</a>
-    <a href="./use.html">EPA이용방법</a>
-    <a href="./mypage.html">마이페이지</a>
+    <a id="logo" href="main.do">EPA</a>
+    <a href="${cpath}/info.do">운동정보</a>
+    <a href="${cpath}/boardList.do">커뮤니티</a>
+    <a href="${cpath}/use.do">EPA이용방법</a>
+    <a href="${cpath}/mypage.do">마이페이지</a>
 </div>
 <video width="100%" height="auto" autoplay muted loop>
     <source src="${cpath}/resources/video/epa_video.mp4" type="video/mp4">
