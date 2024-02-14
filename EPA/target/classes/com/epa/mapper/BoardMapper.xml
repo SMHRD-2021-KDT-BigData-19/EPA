@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.epa.mapper.BoardMapper">
+     
+     <select id="boardList" resultType="com.epa.entity.Board">
+        select * from BOARD_TB
+    </select>
+     
+     <insert id="boardInsert" parameterType="com.epa.entity.Board">
+        insert into BOARD_TB (BD_T,BD_C,BD_HEAD,MEM_ID)
+        values (#{BD_T},#{MEM_ID},#{BD_HEAD},#{BD_C})
+    </insert>
+    
+    <select id="boardContent" parameterType="int"
+        resultType="com.epa.entity.Board">
+        select * from board where BD_NO=#{BD_NO}
+    </select>
+    
+</mapper>
