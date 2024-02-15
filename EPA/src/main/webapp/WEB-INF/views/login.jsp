@@ -65,7 +65,7 @@ h2 {
 
 .login_id input {
   width: 100%;
-  height: 50px;d\
+  height: 50px;
   border-radius: 30px;
   margin-top: 10px;
   padding: 0px 20px;
