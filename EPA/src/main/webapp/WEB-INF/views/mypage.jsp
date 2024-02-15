@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
+<c:set var="memId" value="${sessionScope.loginMember.MEM_ID}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +29,7 @@
 <div class="container">
 <div class="profile-card">
     <img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
-    <h2>헤어진 헬창님</h2>
+    <h2>${memId}님</h2>
     <h4 id="message">헤어진 기념 바프할거다.....</h4>
     <a href="${cpath}/mypagecorrection"><button>편집하기</button></a>
 </div>
@@ -40,7 +41,7 @@
     <div class="progress-text2"><b>이번 달 운동 진행률</b></div>
     <progress class="progress2"value="3" max="30"></progress>
     <div class="button-container">
-       <a href="./calendar.html" class="btn-3d khaki">캘린더</a>
+       <a href="${cpath}/calendar" class="btn-3d khaki">캘린더</a>
        <a href="./level.html" class="btn-3d powderblue">등급 확인</a>
        <a href="#" class="btn-3d lightpink">운동루틴 설정</a>
     </div>

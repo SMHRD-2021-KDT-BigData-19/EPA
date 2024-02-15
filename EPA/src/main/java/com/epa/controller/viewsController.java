@@ -36,4 +36,8 @@ public class viewsController {
 	@RequestMapping("/mypagecorrection")
 	public void mypagecorrection() {
 	}
+	
+	@RequestMapping("/calendar")
+	public void clanedar() {
+	}
 }
