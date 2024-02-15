@@ -88,6 +88,6 @@ LOGOUT DATETIME
 SHOW TABLES;
 
 -- 테이블 정보 보는 곳
-SELECT * FROM BOARD_TB; -- 테이블명 바꾸면 됨
+SELECT * FROM MEM_TB; -- 테이블명 바꾸면 됨
 
 TRUNCATE TABLE BOARD_TB;

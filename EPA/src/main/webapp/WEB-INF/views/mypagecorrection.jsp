@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
+<c:set var="memId" value="${sessionScope.loginMember.MEM_ID}" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,24 +44,13 @@
     <div class="container">
         <div class="profile-card">
             <img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
-            <h2>헤어진 헬창님</h2>
+            <h2>${memId}님</h2>
             <h4 id="message">헤어진 기념 바프할거다.....</h4>
         </div>
         
         <div>
-        <form action="/update.do" method="post">
-            <br>
-            <label for="current_pw">현재 비밀번호</label>
-            <br>
-            <input type="password" id="current_pw" name="current_pw" placeholder="현재 비밀번호를 입력해 주세요">
-            <br>
-            <br>
-            <label for="new_pw">변경 할 비밀번호</label>
-            <br>
+        <form action="${cpath}/update.do" method="post">
             <input type="password" id="MEM_PW" name="MEM_PW" placeholder="변경할 비밀번호를 입력해 주세요">
-            <br>
-    
-            <input type="password" placeholder="변경할 비밀번호를 한 번 더입력해 주세요">
             <br>
             <label for="nickname">닉네임</label>
             <br>
@@ -81,7 +72,9 @@
             <input type="text" id="MEM_W" name="MEM_W" placeholder="내용을 입력해 주세요">
             <br>
             <br>
-                <button class="btn-save" type="submit"><b>저장</b></button>
+            	
+                <input class="btn-save" type="submit">저장</input>
+<!--                 <button class="btn-save" type="submit"><b>저장</b></button> -->
                 <button class="btn-cancel" ><b>취소</b></button>
         </form>
         </div>
