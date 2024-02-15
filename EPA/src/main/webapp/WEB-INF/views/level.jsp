@@ -132,7 +132,7 @@ progress.levelpro2 {color:white!important;}
     
 
     </style>
-</head>
+</head>ㄴㄴㄴㄴ
 <body>
     <header>
        <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="${cpath}/resources/css/style.css">
     <title>Your Website</title>
 </head>
-<style>
+<style>ㄴㄴㄴㄴ
 </style>
 <body>
 <header>

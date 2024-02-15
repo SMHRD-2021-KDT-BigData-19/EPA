@@ -41,7 +41,6 @@
             z-index: 1000;
         }
         
-
         #cont {
             margin: 50px auto;
             width: 30%;

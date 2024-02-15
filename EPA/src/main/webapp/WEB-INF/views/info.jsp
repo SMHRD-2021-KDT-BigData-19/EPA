@@ -77,7 +77,7 @@ font-family: 'NPSfontBold';
     <a href="${cpath}/Logout.do">로그아웃</a>
 <!--     <span>&nbsp;</span>
     <a href="./join.html">회원가입</a> -->
-</header>
+</header>ㄴㄴㄴㄴ
 <div class="navbar">
     <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></img></a>
     <a href="${cpath}/info.do">운동정보</a>

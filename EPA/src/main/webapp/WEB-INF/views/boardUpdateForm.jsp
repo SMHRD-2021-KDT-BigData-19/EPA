@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-<header>
+<header>ㄴㄴㄴㄴ
    <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
     <a href="${cpath}/login.do">로그인</a>
     <span>&nbsp;</span>

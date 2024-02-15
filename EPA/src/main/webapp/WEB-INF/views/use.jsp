@@ -18,7 +18,7 @@
     <span>&nbsp;</span>
     <span>&nbsp;</span>
     <a href="#"><img id="member_icon" src="${cpath}/resources/img/member.png" width="20" height="20"></img></a>
-    <a href="${cpath}/join.do">회원가입</a>
+    <a href="${cpath}/join.do">회원가입</a>ㄴㄴㄴㄴ
 </header>
 <div class="navbar">
     <a href="${cpath}/"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
