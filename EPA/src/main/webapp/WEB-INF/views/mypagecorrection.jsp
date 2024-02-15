@@ -78,7 +78,7 @@
                 <button class="btn-cancel" ><b>취소</b></button>
         </form>
         </div>
-
+    <a href="${cpath}/delete.do">탈퇴</a>
     <footer>
         <div class="inner">
             <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
