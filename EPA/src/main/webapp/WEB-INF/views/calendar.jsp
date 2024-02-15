@@ -75,10 +75,10 @@
             <br>
             <h1>일정을 입력해주세요!</h1>
             운동시작일 <br>
-            <input type="text" id="schStart" value=""><br>
+            <input type="text" id="schStart" value=""><br><br>
             운동종료일<br>
              <input type="text" id="schEnd" value=""><br><br>
-            예방접종/진료종류<br>
+            운동종류<br>
             <select>
              <option id="schTitle" value=""> 운동코드1<br><br></option>
              <option id="schTitle" value=""> 운동코드2<br><br></option>

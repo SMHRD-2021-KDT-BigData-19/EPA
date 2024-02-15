@@ -152,6 +152,14 @@ h2 {
 			          var id_token = googleUser.getAuthResponse().id_token;
 			     console.log("ID Token:" + id_token);
 			   }
+			
+            <!-- 실패 메시지가 있을 경우에만 출력 -->
+            <c:if test="${not empty loginError}">
+               <!-- 팝업을 띄우기 위한 스크립트 호출 -->
+               <script>
+                  alert('${loginError}');
+               </script>
+            </c:if>
        
             </script>
             <div class="submit">
