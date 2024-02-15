@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -51,6 +50,31 @@ public class BoardController {
 	}
 	
 	
+	   
+	   @RequestMapping("/boardDelete.do/{BD_NO}")
+	   public String boardDelete(@PathVariable("BD_NO")int BD_NO) {
+	      
+	      mapper.boardDelete(BD_NO);
+	      
+	      return "redirect:/boardList.do";
+	   }
+	   
+	   @RequestMapping("/boardUpdateForm.do")
+	   public String boardUpdateForm(int BD_NO,Model model) {
+	      Board vo =mapper.boardContent(BD_NO);
+	      model.addAttribute("vo",vo);
+	      
+	      return "boardUpdateForm";
+	   }
+	   
+	   @RequestMapping("/boardUpdate.do")
+	   public String boardUpdate(Board vo) {
+	                        
+	      mapper.boardUpdate(vo);
+	      
+	      return "redirect:/boardList.do";
+	   }
+
 	//	마이페이지 이동 경로
 	@RequestMapping("/login.do")
 	public void login() {

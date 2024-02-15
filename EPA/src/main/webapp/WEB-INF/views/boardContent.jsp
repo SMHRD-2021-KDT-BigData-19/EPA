@@ -32,6 +32,20 @@
     </style>
 </head>
 <body>
+<script type="text/javascript">
+	function goDelete() {
+		location.href="<c:url value='/boardDelete.do/${vo.BD_NO}'/>";
+		
+	}
+	function goUpdate() {
+		location.href="${cpath}/boardUpdateForm.do?BD_NO=${vo.BD_NO}";
+	
+	}
+	function goList() {
+		location.href="${cpath}/boardList.do";
+	
+	}
+</script>
 <header>
     <a href="./login.html">로그인</a>
     <span>&nbsp;</span>
@@ -70,9 +84,9 @@
         <tr id="small">
             <td style="text-align: right;"></td>
             <td style="text-align: right;">작성일&nbsp;:&nbsp;&nbsp;${vo.BD_DATE}&nbsp;
-            <button >수정</button>
-            <button>삭제</button>
-            <button>목록</button>
+            <button onclick="goUpdate()">수정</button>
+            <button onclick="goDelete()">삭제</button>
+            <button onclick="goList()">목록</button>
             </td>
         </tr>
         <tr>
@@ -85,6 +99,7 @@
             <td>댓글내용1</td>
         </tr>
     </table>
+ </div>
     <footer>
         <div class="inner">
           <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다</div>

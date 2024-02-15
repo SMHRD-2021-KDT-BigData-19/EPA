@@ -15,7 +15,16 @@
     
     <select id="boardContent" parameterType="int"
         resultType="com.epa.entity.Board">
-        select * from board where BD_NO=#{BD_NO}
+        select * from BOARD_TB where BD_NO=#{BD_NO}
     </select>
+    
+    <delete id="boardDelete" parameterType="int">
+        delete from BOARD_TB where BD_NO=#{BD_NO}
+    </delete>
+    
+    <update id="boardUpdate" parameterType="com.epa.entity.Board">
+        update BOARD_TB set BD_T=#{BD_T}, BD_C=#{BD_C}
+        where BD_NO=#{BD_NO}
+    </update>
     
 </mapper>
