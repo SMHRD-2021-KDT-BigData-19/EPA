@@ -23,20 +23,29 @@ public class MemberControll {
 		return "redirect:/boardList.do";
 	}
 
-	@PostMapping("/Login.do")
-	public String loginMember(Member vo, HttpSession session) {
+	   @PostMapping("/Login.do")
+	   public String loginMember(Member vo, HttpSession session) {
+	       Member loginMember = mapper.loginMember(vo);
 
-		Member loginMember = mapper.loginMember(vo);
-		// 세션에 저장
-		// HttpSession session = request.getSession();
-		// request 사용하려면 매개변수 HttpServletRequest request
-		if (loginMember != null) {
-			session.setAttribute("loginMember", loginMember);
-		}
-		System.out.println("로그인");
-		return "mainLogin";
-	}
-	
+	       if (loginMember != null) {
+	           // 입력한 비밀번호와 저장된 비밀번호를 비교
+	           if (vo.getMEM_PW().equals(loginMember.getMEM_PW())) {
+	               // 비밀번호가 일치하면 세션 속성 설정
+	               session.setAttribute("loginMember", loginMember);
+	               return "mainLogin";
+	           } else {
+	               // 비밀번호가 일치하지 않으면 오류 처리 (예: 오류 메시지 표시)
+	               System.out.println("비밀번호가 틀렸습니다");
+	               // 여기서 로그인 오류 페이지로 리다이렉트하거나 다른 조치를 취할 수 있습니다
+	               return "login";
+	           }
+	       } else {
+	           // 사용자를 찾을 수 없으면 오류 처리 (예: 오류 메시지 표시)
+	           System.out.println("사용자를 찾을 수 없습니다");
+	           // 여기서 로그인 오류 페이지로 리다이렉트하거나 다른 조치를 취할 수 있습니다
+	           return "login";
+	       }
+	   }
 	
 	@RequestMapping("/Logout.do")
 	public String memberLogout(HttpSession session) {

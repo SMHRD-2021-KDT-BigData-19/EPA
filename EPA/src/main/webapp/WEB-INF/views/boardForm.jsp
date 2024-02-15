@@ -40,7 +40,7 @@
     <form id="postForm" action="${cpath}/boardInsert.do" method="post">
         <label for="title"><b>제목</b></label>
         <input type="text" id="title" name="BD_T">
-        <input name="MEM_ID">
+        <input type="hidden" id="writer" name="MEM_ID" value="${loginMember.MEM_ID}">
         <label for="category"><b>카테고리</b></label>
     	<select id="category" name="BD_HEAD">
         <option value="운동루틴">운동루틴</option>
