@@ -25,11 +25,11 @@ public class MemberControll {
 	@RequestMapping("/joinInsert.do")
 	public String joinInsert(Member vo) {
 		mapper.joinInsert(vo);
-		return "redirect:/boardList.do";
+		return "mainLogin";
 	}
 
 	@PostMapping("/Login.do")
-	public String loginMember(Member vo, HttpSession session) {
+	public String loginMember(Member vo, HttpSession session, Model model) {
 	    Member loginMember = mapper.loginMember(vo);
 
 	    if (loginMember != null) {
@@ -40,17 +40,23 @@ public class MemberControll {
 	            return "mainLogin";
 	        } else {
 	            // 비밀번호가 일치하지 않으면 오류 처리 (예: 오류 메시지 표시)
-	            System.out.println("비밀번호가 틀렸습니다");
-	            // 여기서 로그인 오류 페이지로 리다이렉트하거나 다른 조치를 취할 수 있습니다
-	            return "login";
+	            System.out.println("잘못된 비밀번호입니다");
+
+	            // 사용자에게 알림을 보여주기 위해 Model에 메시지 추가
+	            model.addAttribute("loginError", "잘못된 비밀번호입니다");
+	            return "login"; // 로그인 화면으로 리다이렉트
 	        }
-	    } else {
+	    } 
+	    else {
 	        // 사용자를 찾을 수 없으면 오류 처리 (예: 오류 메시지 표시)
-	        System.out.println("사용자를 찾을 수 없습니다");
-	        // 여기서 로그인 오류 페이지로 리다이렉트하거나 다른 조치를 취할 수 있습니다
+	        System.out.println("로그인에 실패하셨습니다");
+
+	        // 사용자에게 알림을 보여주기 위해 Model에 메시지 추가
+	        model.addAttribute("loginError", "로그인에 실패하셨습니다");
 	        return "login";
 	    }
 	}
+
 
 	
 	
@@ -114,7 +120,7 @@ public class MemberControll {
 	        e.printStackTrace();
 	        // 필요한 경우 예외 처리
 	    }
-	    return "redirect:/"; // 메인 페이지 또는 다른 적절한 페이지로 리디렉션
+	    return "main"; // 메인 페이지 또는 다른 적절한 페이지로 리디렉션
 	}
 
 	
