@@ -226,7 +226,7 @@ form input[type="radio"]{
 					
 						<h4>아이디</h4>
 						<input type="text" name="MEM_ID" id="id" placeholder="아이디" style="width: 60%; max-width: 300px;">
-						<button class ="id_check">중복 확인</button><br><br>
+						<button class ="id_check">중복 확인</button><br>
 						
 						<h4>비밀번호</h4>
 						<input type="password" name="MEM_PW" placeholder="비밀번호"><br>
