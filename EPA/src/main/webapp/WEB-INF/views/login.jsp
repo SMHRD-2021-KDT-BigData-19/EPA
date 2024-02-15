@@ -130,6 +130,7 @@ h2 {
                 <input type="password" name="MEM_PW" id="MEM_PW" placeholder="Password">
             </div>
             <div class="login_etc">
+        
                 <div class="checkbox">
                 <input type="checkbox"> 암호 기억하기
                 </div>
@@ -153,7 +154,7 @@ h2 {
 			   }
        
             </script>
-            <dv class="submit">
+            <div class="submit">
                <input type="submit" value="로그인">
             </div>
         </div>

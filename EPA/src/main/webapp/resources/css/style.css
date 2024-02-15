@@ -102,6 +102,10 @@ a:hover {
 }
 
 
+#login_icon{
+	margin-top:10px;
+}
+
 /* 로그인,회원가입 상단바 */
 header{
     text-align: right;
@@ -469,5 +473,4 @@ footer {
     color: #545e6f;
     margin: 0.6rem;
 }
-
 

@@ -9,12 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="${cpath}/resources/css/style.css">
+    
     <title>Your Website</title>
 </head>
 <body>
 <header>
+    <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
     <a href="${cpath}/login.do">로그인</a>
     <span>&nbsp;</span>
+    <span>&nbsp;</span>
+    <span>&nbsp;</span>
+    <a href="#"><img id="member_icon" src="${cpath}/resources/img/member.png" width="20" height="20"></img></a>
     <a href="${cpath}/join.do">회원가입</a>
 </header>
 <div class="navbar">
