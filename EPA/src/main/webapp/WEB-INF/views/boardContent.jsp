@@ -28,7 +28,7 @@
             background-color: #3F568B;
             color: aliceblue;
             border-radius: 5px;
-        }ㄴㄴㄴㄴㄴㄴ
+        }
     </style>
 </head>
 <body>

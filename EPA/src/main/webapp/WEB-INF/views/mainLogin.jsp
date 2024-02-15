@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="${cpath}/resources/css/style.css">
     <title>Your Website</title>
-</head>ㄴㄴㄴ
+</head>
 <body>
 <header>
     <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>

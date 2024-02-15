@@ -17,7 +17,7 @@
       }
     </style>
 </head>
-<body>ㄴㄴㄴㄴ
+<body>
 <script type="text/javascript">
  	function goForm() {
 		location.href="${cpath}/boardForm.do";

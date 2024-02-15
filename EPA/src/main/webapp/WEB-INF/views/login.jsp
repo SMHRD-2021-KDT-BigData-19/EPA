@@ -61,7 +61,7 @@ h2 {
 .login_id {
   margin-top: 20px;
   width: 80%;
-}ㄴㄴㄴㄴ
+}
 
 .login_id input {
   width: 100%;
