@@ -135,9 +135,13 @@ progress.levelpro2 {color:white!important;}
 </head>
 <body>
     <header>
-        <a href="./login.html">로그인</a>
-        <span>&nbsp;</span>
-        <a href="./join.html">회원가입</a>
+       <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
+    <a href="${cpath}/login.do">로그인</a>
+    <span>&nbsp;</span>
+    <span>&nbsp;</span>
+    <span>&nbsp;</span>
+    <a href="#"><img id="member_icon" src="${cpath}/resources/img/member.png" width="20" height="20"></img></a>
+    <a href="${cpath}/join.do">회원가입</a>
     </header>
     <div class="navbar">
         <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png"width="150" height="80"></img></a>

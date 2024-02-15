@@ -48,17 +48,22 @@
             height: 70%;
             background-color: rgb(255, 179, 179);
             color: white;
+            border-radius: 20px;
         }
     </style>
 </head>
 <body>
 <header>
-  <a href="./login.html">로그인</a>
-  <span>&nbsp;</span>
-  <a href="./join.html">회원가입</a>
+  <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
+    <a href="${cpath}/login.do">로그인</a>
+    <span>&nbsp;</span>
+    <span>&nbsp;</span>
+    <span>&nbsp;</span>
+    <a href="#"><img id="member_icon" src="${cpath}/resources/img/member.png" width="20" height="20"></img></a>
+    <a href="${cpath}/join.do">회원가입</a>
 </header>
 <div class="navbar">
-  <a href="${cpath}/"><img id="icon" src="${cpath}/resources/css/img/mainlogo.png" width="150" height="80"></a>
+  <a href="${cpath}/"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
   <a href="./info.html">운동정보</a>
   <a href="./community.html">커뮤니티</a>
   <a href="./use.html">EPA이용방법</a>
