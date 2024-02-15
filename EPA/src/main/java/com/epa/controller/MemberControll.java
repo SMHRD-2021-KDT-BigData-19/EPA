@@ -37,13 +37,15 @@ public class MemberControll {
 		System.out.println("로긴");
 		return "main";
 	}
+	
+	
 
-	@RequestMapping("/googleLogin")
-	public void joinMemberByGoogle(Member vo) {
-		System.out.println("dd");
-		mapper.joinInsert(vo);
-		System.out.println("ㅊㅊ");
-	}
+//	@RequestMapping("/googleLogin")
+//	public void joinMemberByGoogle(Member vo) {
+//		System.out.println("dd");
+//		mapper.joinInsert(vo);
+//		System.out.println("ㅊㅊ");
+//	}
 //
 //	// 구글 로그인
 //	@PostMapping("/Login.do")

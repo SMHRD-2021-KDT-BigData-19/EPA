@@ -13,7 +13,7 @@
 </head>
 <body>
 <header>
-    <a href="./login.html">로그인</a>
+    <a href="${cpath}/login.do">로그인</a>
     <span>&nbsp;</span>
     <a href="${cpath}/join.do">회원가입</a>
 </header>
