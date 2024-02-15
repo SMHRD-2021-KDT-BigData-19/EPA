@@ -13,21 +13,31 @@
 
 	<select id="loginMember" parameterType="com.epa.entity.Member"
 		resultType="com.epa.entity.Member">
-		select * from MEM_TB where MEM_ID=#{MEM_ID} and MEM_PW=#{MEM_PW}
+		select * from MEM_TB where MEM_ID=#{MEM_ID} and
+		MEM_PW=#{MEM_PW}
 	</select>
 
-    <update id="updateMember" parameterType="com.epa.entity.Member">
-        update MEM_TB
-        set MEM_PW = #{MEM_PW}, MEM_NM = #{MEM_NM}, MEM_AGE = #{MEM_AGE},
-            MEM_H = #{MEM_H}, MEM_W = #{MEM_W}, MEM_G = #{MEM_G}, MEM_EMAIL = #{MEM_EMAIL}
-        where MEM_ID = #{MEM_ID}
-    </update>
+	<update id="updateMember" parameterType="com.epa.entity.Member">
+		update MEM_TB
+		set MEM_PW
+		= #{MEM_PW}, MEM_NM = #{MEM_NM}, MEM_AGE = #{MEM_AGE},
+		MEM_H =
+		#{MEM_H}, MEM_W = #{MEM_W}, MEM_G = #{MEM_G}, MEM_EMAIL =
+		#{MEM_EMAIL}
+		where MEM_ID = #{MEM_ID}
+	</update>
 
 
 	<insert id="insertMember">
 		insert into MEM_TB(MEM_ID,MEM_PW,MEM_NM,MEM_EMAIL)
 		values (#{MEM_ID},#{MEM_PW},#{MEM_NM},#{MEM_EMAIL})
 	</insert>
+
+	<delete id="deleteMember" parameterType="com.epa.entity.Member">
+		DELETE FROM MEM_TB
+		WHERE
+		MEM_ID = #{MEM_ID}
+	</delete>
 
 	<select id="readMember" resultType="com.epa.entity.Member">
 		select *

@@ -97,6 +97,25 @@ public class MemberControll {
 	    return "main";
 	}
 
+	@RequestMapping("/delete.do")
+	public String deleteMember(HttpSession session) {
+	    try {
+	        Member currentMember = (Member) session.getAttribute("loginMember");
+
+	        // 회원 삭제
+	        mapper.deleteMember(currentMember);
+
+	        // 삭제 후 세션 초기화
+	        session.invalidate();
+
+	        System.out.println("회원이 성공적으로 삭제되었습니다.");
+	    } catch (Exception e) {
+	        System.out.println("회원 삭제 실패");
+	        e.printStackTrace();
+	        // 필요한 경우 예외 처리
+	    }
+	    return "redirect:/"; // 메인 페이지 또는 다른 적절한 페이지로 리디렉션
+	}
 
 	
 }
