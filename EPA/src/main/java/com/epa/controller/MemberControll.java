@@ -52,7 +52,8 @@ public class MemberControll {
 	        System.out.println("로그인에 실패하셨습니다");
 
 	        // 사용자에게 알림을 보여주기 위해 Model에 메시지 추가
-	        model.addAttribute("loginError", "로그인에 실패하셨습니다");
+	        model.addAttribute("loginError", " 아이디(로그인 전용 아이디) 또는 비밀번호를 잘못 입력했습니다." 
+	       );
 	        return "login";
 	    }
 	}
