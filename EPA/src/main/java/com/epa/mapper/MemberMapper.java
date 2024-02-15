@@ -15,5 +15,8 @@ public interface MemberMapper {
 	public Member readMemberWithIDPW(String mem_ID, String mem_PW);
 
 
+	public void updateMember(Member loginMember);
+
+
 
 }

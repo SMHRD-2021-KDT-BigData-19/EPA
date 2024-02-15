@@ -74,16 +74,16 @@ font-family: 'NPSfontBold';
 </style>
 <body>
 <header>
-    <a href="./login.html">로그인</a>
-    <span>&nbsp;</span>
-    <a href="./join.html">회원가입</a>
+    <a href="${cpath}/Logout.do">로그아웃</a>
+<!--     <span>&nbsp;</span>
+    <a href="./join.html">회원가입</a> -->
 </header>
 <div class="navbar">
-    <a href="${cpath}/"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
-    <a href="./info.html">운동정보</a>
-    <a href="./community.html">커뮤니티</a>
-    <a href="./use.html">EPA이용방법</a>
-    <a href="./mypage.html">마이페이지</a>
+    <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></img></a>
+    <a href="${cpath}/info.do">운동정보</a>
+    <a href="${cpath}/boardList.do">커뮤니티</a>
+    <a href="${cpath}/use.do">EPA이용방법</a>
+    <a href="${cpath}/mypage.do">마이페이지</a>
 </div>
 <h1 id="info_text">운동 선택 후 당신의 자세를 확인하세요!</h1>
 <a href="${cpath}/stretching" class="button">운동 전 스트레칭하기</a>
