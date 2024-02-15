@@ -42,7 +42,7 @@ li {
 }
 
 .login {
-  width: 30%;
+  width: 60%;
   height: 600px;
   background: white;
   border-radius: 20px;
@@ -117,7 +117,7 @@ h2 {
 </style>
 <body>
     <div class="wrap">
-    <form action="${cpath}/Login.do" method="post">
+    <form action="${cpath}/Login.do" method="post" class="login">
         <div class="login">
             <h2>로그인</h2>
         
@@ -130,7 +130,6 @@ h2 {
                 <input type="password" name="MEM_PW" id="MEM_PW" placeholder="Password">
             </div>
             <div class="login_etc">
-        
                 <div class="checkbox">
                 <input type="checkbox"> 암호 기억하기
                 </div>
