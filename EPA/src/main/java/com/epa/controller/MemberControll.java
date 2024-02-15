@@ -34,12 +34,18 @@ public class MemberControll {
 		if (loginMember != null) {
 			session.setAttribute("loginMember", loginMember);
 		}
-		System.out.println("로긴");
-		return "main";
+		System.out.println("로그인");
+		return "mainLogin";
 	}
 	
 	
-
+	@RequestMapping("/Logout.do")
+	public String memberLogout(HttpSession session) {
+		session.removeAttribute("loginMember");
+		System.out.println("로그아웃");
+		return "main";
+	}
+	
 //	@RequestMapping("/googleLogin")
 //	public void joinMemberByGoogle(Member vo) {
 //		System.out.println("dd");
