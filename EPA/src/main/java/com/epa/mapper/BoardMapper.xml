@@ -9,8 +9,8 @@
     </select>
      
      <insert id="boardInsert" parameterType="com.epa.entity.Board">
-        insert into BOARD_TB (BD_T,BD_C,BD_HEAD,MEM_ID)
-        values (#{BD_T},#{MEM_ID},#{BD_HEAD},#{BD_C})
+        insert into BOARD_TB (BD_T,BD_HEAD,BD_C,MEM_ID)
+        values (#{BD_T},#{BD_HEAD},#{BD_C},#{MEM_ID})
     </insert>
     
     <select id="boardContent" parameterType="int"
