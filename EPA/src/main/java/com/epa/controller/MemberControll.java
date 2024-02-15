@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.epa.entity.Member;
 import com.epa.mapper.MemberMapper;
@@ -49,8 +50,10 @@ public class MemberControll {
 		return "main";
 	}
 	
-	
-
+	@RequestMapping("/update.do")
+	public void mypage() {
+	}
+}
 
 	
 //	@RequestMapping("/googleLogin")
@@ -69,4 +72,3 @@ public class MemberControll {
 //		}
 //	}
 
-}

@@ -45,44 +45,46 @@
             <h2>헤어진 헬창님</h2>
             <h4 id="message">헤어진 기념 바프할거다.....</h4>
         </div>
+        
+        <div>
         <form action="/update.do" method="post">
-
             <br>
             <label for="current_pw">현재 비밀번호</label>
             <br>
-            <input type="password" id="current_pw" placeholder="현재 비밀번호를 입력해 주세요">
+            <input type="password" id="current_pw" name="current_pw" placeholder="현재 비밀번호를 입력해 주세요">
             <br>
             <br>
             <label for="new_pw">변경 할 비밀번호</label>
             <br>
-            <input type="password" id="MEM_PW" placeholder="변경할 비밀번호를 입력해 주세요">
+            <input type="password" id="MEM_PW" name="MEM_PW" placeholder="변경할 비밀번호를 입력해 주세요">
             <br>
-            <br>
-            <input type="password" id="MEM_PW" placeholder="변경할 비밀번호를 한 번 더입력해 주세요">
+    
+            <input type="password" placeholder="변경할 비밀번호를 한 번 더입력해 주세요">
             <br>
             <label for="nickname">닉네임</label>
             <br>
-            <input type="text" id="MEM_NM" placeholder="변경할 닉네임을 입력해 주세요">
+            <input type="text" id="MEM_NM" name="MEM_NM" placeholder="변경할 닉네임을 입력해 주세요">
             <br>
             <br>
             <label for="email">이메일</label>
             <br>
-            <input type="email" id="MEM_EMAIL" placeholder="변경할 이메일을 입력해 주세요">
+            <input type="email" id="MEM_EMAIL" name="MEM_EMAIL" placeholder="변경할 이메일을 입력해 주세요">
             <br>
             <br>
             <label for="height">키(cm)</label>
             <br>
-            <input type="text" id="MEM_H" placeholder="내용을 입력해 주세요">
+            <input type="text" id="MEM_H" name="MEM_H" placeholder="내용을 입력해 주세요">
             <br>
             <br>
             <label for="weight">몸무게(kg)</label>
             <br>
-            <input type="text" id="MEM_W" placeholder="내용을 입력해 주세요">
+            <input type="text" id="MEM_W" name="MEM_W" placeholder="내용을 입력해 주세요">
             <br>
             <br>
                 <button class="btn-save" type="submit"><b>저장</b></button>
                 <button class="btn-cancel" ><b>취소</b></button>
         </form>
+        </div>
 
     <footer>
         <div class="inner">
