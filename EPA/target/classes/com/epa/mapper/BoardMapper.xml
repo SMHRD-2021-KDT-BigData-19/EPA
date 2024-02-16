@@ -13,9 +13,19 @@
         values (#{BD_T},#{BD_HEAD},#{BD_C},#{MEM_ID})
     </insert>
     
+     <insert id="commentInsert" parameterType="com.epa.entity.Comment">
+        insert into COMMENT_TB (MEM_ID,COM_C)
+        values (#{MEM_ID},#{COM_C})
+    </insert>
+    
     <select id="boardContent" parameterType="int"
         resultType="com.epa.entity.Board">
         select * from BOARD_TB where BD_NO=#{BD_NO}
+    </select>
+    
+    <select id="commnetContent" parameterType="int"
+        resultType="com.epa.entity.Comment">
+        select * from COMMENT_TB where BD_NO=#{BD_NO}
     </select>
     
     <delete id="boardDelete" parameterType="int">

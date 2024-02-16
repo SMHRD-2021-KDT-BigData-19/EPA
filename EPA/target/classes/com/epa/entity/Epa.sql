@@ -10,3 +10,7 @@ alter table MEM_TB add google_ID VARCHAR(100);
 alter table MEM_TB change GOOGlE_ID Google_ID varchar(100);
 
 commit
+
+insert into COMMENT_TB (MEM_ID,COM_C)
+        values (77,88)
+        where BD_NO = 1

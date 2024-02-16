@@ -62,8 +62,7 @@ CREATE TABLE BOARD_TB (
   BD_HEAD INT NOT NULL
 );
 
-use epa;
-show tables;
+
 desc COMMENT_TB;
 
 -- 커뮤니티 댓글
@@ -96,6 +95,6 @@ LOGOUT DATETIME
 SHOW TABLES;
 
 -- 테이블 정보 보는 곳
-SELECT * FROM MEM_TB; -- 테이블명 바꾸면 됨
+SELECT * FROM COMMENT_TB; -- 테이블명 바꾸면 됨
 
 TRUNCATE TABLE BOARD_TB;

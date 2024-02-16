@@ -10,11 +10,7 @@ public class Comment {
 	public int getCOM_NO() {
 		return COM_NO;
 	}
-	@Override
-	public String toString() {
-		return "Comment [COM_NO=" + COM_NO + ", BD_NO=" + BD_NO + ", MEM_ID=" + MEM_ID + ", COM_RE=" + COM_RE
-				+ ", COM_C=" + COM_C + ", D_DATE=" + D_DATE + "]";
-	}
+	
 	public void setCOM_NO(int cOM_NO) {
 		COM_NO = cOM_NO;
 	}

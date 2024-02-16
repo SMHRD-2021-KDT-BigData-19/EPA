@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.epa.mapper.BoardMapper;
 
 import com.epa.entity.Board;
+import com.epa.entity.Comment;
 
 @Controller
 public class BoardController {
@@ -35,13 +36,22 @@ public class BoardController {
 		mapper.boardInsert(vo);
 		return "redirect:/boardList.do";
 	}
+	
+	
+	@RequestMapping("/commentInsert.do")
+	public String commentInsert(Comment co) {
+		mapper.commentInsert(co);
+		return "boardContent.do";
+	}
 
 	@RequestMapping("/boardContent.do/{BD_NO}")
 	public String boardContent(@PathVariable("BD_NO") int theBD_NO, Model model) {
 
 		Board vo = mapper.boardContent(theBD_NO);
+		List<Comment> comment = mapper.commnetContent(theBD_NO);
 
 		model.addAttribute("vo", vo);
+		model.addAttribute("comment",comment);
 
 		return "boardContent";
 	}
