@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -105,15 +106,20 @@ public class MemberControll {
 	}
 
 	
-	@RequestMapping("/messageMember.do")
+	@RequestMapping("/message.do")
 	public String updateMemberMessage(String MEM_M, HttpSession session) {
 	    try {
 	        // 세션에서 현재 로그인한 사용자 정보를 가져옴
 	        Member currentMember = (Member) session.getAttribute("loginMember");
-
-	        // 새로운 MEM_M 값을 설정하고 업데이트 수행
-	        currentMember.setMEM_M(MEM_M);
-	        mapper.messageMember(currentMember);
+	        // 현재 MEM_M 값이 NULL인 경우 INSERT 수행
+	        if (currentMember.getMEM_M() == null) {
+	            currentMember.setMEM_M(MEM_M);
+	            mapper.insertMessage(currentMember); // 이 부분은 새로운 INSERT 쿼리를 작성하여 사용해야 합니다.
+	        } else {
+	            // 새로운 MEM_M 값을 설정하고 업데이트 수행
+	            currentMember.setMEM_M(MEM_M);
+	            mapper.messageMember(currentMember);
+	        }
 
 	        // 콘솔에 업데이트된 정보 출력 (필요에 따라 로그를 사용하거나 생략 가능)
 	        System.out.println("MEM_M updated: " + MEM_M);
@@ -127,8 +133,12 @@ public class MemberControll {
 	    return "mypage";
 	}
 
+    @GetMapping("/getMEM_M")
+    public String getMEM_M(HttpSession session) {
+        Member currentMember = (Member) session.getAttribute("loginMember");
+        return mapper.getMEM_M(currentMember.getMEM_ID());
+    }
 
-	
 	
 	@RequestMapping("/delete.do")
 	public String deleteMember(HttpSession session) {

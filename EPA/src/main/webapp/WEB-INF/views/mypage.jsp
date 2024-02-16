@@ -3,12 +3,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <c:set var="memId" value="${sessionScope.loginMember.MEM_ID}" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
     <title>Your Website</title>
 </head>
 <style>
@@ -31,11 +34,13 @@
 	<form action="${cpath}/message.do" method="post">
     <img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
     <h2>${memId}님</h2>
-    <input type="text" name="MEM_M" id="MEM_M">
+    <input type="text" name="MEM_M" id="MEM_M" placeholder="상태 메시지를 입력하세요">
     <!-- <h4 id="message">헤어진 기념 바프할거다.....</h4> -->
     <input type="submit" value="수정하기" class="submit">
     </form>
 </div>
+
+    
 <div class="bar">
     <div class="progress-text"><b>이번 달 운동 목표 진행률</div>
         <progress class="progress1" value="25" max="31"></progress></div>
@@ -49,6 +54,23 @@
        <a href="#" class="btn-3d lightpink">운동루틴 설정</a>
     </div>
 </div>
+
+<script>
+    // 페이지 로드 시 MEM_M 값을 가져와서 동적으로 placeholder 설정
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "${cpath}/getMEM_M",
+            success: function (data) {
+                $("#MEM_M").attr("placeholder", "상태 메시지: " + data);
+            },
+            error: function () {
+                console.error("AJAX 요청 오류");
+            }
+        });
+    });
+</script>
+
 <footer>
     <div class="inner">
       <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>

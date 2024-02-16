@@ -27,13 +27,18 @@
 		where MEM_ID = #{MEM_ID}
 	</update>
 
-	<update id="messageMember"
-		parameterType="com.epa.entity.Member">
+	<update id="messageMember" parameterType="com.epa.entity.Member">
 		update MEM_TB
-		set MEM_M = #{MEM_M}
+		set MEM_M
+		= #{MEM_M}
 		where MEM_ID = #{MEM_ID}
 	</update>
 
+	<!-- Insert MEM_M 값 -->
+	<insert id="insertMessage" parameterType="com.epa.entity.Member">
+		INSERT INTO MEM_TB (MEM_M, MEM_ID)
+		VALUES (#{MEM_M}, #{MEM_ID})
+	</insert>
 
 	<insert id="insertMember">
 		insert into MEM_TB(MEM_ID,MEM_PW,MEM_NM,MEM_EMAIL)
