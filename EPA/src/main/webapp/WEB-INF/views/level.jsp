@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
+<c:set var="memId" value="${sessionScope.loginMember.MEM_ID}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -153,12 +154,12 @@ progress.levelpro2 {color:white!important;}
     <div class="container">
         <div class="profile-card">
             <img src="${cpath}/resources/css/img/사용자.png" alt="프로필 사진">
-            <h2>헤어진 헬창님</h2>
+                <h2>${memId}님</h2>
             <h4 id="message">헤어진 기념 바프할거다.....</h4>
         </div>
         <div class="profile-text">
             <div class="circle-container">
-                <h2>헤어진 헬창님의 현재 등급은 "중급자"입니다!</h2>
+                <h2>${memId}님의 현재 등급은 "중급자"입니다!</h2>
                 <div class="circle-text">중급자</div>
             </div>
             <div class="levelbar">

@@ -27,6 +27,13 @@
 		where MEM_ID = #{MEM_ID}
 	</update>
 
+	<update id="messageMember"
+		parameterType="com.epa.entity.Member">
+		update MEM_TB
+		set MEM_M = #{MEM_M}
+		where MEM_ID = #{MEM_ID}
+	</update>
+
 
 	<insert id="insertMember">
 		insert into MEM_TB(MEM_ID,MEM_PW,MEM_NM,MEM_EMAIL)

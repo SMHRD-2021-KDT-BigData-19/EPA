@@ -104,6 +104,32 @@ public class MemberControll {
 	    return "main";
 	}
 
+	
+	@RequestMapping("/messageMember.do")
+	public String updateMemberMessage(String MEM_M, HttpSession session) {
+	    try {
+	        // 세션에서 현재 로그인한 사용자 정보를 가져옴
+	        Member currentMember = (Member) session.getAttribute("loginMember");
+
+	        // 새로운 MEM_M 값을 설정하고 업데이트 수행
+	        currentMember.setMEM_M(MEM_M);
+	        mapper.messageMember(currentMember);
+
+	        // 콘솔에 업데이트된 정보 출력 (필요에 따라 로그를 사용하거나 생략 가능)
+	        System.out.println("MEM_M updated: " + MEM_M);
+
+	    } catch (Exception e) {
+	        System.out.println("ㄲㅂ!");
+	        e.printStackTrace();
+	        // 여기서 예외 처리 페이지로 리다이렉트하거나 다른 조치를 취할 수 있습니다.
+	        return "mypagecorrection";
+	    }
+	    return "mypage";
+	}
+
+
+	
+	
 	@RequestMapping("/delete.do")
 	public String deleteMember(HttpSession session) {
 	    try {

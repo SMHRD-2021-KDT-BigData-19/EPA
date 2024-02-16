@@ -20,6 +20,8 @@ public interface MemberMapper {
 
 	public void deleteMember(Member vo);
 
+	public void messageMember(Member vo);
+
 
 
 

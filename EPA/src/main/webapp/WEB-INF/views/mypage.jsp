@@ -28,10 +28,13 @@
 </div>
 <div class="container">
 <div class="profile-card">
+	<form action="${cpath}/message.do" method="post">
     <img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
     <h2>${memId}님</h2>
-    <h4 id="message">헤어진 기념 바프할거다.....</h4>
-    <a href="${cpath}/mypagecorrection"><button>편집하기</button></a>
+    <input type="text" name="MEM_M" id="MEM_M">
+    <!-- <h4 id="message">헤어진 기념 바프할거다.....</h4> -->
+    <input type="submit" value="수정하기" class="submit">
+    </form>
 </div>
 <div class="bar">
     <div class="progress-text"><b>이번 달 운동 목표 진행률</div>

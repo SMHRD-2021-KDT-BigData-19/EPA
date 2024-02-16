@@ -12,6 +12,7 @@ public class Member {
 	private String MEM_EMAIL;
 	private String JOIN_DATE;
 	private String TEAR;
+	private String MEM_M;
 	
 	
 	public String getMEM_ID() {
@@ -79,6 +80,12 @@ public class Member {
 	}
 	public void setTEAR(String tEAR) {
 		TEAR = tEAR;
+	}
+	public String getMEM_M() {
+		return MEM_M;
+	}
+	public void setMEM_M(String mEM_M) {
+		MEM_M = mEM_M;
 	}
 
 }
