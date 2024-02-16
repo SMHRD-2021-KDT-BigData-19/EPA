@@ -14,7 +14,7 @@
 
 <title>Your Website</title>
 </head>
-<style>ㅇ
+<style>
 #memMContainer{
 	font-family: 'SejonghospitalBold';
     font-size: 20px;
