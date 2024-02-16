@@ -231,39 +231,39 @@ form input[type="radio"]{
 					
 						
 						<h4>아이디</h4>
-						<input type="text" name="MEM_ID" id="id" placeholder="아이디" style="width: 60%; max-width: 300px;">
+						<input type="text" name="MEM_ID" id="id" placeholder="아이디" style="width: 60%; max-width: 300px;" required>
 						<button class ="id_check">중복 확인</button><br>
 						
 						<h4>비밀번호</h4>
-						<input type="password" name="MEM_PW" placeholder="비밀번호"><br>
+						<input type="password" name="MEM_PW" placeholder="비밀번호" required><br>
 						
 						
 						<h4>비밀번호 확인</h4>
-                    	<input type="password" name="confirm_password" id="confirm_password" placeholder="비밀번호 확인"><br>
+                    	<input type="password" name="confirm_password" id="confirm_password" placeholder="비밀번호 확인" required><br>
 				
 						
 						<h4>이메일</h4>
-						<input type="email" name="MEM_EMAIL" id="email" placeholder="이메일"><br>
+						<input type="email" name="MEM_EMAIL" id="email" placeholder="이메일" required><br>
 					
 				
 				<h2 style="visibility: hidden;">회원가입</h2>
 				
 					<h4>닉네임</h4>
-					<input type="text" name="MEM_NM" placeholder="닉네임"><br>
+					<input type="text" name="MEM_NM" placeholder="닉네임" required><br>
 				
 					<h4>키</h4>
-					<input type="text" name="MEM_H" placeholder="키"><br>
+					<input type="text" name="MEM_H" placeholder="키" required><br>
 				
 					<h4>몸무게</h4>
-					<input type="text" name="MEM_W" placeholder="몸무게"><br>
+					<input type="text" name="MEM_W" placeholder="몸무게" required><br>
 				
 					<h4>생일</h4>
-					<input type="date" name="MEM_AGE"><br>
+					<input type="date" name="MEM_AGE" required><br>
 				
 					<label for="male" class="male">남성</label> 
-					<input type="radio" id="male" name="MEM_G" value="male" class="male"> <br>
+					<input type="radio" id="male" name="MEM_G" value="male" class="male" required> <br>
 					<label for="female" class="female">여성</label>
-					<input type="radio" id="female" name="MEM_G" value="female" class="female">
+					<input type="radio" id="female" name="MEM_G" value="female" class="female" required>
 				
 					<input type="submit" value="가입하기" class="submit">
               </form>
