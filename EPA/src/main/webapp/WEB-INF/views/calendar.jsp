@@ -14,6 +14,7 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
 
     <style>
+    
         #calendar {
         	background-color : white;
             width: 70%;
@@ -24,6 +25,7 @@
             width: 700px !important;
             height: 550px !important;
             font-family: 'SejonghospitalBold';
+            
         }
         .fc-scrollgrid {
           overflow: hidden !important;
@@ -106,6 +108,13 @@
          <script src="assets/js/breakpoints.min.js"></script>
          <script src="assets/js/util.js"></script>
          <script src="assets/js/main.js"></script>
+           <footer>
+        <div class="inner">
+            <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
+            <div class="footer-copyright">Copyright 2024 All ⓒ rights reserved</div>
+            <div class="footer-contact">Designed by 바른자세</div>
+        </div>
+    </footer>
       <script>
         const YrModal = document.querySelector("#yrModal");
         const calendarEl = document.querySelector('#calendar');

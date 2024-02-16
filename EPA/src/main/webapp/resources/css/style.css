@@ -24,6 +24,16 @@
     font-weight: 700;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'SOGANGUNIVERSITYTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/SOGANGUNIVERSITYTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 /* 로그인 하이퍼링크 클릭 색상 */
 a {
     color: black; 
