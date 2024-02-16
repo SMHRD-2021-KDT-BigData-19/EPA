@@ -29,6 +29,9 @@ public interface MemberMapper {
 	public String getMEM_M(String mem_ID);
 
 
+	public void imageMember(String memId, String filePath);
+
+
 
 
 }

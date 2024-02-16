@@ -34,14 +34,24 @@
 		where MEM_ID = #{MEM_ID}
 	</update>
 
-	    <select id="getMEM_M" resultType="java.lang.String">
-        SELECT MEM_M FROM MEM_TB WHERE MEM_ID = #{memId}
-    </select>
-	
-	    
+	<select id="getMEM_M" resultType="java.lang.String">
+		SELECT MEM_M FROM MEM_TB WHERE
+		MEM_ID = #{memId}
+	</select>
+
+	<!-- Your existing queries ... -->
+
+	<update id="imageMember" parameterType="map">
+		UPDATE MEM_TB
+		SET MEM_IMG = #{imagePath}
+		WHERE MEM_ID = #{memId}
+	</update>
+
+
 	<!-- Insert MEM_M 값 -->
 	<insert id="insertMessage" parameterType="com.epa.entity.Member">
-		INSERT INTO MEM_TB (MEM_M, MEM_ID)
+		INSERT INTO MEM_TB
+		(MEM_M, MEM_ID)
 		VALUES (#{MEM_M}, #{MEM_ID})
 	</insert>
 
