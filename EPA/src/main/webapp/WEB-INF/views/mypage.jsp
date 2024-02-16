@@ -42,7 +42,7 @@
     <progress class="progress2"value="3" max="30"></progress>
     <div class="button-container">
        <a href="${cpath}/calendar" class="btn-3d khaki">캘린더</a>
-       <a href="./level.html" class="btn-3d powderblue">등급 확인</a>
+       <a href="${cpath}/level" class="btn-3d powderblue">등급 확인</a>
        <a href="#" class="btn-3d lightpink">운동루틴 설정</a>
     </div>
 </div>

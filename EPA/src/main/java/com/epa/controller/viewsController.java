@@ -38,6 +38,10 @@ public class viewsController {
 	}
 	
 	@RequestMapping("/calendar")
-	public void clanedar() {
+	public void calendar() {
+	}
+	
+	@RequestMapping("/level")
+	public void level() {
 	}
 }
