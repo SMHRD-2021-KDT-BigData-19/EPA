@@ -23,6 +23,12 @@ public interface MemberMapper {
 	public void messageMember(Member vo);
 
 
+	public void insertMessage(Member currentMember);
+
+
+	public String getMEM_M(String mem_ID);
+
+
 
 
 }
