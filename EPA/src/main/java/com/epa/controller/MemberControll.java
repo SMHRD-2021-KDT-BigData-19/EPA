@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.epa.entity.Member;
 import com.epa.mapper.MemberMapper;
@@ -130,14 +132,22 @@ public class MemberControll {
 	        // 여기서 예외 처리 페이지로 리다이렉트하거나 다른 조치를 취할 수 있습니다.
 	        return "mypagecorrection";
 	    }
-	    return "mypage";
+	    return "redirect:/mypage.do";
 	}
 
-    @GetMapping("/getMEM_M")
-    public String getMEM_M(HttpSession session) {
-        Member currentMember = (Member) session.getAttribute("loginMember");
-        return mapper.getMEM_M(currentMember.getMEM_ID());
-    }
+	
+	@RequestMapping("/mypage.do")
+	public ModelAndView mypage(HttpSession session, Model model) {
+	    Member currentMember = (Member) session.getAttribute("loginMember");
+	    String memM = mapper.getMEM_M(currentMember.getMEM_ID());
+
+	    // 모델에 MEM_M 값을 담아서 뷰로 전달
+	    model.addAttribute("memM", memM);
+
+	    // ModelAndView 객체를 사용하여 뷰 이름과 모델을 함께 반환
+	    return new ModelAndView("mypage");
+	}
+
 
 	
 	@RequestMapping("/delete.do")
