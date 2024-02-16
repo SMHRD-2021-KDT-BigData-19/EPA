@@ -15,6 +15,56 @@
 <title>Your Website</title>
 </head>
 <style>
+#memMContainer{
+	font-family: 'SejonghospitalBold';
+    font-size: 20px;
+    margin-left: 50px;
+}
+#MEM_M{
+ margin-top: 20px;
+        width: 400px;
+        height: 70px;
+        position: absolute;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding: 10px; 
+        font-size: 16px; /* 텍스트 크기 설정 */
+        resize: none; /* 사용자가 텍스트 상자 크기를 조정하지 못하도록  */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        font-family: 'SejonghospitalBold'; 
+}
+ .submit {
+   		margin-top: 125px;
+    margin-left: 320px;
+    font-family: 'SejonghospitalBold';
+    background-color: #dcdcdc;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+  }
+  body > div.container > div.profile-card{
+  margin-bottom: 30px}
+  
+  body > div.container > div.profile-card > form > img{ 
+  margin-left: 110px
+  }
+  .container {
+        margin-bottom: 30px; /* 프로필 카드 아래 여백 추가 */
+    }
+
+    footer {
+        margin-top: 30px; /* 푸터 위 여백 추가 */
+    }
+     
 </style>
 <body>
 	<header>
@@ -55,9 +105,9 @@
 		</div>
 		<progress class="progress2" value="3" max="30"></progress>
 		<div class="button-container">
-			<a href="${cpath}/calendar" class="btn-3d khaki">캘린더</a> <a
-				href="${cpath}/level" class="btn-3d powderblue">등급 확인</a> <a
-				href="#" class="btn-3d lightpink">운동루틴 설정</a>
+			<a href="${cpath}/calendar" class="btn-3d khaki">운동루틴 설정</a> 
+			<a href="${cpath}/level" class="btn-3d powderblue">등급 확인</a> 
+			<a href="${cpath}/mypagecorrection" class="btn-3d lightpink">회원정보 수정</a>
 		</div>
 	</div>
 

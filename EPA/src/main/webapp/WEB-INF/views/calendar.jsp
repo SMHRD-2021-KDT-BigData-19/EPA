@@ -97,7 +97,6 @@
       <div id="Wrapper">
        <div id='calendar' style="text-align:center; width:50%; height: 50%; margin: 0 auto;"></div>
       <div>
-        <button>zz</button>
       </div>
     
       </div>
