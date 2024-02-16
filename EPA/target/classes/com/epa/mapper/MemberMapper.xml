@@ -6,16 +6,18 @@
 
 	<insert id="joinInsert" parameterType="com.epa.entity.Member">
 		insert into MEM_TB
-		(MEM_ID,MEM_PW,MEM_NM,MEM_AGE,MEM_H,MEM_W,MEM_G,MEM_EMAIL)
+		(MEM_ID,MEM_PW,MEM_NM,MEM_AGE,MEM_H,MEM_W,MEM_G,MEM_EMAIL,MEM_M)
 		values
-		(#{MEM_ID},#{MEM_PW},#{MEM_NM},#{MEM_AGE},#{MEM_H},#{MEM_W},#{MEM_G},#{MEM_EMAIL})
+		(#{MEM_ID},#{MEM_PW},#{MEM_NM},#{MEM_AGE},#{MEM_H},#{MEM_W},#{MEM_G},#{MEM_EMAIL},#{MEM_M})
 	</insert>
+
 
 	<select id="loginMember" parameterType="com.epa.entity.Member"
 		resultType="com.epa.entity.Member">
 		select * from MEM_TB where MEM_ID=#{MEM_ID} and
 		MEM_PW=#{MEM_PW}
 	</select>
+
 
 	<update id="updateMember" parameterType="com.epa.entity.Member">
 		update MEM_TB
@@ -43,7 +45,8 @@
 
 	<update id="imageMember" parameterType="map">
 		UPDATE MEM_TB
-		SET MEM_IMG = #{imagePath}
+		SET MEM_IMG
+		= #{imagePath}
 		WHERE MEM_ID = #{memId}
 	</update>
 

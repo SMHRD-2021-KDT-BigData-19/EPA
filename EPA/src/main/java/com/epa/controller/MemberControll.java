@@ -39,32 +39,35 @@ public class MemberControll {
 	}
 
 	@PostMapping("/Login.do")
-	public String loginMember(Member vo, HttpSession session, Model model) {
-		Member loginMember = mapper.loginMember(vo);
+	   public String loginMember(Member vo, HttpSession session, Model model) {
+	      Member loginMember = mapper.loginMember(vo);
 
-		if (loginMember != null) {
-			// 입력한 비밀번호와 저장된 비밀번호를 비교
-			if (vo.getMEM_PW().equals(loginMember.getMEM_PW())) {
-				// 비밀번호가 일치하면 세션 속성 설정
-				session.setAttribute("loginMember", loginMember);
-				return "mainLogin";
-			} else {
-				// 비밀번호가 일치하지 않으면 오류 처리 (예: 오류 메시지 표시)
-				System.out.println("잘못된 비밀번호입니다");
+	      if (loginMember != null) {
+	         // 입력한 비밀번호와 저장된 비밀번호를 비교
+	         if (vo.getMEM_PW().equals(loginMember.getMEM_PW())) {
+	            // 비밀번호가 일치하면 세션 속성 설정
+	            session.setAttribute("loginMember", loginMember);
+	            return "mainLogin";
+	         } else {
+	            // 비밀번호가 일치하지 않으면 오류 처리 (예: 오류 메시지 표시)
+	            System.out.println("잘못된 비밀번호입니다");
 
-				// 사용자에게 알림을 보여주기 위해 Model에 메시지 추가
-				model.addAttribute("loginError", "잘못된 비밀번호입니다");
-				return "login"; // 로그인 화면으로 리다이렉트
-			}
-		} else {
-			// 사용자를 찾을 수 없으면 오류 처리 (예: 오류 메시지 표시)
-			System.out.println("로그인에 실패하셨습니다");
+	            // 사용자에게 알림을 보여주기 위해 Model에 메시지 추가
+	            model.addAttribute("loginError", "잘못된 비밀번호입니다");
+	            return "login"; // 로그인 화면으로 리다이렉트
+	         }
+	      } else {
+	         // 사용자를 찾을 수 없으면 오류 처리 (예: 오류 메시지 표시)
+	         System.out.println("로그인에 실패하셨습니다");
 
-			// 사용자에게 알림을 보여주기 위해 Model에 메시지 추가
-			model.addAttribute("loginError", " 아이디(로그인 전용 아이디) 또는 비밀번호를 잘못 입력했습니다!");
-			return "login";
-		}
-	}
+	         // 사용자에게 알림을 보여주기 위해 Model에 메시지 추가
+	         model.addAttribute("loginError", " 아이디(로그인 전용 아이디) 또는 비밀번호를 잘못 입력했습니다!");
+	         return "login";
+	      }
+	   }
+
+
+
 
 	@RequestMapping("/Logout.do")
 	public String memberLogout(HttpSession session) {
@@ -131,7 +134,7 @@ public class MemberControll {
 			System.out.println("ㄲㅂ!");
 			e.printStackTrace();
 			// 여기서 예외 처리 페이지로 리다이렉트하거나 다른 조치를 취할 수 있습니다.
-			return "mypagecorrection";
+			return "redirect:/mypage.do";
 		}
 		return "redirect:/mypage.do";
 	}
@@ -169,7 +172,14 @@ public class MemberControll {
 		return "main"; // 메인 페이지 또는 다른 적절한 페이지로 리디렉션
 	}
 
+	//요청 --> 등급보는 페이지
+	//메소드 (______ session){ 
+	// epa vo = session.getAttribute("로그인정보");
+	// String code = vo.get등급코드();
+//	Tear tear = mapper.getTear(code); -->xml select 조건 저 코드가 있는 *
+//	model.addA...("tear",tear);
 }
+
 
 //	@RequestMapping("/googleLogin")
 //	public void joinMemberByGoogle(Member vo) {
