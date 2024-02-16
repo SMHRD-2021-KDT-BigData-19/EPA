@@ -42,7 +42,7 @@ li {
 
 .login {
 	width: 60%;
-	min-height: 700px; /* 더 큰 높이로 설정 */
+	min-height: 700px; 
 	background: white;
 	border-radius: 20px;
 	display: flex;
@@ -88,7 +88,7 @@ h2 {
 .submit {
 	text-align: center;
 	width: 100%;
-	margin-top: 20px;
+	margin-top: -20px
 }
 
 .submit {
@@ -208,6 +208,15 @@ form .id_check {
 form input[type="radio"]{
  
 } 
+.male {
+    margin-left: -100px;
+}
+
+.female {
+   position: relative;
+    top: -60px;
+    margin-left: 100px;
+}
 
 </style>
 </head>
@@ -220,10 +229,7 @@ form input[type="radio"]{
 					<h2>회원가입</h2>
 					<h5>*모든 항목 필수 입력*</h5><br><br>
 					
-								
-						<h4>이메일</h4>
-						<input type="email" name="MEM_EMAIL" id="email" placeholder="이메일"><br>
-					
+						
 						<h4>아이디</h4>
 						<input type="text" name="MEM_ID" id="id" placeholder="아이디" style="width: 60%; max-width: 300px;">
 						<button class ="id_check">중복 확인</button><br>
@@ -233,9 +239,12 @@ form input[type="radio"]{
 						
 						
 						<h4>비밀번호 확인</h4>
-                    	<input type="password" name="confirm_password" id="confirm_password" placeholder="비밀번호 확인">
+                    	<input type="password" name="confirm_password" id="confirm_password" placeholder="비밀번호 확인"><br>
 				
-				
+						
+						<h4>이메일</h4>
+						<input type="email" name="MEM_EMAIL" id="email" placeholder="이메일"><br>
+					
 				
 				<h2 style="visibility: hidden;">회원가입</h2>
 				
@@ -249,12 +258,12 @@ form input[type="radio"]{
 					<input type="text" name="MEM_W" placeholder="몸무게"><br>
 				
 					<h4>생일</h4>
-					<input type="date" name="MEM_AGE">
+					<input type="date" name="MEM_AGE"><br>
 				
-					<label for="male">남성</label> 
-					<input type="radio" id="male" name="MEM_G" value="male"> 
-					<label for="female">여성</label>
-					<input type="radio" id="female" name="MEM_G" value="female">
+					<label for="male" class="male">남성</label> 
+					<input type="radio" id="male" name="MEM_G" value="male" class="male"> <br>
+					<label for="female" class="female">여성</label>
+					<input type="radio" id="female" name="MEM_G" value="female" class="female">
 				
 					<input type="submit" value="가입하기" class="submit">
               </form>
