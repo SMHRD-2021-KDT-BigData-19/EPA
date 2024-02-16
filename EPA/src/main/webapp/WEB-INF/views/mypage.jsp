@@ -81,14 +81,13 @@
 	<div class="container">
 		<div class="profile-card">
 			<form action="${cpath}/message.do" method="post">
-        <img src="${cpath}/resources/img/사용자.png" alt="프로필 사진" id="profileImage" onclick="uploadImage()">
+				<img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
 				<h2>${memId}님</h2>
-				<br>
-				<br>
-				<br>
+				<br><br><br>
 				<div id="memMContainer">${memM}</div>
-				<input type="text" name="MEM_M" id="MEM_M" placeholder="${memM}">
-				<input type="submit" value="수정하기" class="submit">
+				<input type="text" name="MEM_M" id="MEM_M"
+					placeholder="${memM}"> <input type="submit"
+					value="수정하기" class="submit">
 			</form>
 		</div>
 
@@ -128,8 +127,6 @@
 		});
 	</script>
 
-
-
 	<footer>
 		<div class="inner">
 			<div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
@@ -140,3 +137,4 @@
 	</footer>
 </body>
 </html>
+
