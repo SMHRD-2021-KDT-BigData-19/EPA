@@ -30,9 +30,6 @@ public class MemberControll {
 	@Autowired
 	private MemberMapper mapper;
 
-	public void saveImagePath(String memId, String imagePath) {
-		mapper.imageMember(memId, imagePath);
-	}
 	/* 회원등록화면 */
 
 	@RequestMapping("/joinInsert.do")
@@ -139,29 +136,6 @@ public class MemberControll {
 		return "redirect:/mypage.do";
 	}
 
-	@PostMapping("/imageMember")
-	public String uploadImage(@RequestParam("file") MultipartFile file, HttpSession session) {
-	    if (!file.isEmpty()) {
-	        try {
-	            String memId = ((Member) session.getAttribute("loginMember")).getMEM_ID();
-	            String filePath = "path/to/your/project/resources/images/" + memId + ".png";
-	            Files.copy(file.getInputStream(), Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING);
-
-	            // Save the file path to the database
-	            mapper.imageMember(memId, filePath);
-
-	            // Redirect to /mypage.do after successful upload
-	            return "redirect:/mypage.do";
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	            // Handle the error case, you might want to show an error message to the user
-	            return "main"; // Change to an appropriate error page
-	        }
-	    } else {
-	        // Handle the case where the file is empty, you might want to show an error message
-	        return "main"; // Change to an appropriate error page
-	    }
-	}
 
 	@RequestMapping("/mypage.do")
 	public ModelAndView mypage(HttpSession session, Model model) {
