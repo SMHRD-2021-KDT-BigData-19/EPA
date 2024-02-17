@@ -14,7 +14,21 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
 
     <style>
-    
+      body, html {
+        padding: 0;
+        margin: 0;
+    }
+    footer {
+        margin: 0; /* 푸터 아래 여백 제거 */
+        text-align: center; 
+        clear: both; 
+        padding: 20px 0;
+    }
+    #Wrapper {
+        margin: 0; /* Wrapper의 여백 제거 */
+        padding: 0; /* Wrapper의 패딩 제거 */
+    }
+    /* 이하 코드 생략 */
         #calendar {
         	background-color : white;
             width: 70%;
@@ -102,6 +116,7 @@
       </div>
     
       </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
          <script src="assets/js/jquery.min.js"></script>
          <script src="assets/js/jquery.dropotron.min.js"></script>
          <script src="assets/js/browser.min.js"></script>
