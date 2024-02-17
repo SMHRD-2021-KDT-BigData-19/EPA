@@ -35,6 +35,9 @@ public interface MemberMapper {
 	public int getAttendCount(String memberId);
 
 
+	public int mbidCheck(String mEM_ID);
+
+
 
 
 

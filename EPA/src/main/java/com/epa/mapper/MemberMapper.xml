@@ -83,4 +83,11 @@
 		where MEM_ID=#{MEM_ID} and
 		MEM_PW=#{MEM_PW}
 	</select>
+	
+	<select id="mbidCheck" parameterType="String" resultType="int">
+      select count(*)
+      from MEM_TB
+      where
+      MEM_ID=#{MEM_ID}
+   </select>
 </mapper>

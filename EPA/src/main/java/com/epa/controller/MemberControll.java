@@ -171,6 +171,12 @@ public class MemberControll {
 		}
 		return "main"; // 메인 페이지 또는 다른 적절한 페이지로 리디렉션
 	}
+	
+	@RequestMapping("/mbidCheck.do")
+	   public @ResponseBody int mbidCheck(String MEM_ID) {
+	      int result = mapper.mbidCheck(MEM_ID);
+	      return result;
+	}
 
 	//요청 --> 등급보는 페이지
 	//메소드 (______ session){ 

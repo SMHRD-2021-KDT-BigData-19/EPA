@@ -12,7 +12,8 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
 	rel="stylesheet">
-<link rel="stylesheet" href="${cpath}/resources/css/style.css"">
+<link rel="stylesheet" href="${cpath}/resources/css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style>
 * {
 	margin: 0;
@@ -232,7 +233,7 @@ form input[type="radio"]{
 						
 						<h4>아이디</h4>
 						<input type="text" name="MEM_ID" id="id" placeholder="아이디" style="width: 60%; max-width: 300px;" required>
-						<button class ="id_check">중복 확인</button><br>
+						<button type="button" class ="id_check" id="MEM_ID" onclick="checkId();">중복 확인</button><br>
 						
 						<h4>비밀번호</h4>
 						<input type="password" name="MEM_PW" placeholder="비밀번호" required><br>
@@ -272,6 +273,31 @@ form input[type="radio"]{
 		</div>
 
 	</div>
+	<script>
+   // jQuery를 사용한 AJAX 요청
+   function checkId() {
+      let MEM_ID = $("#MEM_ID").val();
+    $.ajax({
+        url: "${cpath}/mbidCheck.do",
+        type: "post",
+        data: { MEM_ID: MEM_ID },
+        dataType: 'json',
+        success: function (result) {
+            console.log(result);
+            if (result == 1) {
+                alert("중복된 아이디입니다.");
+            } else {
+                alert("사용가능한 아이디입니다.");
+            }
+        },
+        error: function () {
+            alert("서버요청실패");
+        }
+    });
+}
+   
+   
+   </script>
 </body>
 </html>
 
