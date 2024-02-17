@@ -98,11 +98,14 @@
             
               <td>
                 <b>댓글</b></td>
+                
+                
                
               <td>
               <form action="${cpath}/commentInsert.do" method="post">
-              <input type="hidden" name="MEM_ID" value="${loginMember.MEM_ID}">
+              <input name="MEM_ID" value="${loginMember.MEM_ID}">
               <input type="text" name="COM_C">
+              <input type="hidden" name="BD_NO" value="${vo.BD_NO}">
               <button type="submit">작성</button></form></td>
   
         </tr>

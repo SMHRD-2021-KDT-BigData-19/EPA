@@ -64,6 +64,7 @@ CREATE TABLE BOARD_TB (
 
 
 desc COMMENT_TB;
+select * from COMMENT_TB;
 
 -- 커뮤니티 댓글
 CREATE TABLE COMMENT_TB(

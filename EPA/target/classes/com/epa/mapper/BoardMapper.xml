@@ -14,8 +14,8 @@
     </insert>
     
      <insert id="commentInsert" parameterType="com.epa.entity.Comment">
-        insert into COMMENT_TB (MEM_ID,COM_C)
-        values (#{MEM_ID},#{COM_C})
+        insert into COMMENT_TB (MEM_ID,COM_C,BD_NO)
+        values (#{MEM_ID},#{COM_C},#{BD_NO})
     </insert>
     
     <select id="boardContent" parameterType="int"

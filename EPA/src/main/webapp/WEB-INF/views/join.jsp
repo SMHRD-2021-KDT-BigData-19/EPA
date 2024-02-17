@@ -277,7 +277,6 @@ form input[type="radio"]{
    // jQuery를 사용한 AJAX 요청
    function checkId() {
       let MEM_ID = $("#MEM_ID").val();
-      console.log(MEM_ID);
     $.ajax({
         url: "${cpath}/mbidCheck.do",
         type: "post",

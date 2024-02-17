@@ -40,8 +40,9 @@ public class BoardController {
 	
 	@RequestMapping("/commentInsert.do")
 	public String commentInsert(Comment co) {
+		System.out.println(co.getBD_NO());
 		mapper.commentInsert(co);
-		return "boardContent.do";
+		return "redirect:/boardContent.do/"+co.getBD_NO();
 	}
 
 	@RequestMapping("/boardContent.do/{BD_NO}")
