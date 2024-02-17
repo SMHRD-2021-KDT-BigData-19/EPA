@@ -174,7 +174,14 @@ public class MemberControll {
 	
 	@RequestMapping("/mbidCheck.do")
 	   public @ResponseBody int mbidCheck(String MEM_ID) {
-	      int result = mapper.mbidCheck(MEM_ID);
+		  int result = 1;
+	      String id = mapper.mbidCheck(MEM_ID);
+	      if (id!=null) {// 아이디에 값이 있다면 1 출력 null 부정
+	    	  result = 1;
+	      }
+	      else {
+	    	  result = 0;
+	      }
 	      return result;
 	}
 

@@ -232,8 +232,8 @@ form input[type="radio"]{
 					
 						
 						<h4>아이디</h4>
-						<input type="text" name="MEM_ID" id="id" placeholder="아이디" style="width: 60%; max-width: 300px;" required>
-						<button type="button" class ="id_check" id="MEM_ID" onclick="checkId();">중복 확인</button><br>
+						<input type="text" name="MEM_ID" id="MEM_ID" placeholder="아이디" style="width: 60%; max-width: 300px;" required>
+						<button type="button" class ="id_check" onclick="checkId();">중복 확인</button><br>
 						
 						<h4>비밀번호</h4>
 						<input type="password" name="MEM_PW" placeholder="비밀번호" required><br>
@@ -277,14 +277,16 @@ form input[type="radio"]{
    // jQuery를 사용한 AJAX 요청
    function checkId() {
       let MEM_ID = $("#MEM_ID").val();
+      console.log(MEM_ID);
     $.ajax({
         url: "${cpath}/mbidCheck.do",
         type: "post",
         data: { MEM_ID: MEM_ID },
         dataType: 'json',
         success: function (result) {
-            console.log(result);
+        	
             if (result == 1) {
+            
                 alert("중복된 아이디입니다.");
             } else {
                 alert("사용가능한 아이디입니다.");

@@ -84,8 +84,8 @@
 		MEM_PW=#{MEM_PW}
 	</select>
 	
-	<select id="mbidCheck" parameterType="String" resultType="int">
-      select count(*)
+	<select id="mbidCheck" parameterType="com.epa.entity.Member" resultType="String">
+      select MEM_ID
       from MEM_TB
       where
       MEM_ID=#{MEM_ID}

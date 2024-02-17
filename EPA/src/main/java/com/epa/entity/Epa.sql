@@ -13,4 +13,10 @@ commit
 
 insert into COMMENT_TB (MEM_ID,COM_C)
         values (77,88)
-        where BD_NO = 1
+        where BD_NO = 1;
+        
+        select MEM_ID from MEM_TB where MEM_ID='77'
+        select count(*)
+      from MEM_TB
+      where
+      MEM_ID='77'
