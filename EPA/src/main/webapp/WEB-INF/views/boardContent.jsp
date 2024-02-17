@@ -93,30 +93,26 @@
             <button onclick="goList()">목록</button>
             </td>
         </tr>
-        	
-        <tr>
-            
-              <td>
-                <b>댓글</b></td>
-                
-                
-               
-              <td>
-              <form action="${cpath}/commentInsert.do" method="post">
-              <input name="MEM_ID" value="${loginMember.MEM_ID}">
-              <input type="text" name="COM_C">
-              <input type="hidden" name="BD_NO" value="${vo.BD_NO}">
-              <button type="submit">작성</button></form></td>
-  
-        </tr>
         
-        
-        <tr>
+     <tr>
         <c:forEach items="${comment}" var="c">
             <td>${c.MEM_ID}</td>
-            <td>${c.COM_C}</td>
+            <td>${c.COM_C}<br></td>
+            
         </c:forEach>
         </tr>
+     <tr>
+         <td><b>댓글</b></td>
+           
+         <td>
+         <form action="${cpath}/commentInsert.do" method="post">
+         <input type="hidden" name="MEM_ID" value="${loginMember.MEM_ID}">
+         <input type="text" name="COM_C">
+         <input type="hidden" name="BD_NO" value="${vo.BD_NO}">
+         <button type="submit">작성</button></form>
+         </td>
+  
+     </tr>
         
     </table>
  </div>
