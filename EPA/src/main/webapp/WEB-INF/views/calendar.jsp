@@ -3,57 +3,43 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
-<html lang='en'>
+<html>
 <head>
-    <title>EPA</title>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-          <link rel="stylesheet" href="assets/css/calmain.css" />
-      <link rel="stylesheet" href="assets/css/main.css" />
-       <link rel="stylesheet" href="${cpath}/resources/css/style.css">
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
 
-    <style>
-    
-        #calendar {
-        	background-color : white;
-            width: 70%;
-            height: 70%;
-            overflow : hidden;
-            margin-top: 50px !important;
-            margin-left: 50px !important;
-            width: 700px !important;
-            height: 550px !important;
-            font-family: 'SejonghospitalBold';
-            
-        }
-        .fc-scrollgrid {
-          overflow: hidden !important;
-        }
-      
-        .fc-view-harness {
-          overflow: hidden !important;
-        }
-        #yrModal {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(255, 238, 230, 0.7);
-            display: none;
-            z-index: 1000;
-        }
-        
-        #cont {
-            margin: 50px auto;
-            width: 30%;
-            height: 70%;
-            background-color: rgb(255, 179, 179);
-            color: white;
-            border-radius: 20px;
-        }
-    </style>
+<title>EPA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="assets/css/calmain.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="${cpath}/resources/css/style.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- fullcalendar CDN -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
+    <!-- fullcalendar 언어 CDN -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
+<style>
+  /* body 스타일 */
+  html, body {
+    overflow: hidden;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+  /* 캘린더 위의 해더 스타일(날짜가 있는 부분) */
+  .fc-header-toolbar {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+</style>
 </head>
-<body>
+<body style="padding:30px;">
 <header>
   <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
     <a href="${cpath}/login.do">로그인</a>
@@ -69,150 +55,152 @@
   <a href="./community.html">커뮤니티</a>
   <a href="./use.html">EPA이용방법</a>
   <a href="./mypage.html">마이페이지</a>
-
 </div>
-    <div id="yrModal">
-        <div id="cont" style="text-align: center;">
-            <br>
-            <h1>일정을 입력해주세요!</h1>
-            운동시작일 <br>
-            <input type="text" id="schStart" value=""><br><br>
-            운동종료일<br>
-             <input type="text" id="schEnd" value=""><br><br>
-            운동종류<br>
-            <select>
-             <option id="schTitle" value=""> 운동코드1<br><br></option>
-             <option id="schTitle" value=""> 운동코드2<br><br></option>
-             <option id="schTitle" value=""> 운동코드3<br><br></option>
-            </select>
-            <br><br>
-            운동 완료 여부: <br>
-             완료<input type="radio"  id="schYes" value="Y"  name="check" checked />
-             미완 <input type="radio" id="schNo" value="N" name="check" /><br><br>
-            배경색<input type="color" id="schBColor" value="">
-            글자색<input type="color" id="schFColor" value=""><br><br>
-            <button onclick="fCalAdd()">추가</button>
-            <button onclick="fMClose()">닫기</button>
+  <div id='calendar-container'>
+    <div id='calendar'></div>
+  </div>
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">운동루틴</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          운동코드 : 
+          <form action="${cpath}/calInsert.do" method="get">
+          <select name="EX_ID">
+            <option id="EX_ID" value="code1">운동코드1</option>
+            <option id="EX_ID" value="code2">운동코드2</option>
+            <option id="EX_ID"  value="code3">운동코드3</option>
+          </select><br />
+          <input type="hidden" id="writer" name="MEM_ID" value= "${loginMember.MEM_ID}" />
+          일정이름 : <input type="text" name="EXPL_ID" id="EXPL_ID" /><br />
+          운동시작시간 : <input type="datetime-local" name="EX_SDATE" id="EX_SDATE" /><br />
+          운동종료시간 : <input type="datetime-local" name="EX_FDATE" id="EX_FDATE" /><br />
+          배경색상 :
+          <select name="P_COLOR" id="P_COLOR">
+              <option value="red">빨강색</option>
+              <option value="orange">주황색</option>
+              <option value="pink">핑크색</option>
+              <option value="green">초록색</option>
+              <option value="blue">파랑색</option>
+              <option value="navy">남색</option>
+              <option value="DarkSlateGray">어두운회색</option>
+              <option value="black">검정색</option>
+              <option value="purple">보라색</option>
+          </select>
+          <button type="button" class="btn btn-secondary" id="cancelButton">취소</button>
+          <button type="submit" class="btn btn-primary" id="saveChanges">추가</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          
+          
+        </div>
+      </div>
     </div>
+  </div>
 
-      <div id="Wrapper">
-       <div id='calendar' style="text-align:center; width:50%; height: 50%; margin: 0 auto;"></div>
-      <div>
-      </div>
-    
-      </div>
-         <script src="assets/js/jquery.min.js"></script>
-         <script src="assets/js/jquery.dropotron.min.js"></script>
-         <script src="assets/js/browser.min.js"></script>
-         <script src="assets/js/breakpoints.min.js"></script>
-         <script src="assets/js/util.js"></script>
-         <script src="assets/js/main.js"></script>
-           <footer>
-        <div class="inner">
-            <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
-            <div class="footer-copyright">Copyright 2024 All ⓒ rights reserved</div>
-            <div class="footer-contact">Designed by 바른자세</div>
-        </div>
-    </footer>
-      <script>
-        const YrModal = document.querySelector("#yrModal");
-        const calendarEl = document.querySelector('#calendar');
-        const mySchStart = document.querySelector("#schStart");
-        const mySchEnd = document.querySelector("#schEnd");
-        const mySchTitle = document.querySelector("#schTitle");
-        const mySchYes = document.querySelector("#schYes");
-        const mySchNo = document.querySelector("#schNo");
-        const mySchAllday = document.querySelector("#allDay");
-        const mySchBColor = document.querySelector("#schBColor");
-        const mySchFColor = document.querySelector("#schFColor");
+  <script>
+  (function(){
+	  $(function(){
+	    // calendar element 취득
+	    var calendarEl = $('#calendar')[0];
+	    // full-calendar 생성하기
+	    var calendar = new FullCalendar.Calendar(calendarEl, {
+	      height: '600px', // calendar 높이 설정
+	      expandRows: false, // 화면에 맞게 높이 재설정
+	      slotMinTime: '08:00', // Day 캘린더에서 시작 시간
+	      slotMaxTime: '20:00', // Day 캘린더에서 종료 시간
+          customButtons:{
+	      	mySaveButton:{
+        	  text: "루틴저장하기",
+        	  click: function() {
+                  if (confirm("저장하시겠습니까?")) {
+                    var allEvents = calendar.getEvents();
+                    console.log("이벤트 저장 로직을 구현하세요.");
+        			  
+        		  }	         
+        		  }
+	      	}
+          },
+	      headerToolbar: {
+	        left: 'prev,next today',
+	        center: 'title',
+	        right: 'dayGridMonth,mySaveButton' //timeGridWeek,timeGridDay,listWeek
+	      },
+	      initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
+	      navLinks: true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
+	      editable: true, // 수정 가능?
+	      selectable: true, // 달력 일자 드래그 설정가능
+	      nowIndicator: true, // 현재 시간 마크
+	      dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
+	      locale: 'ko', // 한국어 설정
+	      
+	      select: function(arg) {
+	        // 모달을 표시
+	        $("#exampleModal").modal("show");
+	        var startDate = new Date(arg.start).toISOString().substring(0, 16);
+	        var endDate = new Date(arg.end).toISOString().substring(0, 16);
+	        $("#EX_ID").val('code1');
+	        $("#EXPL_ID").val('');
+	        $("#EX_SDATE").val(startDate);
+	        $("#EX_FDATE").val(endDate);
+	        $("#P_COLOR").val('pink'); // 기본 색상 설정
 
-        const headerToolbar = {
-               left: 'prevYear,prev,next,nextYear today',
-                 center: 'title',
-                 right: 'dayGridMonth,dayGridWeek,timeGridDay'
-        }
+	        
+	        // '추가' 버튼 클릭 이벤트 핸들러 설정
+	        $("#saveChanges").off("click").on("click", function() {
+	          var eventData = {
+	            title: $("#EXPL_ID").val(), // 사용자가 입력한 일정 이름
+	            start: $("#EX_SDATE").val(), // 사용자가 선택한 시작 시간
+	            end: $("#EX_FDATE").val(), // 사용자가 선택한 종료 시간
+	            color: $("#P_COLOR").val(), // 사용자가 선택한 배경색상
+	          };
+	          if (eventData.title && eventData.start && eventData.end) {
+	            if (eventData.start > eventData.end) {
+	              alert("시작 시간이 종료 시간보다 늦을 수 없습니다.");
+	            } else {
+	              calendar.addEvent(eventData);
+	              $("#exampleModal").modal("hide");
+	              $("#EX_ID").val("");
+	              $("#EXPL_ID").val("");
+	              $("#EX_SDATE").val("");
+	              $("#EX_FDATE").val("");
+	              $("#P_COLOR").val("");
+	            }
+	          } else {
+	            alert("비어있는 일정을 채워주세요.");
+	          }
+	          
+	         $("#cancelButton").off("click").on("click", function() {
+	        	  $("#exampleModal").modal("hide"); // 모달을 숨깁니다.
+	        	});
+	        });
+	        $("#deleteEvent").hide(); // 새 이벤트 추가시 '삭제' 버튼 숨김
+	      },
+	      eventClick: function(info) {
+	        var eventObj = info.event;
+	        if (confirm("이 이벤트를 삭제하시겠습니까?")) {
+	            info.event.remove(); // 이벤트 삭제
+	      }
+	      },
 
-        const calendarOption = {
-            height: '700px',
-            expandRows: true,
-            slotMinTime: '09:00',
-            slotMaxTime: '18:00',
-            initialView: 'dayGridMonth',
-            locale: 'kr',      
-            selectable: true,   
-            selectMirror: false,  
-            navLinks: false,      
-            weekNumbers: false,   
-            editable: true,
-     
-            dayMaxEventRows: true,  
-       
-            nowIndicator: true,
-   
-        }
-
-        const calendar = new FullCalendar.Calendar(calendarEl, calendarOption);
-        calendar.render();
-
-        calendar.on("eventAdd", info => console.log("Add:", info));
-        calendar.on("eventChange", info => console.log("Change:", info));
-        calendar.on("eventRemove", info => console.log("Remove:", info));
-        
-        calendar.on("eventClick", info => {
-            console.log("eClick:", info);
-            if (confirm("일정을 삭제하시겠습니까?")) {
-                info.event.remove();
-            }
-            console.log('Event: ', info.event.extendedProps);
-            console.log('Coordinates: ', info.jsEvent);
-            console.log('View: ', info.view);
-      
-            info.el.style.borderColor = 'red';
-        });
-        calendar.on("eventMouseEnter", info => console.log("eEnter:", info));
-        calendar.on("eventMouseLeave", info => console.log("eLeave:", info));
-        calendar.on("dateClick", info => console.log("dateClick:", info));
-        calendar.on("select", info => {
-            console.log("체크", info);
-
-            mySchStart.value = info.startStr;
-            mySchEnd.value = info.endStr;
-
-            YrModal.style.display = "block";
-        });
-
-        function fCalAdd() {
-            if (!mySchTitle.value) {
-                alert("*예방접종/진료종류 입력해주세요!*")
-                mySchTitle.focus();
-                return;
-            }
-            let bColor = mySchBColor.value;
-            let fColor = mySchFColor.value;
-            if (fColor == bColor) {
-                bColor = "black";
-                fColor = "yellow";
-            }
-
-            let event = {
-                start: mySchStart.value,
-                end: mySchEnd.value,
-                title: mySchTitle.value,
-                backgroundColor: bColor,
-                textColor: fColor
-            };
-            
-
-            calendar.addEvent(event);
-            fMClose();
-        }
-
-        function fMClose() {
-            YrModal.style.display = "none";
-        }
-       
-    </script>
-    <br><br><br>
+      });
+      // 캘린더 랜더링
+      calendar.render();
+    });
+  })();
+</script>
+<footer>
+		<div class="inner">
+			<div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
+			<div class="footer-copyright">Copyright 2024 All ⓒ rights
+				reserved</div>
+			<div class="footer-contact">Designed by 바른자세</div>
+		</div>
+</footer>
 </body>
 </html>

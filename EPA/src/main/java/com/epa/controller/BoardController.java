@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.epa.mapper.BoardMapper;
 
@@ -56,6 +57,7 @@ public class BoardController {
 
 	@RequestMapping("/boardInsert.do")
 	public String boardInsert(Board vo) {
+		
 		mapper.boardInsert(vo);
 		return "redirect:/boardList.do";
 	}

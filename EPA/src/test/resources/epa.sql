@@ -4,9 +4,9 @@ show tables;
 select*from MEM_TB;
 
 /*컬럼 추가*/
-alter table MEM_TB add google_ID VARCHAR(100);
+alter table PLAN_TB add P_COLOR VARCHAR(40);
 
 /*컬럼명 변경 및 타입 변경 */
-alter table MEM_TB change GOOGlE_ID Google_ID varchar(100);
+alter table PLAN_TB change p_color P_COLOR varchar(20);
 
 commit

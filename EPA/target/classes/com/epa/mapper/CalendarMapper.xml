@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.epa.mapper.CalendarMapper">
+     
+     <select id="calender" resultType="com.epa.entity.calendar">
+        select * from PLAN_TB
+    </select>
+     
+     <insert id="calInsert" parameterType="com.epa.entity.calendar">
+        insert into PLAN_TB (EXPL_ID,EX_SDATE,EX_FDATE,P_COLOR)
+        values (#{EXPL_ID},#{EX_SDATE},#{EX_FDATE},#{P_COLOR})
+    </insert>
+   
+    
+    <delete id="calDelete" parameterType="int">
+        delete from PLAN_TB where PL_NO=#{PL_NO}
+    </delete>
+    
+    <update id="calUpdate" parameterType="com.epa.entity.calendar">
+        update PLAN_TB set EX_SDATE=#{EX_SDATE}, EX_FDATE=#{EX_FDATE}
+        where PL_NO=#{PL_NO}
+    </update>
+    
+</mapper>
