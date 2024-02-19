@@ -27,7 +27,7 @@
 <style>
   /* body 스타일 */
   html, body {
-    overflow: hidden;
+   
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
   }
@@ -37,17 +37,147 @@
     padding-left: 1em;
     padding-right: 1em;
   }
+  a {
+    color: black; 
+    text-decoration: none; /* 하이퍼 링크 밑줄 제거 */
+    transition: color 0.3s; 
+  }
+  
+a:hover {
+    color: black; 
+  }
+  
+  .navbar {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: flex-end;
+    display: flex;
+    font-family: 'SejonghospitalBold';
+}
+
+.navbar a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 0px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 18px;
+    margin-top: 25px;
+}
+/* 운동정보 링크에 회색 배경색 적용 */
+.navbar a:nth-child(2):not(#icon):hover {
+    background-color: #ddd;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* 커뮤니티 링크에 회색 배경색 적용 */
+.navbar a:nth-child(3):not(#icon):hover {
+    background-color: #ddd;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* EPA이용방법 링크에 회색 배경색 적용 */
+.navbar a:nth-child(4):not(#icon):hover {
+    background-color: #ddd;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* 마이페이지 링크에 회색 배경색 적용 */
+.navbar a:nth-child(5):not(#icon):hover {
+    background-color: #ddd;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* 아이디가 "icon"인 이미지 링크에 hover 효과 적용하지 않음 */
+.navbar a#icon:hover {
+    background-color: transparent;
+}
+
+
+#login_icon{
+	margin-top:10px;
+}
+
+/* 로그인,회원가입 상단바 */
+header{
+    text-align: right;
+    background-color: white;
+    margin-right: 50px;
+    font-family: 'SejonghospitalBold';
+    margin-bottom: 10px;
+}
+/* 로고글씨 */
+#logo {
+    margin-right: auto;
+    font-size: 50PX;
+    background-color: white;
+    font-family: 'Tenada';
+}
+/* 로고사진 */
+#icon{
+    margin-top: -30px;
+    margin-left: -1900px;
+}
+  
+#calendar{
+font-family: 'NPSfontBold';
+width:1000px;
+margin-left: 230px;
+margin-top: 20px;
+}
+
+
+footer{
+margin-top: 20px;}
+
+#exampleModal > div > div{
+font-family: 'NPSfontBold';
+border-radius:20px;
+background-color:#FFE3EE;}
+
+.modal-title {
+  text-align: center;
+  margin: 0 auto;
+}
+#saveChanges {
+    background-color: #007bff; /* 파란색 */
+    border-color: #007bff;
+    color: #fff; /* 흰색 */
+  }
+
+  /* 취소 버튼 */
+  #cancelButton {
+    background-color: #6c757d; /* 회색 */
+    border-color: #6c757d;
+    color: #fff; /* 흰색 */
+  }
 </style>
 </head>
-<body style="padding:30px;">
+<body style="padding:10px;">
 <header>
-  <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
-    <a href="${cpath}/login.do">로그인</a>
-    <span>&nbsp;</span>
-    <span>&nbsp;</span>
-    <span>&nbsp;</span>
-    <a href="#"><img id="member_icon" src="${cpath}/resources/img/member.png" width="20" height="20"></img></a>
-    <a href="${cpath}/join.do">회원가입</a>
+  <header>
+		<a href="${cpath}/Logout.do">로그아웃</a>
+		<!--     <span>&nbsp;</span>
+    <a href="./join.html">회원가입</a> -->
+	</header>
 </header>
 <div class="navbar">
   <a href="${cpath}/"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
@@ -56,7 +186,7 @@
   <a href="./use.html">EPA이용방법</a>
   <a href="./mypage.html">마이페이지</a>
 </div>
-  <div id='calendar-container'>
+  <div id='calendar-container'  style="text-align: center;">
     <div id='calendar'></div>
   </div>
   <form action="${cpath}/calenderInsert.do" method="post">
@@ -73,10 +203,10 @@
             <option id="EX_ID" value="code1">운동코드1</option>
             <option id="EX_ID" value="code2">운동코드2</option>
             <option id="EX_ID"  value="code3">운동코드3</option>
-          </select><br />
-          일정이름 : <input type="text" name="EXPL_ID" id="EXPL_ID" /><br />
-          운동시작시간 : <input type="datetime-local" name="EX_SDATE" id="EX_SDATE" /><br />
-          운동종료시간 : <input type="datetime-local" name="EX_FDATE" id="EX_FDATE" /><br />
+          </select><br /><br>
+          일정이름 : <input type="text" name="EXPL_ID" id="EXPL_ID" /><br /><br>
+          운동시작시간 : <input type="datetime-local" name="EX_SDATE" id="EX_SDATE" /><br /><br>
+          운동종료시간 : <input type="datetime-local" name="EX_FDATE" id="EX_FDATE" /><br /><br>
           배경색상 :
           <select name="P_COLOR" id="P_COLOR">
               <option value="red">빨강색</option>
@@ -88,11 +218,12 @@
               <option value="DarkSlateGray">어두운회색</option>
               <option value="black">검정색</option>
               <option value="purple">보라색</option>
-          </select>
+          </select><br>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="cancelButton">취소</button>
           <button type="submit" class="btn btn-primary" id="saveChanges">추가</button>
+          <button type="button" class="btn btn-secondary" id="cancelButton">취소</button>
+          
         </div>
       </div>
     </div>
@@ -106,7 +237,7 @@
 	    // full-calendar 생성하기
 	    var calendar = new FullCalendar.Calendar(calendarEl, {
 	      height: '600px', // calendar 높이 설정
-	      expandRows: false, // 화면에 맞게 높이 재설정
+	      expandRows: true, // 화면에 맞게 높이 재설정
 	      slotMinTime: '08:00', // Day 캘린더에서 시작 시간
 	      slotMaxTime: '20:00', // Day 캘린더에서 종료 시간
           customButtons:{
