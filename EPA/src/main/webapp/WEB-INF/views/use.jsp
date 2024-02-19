@@ -27,7 +27,6 @@
     <a href="./use.html">EPA이용방법</a>
     <a href="./mypage.html">마이페이지</a>
 </div>
-fgfgdg
 
 <footer>
     <div class="inner">
