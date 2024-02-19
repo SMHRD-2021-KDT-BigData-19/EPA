@@ -39,6 +39,5 @@
       <div class="footer-contact">Designed by 바른자세</div>
     </div>
   </footer>
-
 </body>
 </html>

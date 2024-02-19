@@ -90,7 +90,7 @@ font-family: 'NPSfontBold';
 <div class="image-container">
     <div class="row">
         <div class="image-with-text">
-            <img src="${cpath}/resources/img/스탠딩사이드크런치.jpg" alt="Image 1">
+            <a href="${cpath}/"> <img src="${cpath}/resources/img/스탠딩사이드크런치.jpg" alt="Image 1"></a>
             <p>스탠딩사이드크런치</p>
         </div>
         <div class="image-with-text">
