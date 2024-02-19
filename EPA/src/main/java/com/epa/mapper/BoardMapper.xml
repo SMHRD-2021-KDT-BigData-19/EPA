@@ -7,6 +7,16 @@
      <select id="boardList" resultType="com.epa.entity.Board">
         select * from BOARD_TB
     </select>
+    
+     <select id="boardList2" resultType="com.epa.entity.Board">
+        select * from BOARD_TB where BD_HEAD = '운동루틴'
+    </select>
+    <select id="boardList3" resultType="com.epa.entity.Board">
+        select * from BOARD_TB where BD_HEAD = '오운완'
+    </select>
+    <select id="boardList4" resultType="com.epa.entity.Board">
+        select * from BOARD_TB where BD_HEAD = '식단관리'
+    </select>
      
      <insert id="boardInsert" parameterType="com.epa.entity.Board">
         insert into BOARD_TB (BD_T,BD_HEAD,BD_C,MEM_ID)

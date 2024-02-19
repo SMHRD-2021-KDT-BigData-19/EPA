@@ -42,7 +42,7 @@
     <a href="./use.html">EPA이용방법</a>
     <a href="./mypage.html">마이페이지</a>
 </div>
-<h1>커뮤니티</h1>
+<h1><a href="${cpath}/boardList.do">커뮤니티</a></h1>
 <br>
 <div class="category">
   <a class="fromCenter" href="${cpath}/boardList2.do">운동루틴</a>
@@ -58,24 +58,24 @@
 <table>
   <thead>
       <tr>
-          <th id="num">NO</th>
-          <th>카테고리</th>
-          <th>제목</th>
-          <th>내용</th>
-          <th>작성자</th>
-          <th>작성 시간</th>
+          <th id="num" class="boardtd">NO</th>
+          <th class="boardtd">카테고리</th>
+          <th class="boardtd">제목</th>
+          <th class="boardtd">내용</th>
+          <th class="boardtd">작성자</th>
+          <th class="boardtd">작성 시간</th>
       </tr>
   </thead>
   <tbody>
   	<c:forEach items="${list2}" var="b">
       <tr>
-          <td id="num">${b.BD_NO}</td>
-          <td>${b.BD_HEAD}</td>
+          <td id="num" class="boardtd">${b.BD_NO}</td>
+          <td class="boardtd">${b.BD_HEAD}</td>
           <c:url var="contentLink" value="/boardContent.do/${b.BD_NO}" />
-          <td><a href="${contentLink}">${b.BD_T}</a></td>
-          <td >${b.BD_C}</td>
-          <td>${b.MEM_ID}</td>
-          <td>${b.BD_DATE}</td>
+          <td class="boardtd"><a href="${contentLink}">${b.BD_T}</a></td>
+          <td class="boardtd">${b.BD_C}</td>
+          <td class="boardtd">${b.MEM_ID}</td>
+          <td class="boardtd">${b.BD_DATE}</td>
       </tr>
      </c:forEach>
   </tbody>

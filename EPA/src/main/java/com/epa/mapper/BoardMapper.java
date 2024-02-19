@@ -25,6 +25,12 @@ public interface BoardMapper {
 
 	public void commentInsert(Comment co);
 
+	public List<Board> boardList2();
+
+	public List<Board> boardList3();
+
+	public List<Board> boardList4();
+
 	
 
 }

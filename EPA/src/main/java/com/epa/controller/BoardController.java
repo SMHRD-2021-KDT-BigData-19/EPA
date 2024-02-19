@@ -25,6 +25,29 @@ public class BoardController {
 		return "boardList";
 
 	}
+	@RequestMapping("/boardList2.do")
+	public String boardList2(Model model) {
+		List<Board> list2 = mapper.boardList2();
+		model.addAttribute("list2", list2);
+		return "boardList2";
+
+	}
+	@RequestMapping("/boardList3.do")
+	public String boardList3(Model model) {
+		List<Board> list3 = mapper.boardList3();
+		model.addAttribute("list3", list3);
+		return "boardList3";
+
+	}
+	@RequestMapping("/boardList4.do")
+	public String boardList4(Model model) {
+		List<Board> list4 = mapper.boardList4();
+		model.addAttribute("list4", list4);
+		return "boardList4";
+
+	}
+
+
 
 	@RequestMapping("/boardForm.do")
 	public void boardForm() {

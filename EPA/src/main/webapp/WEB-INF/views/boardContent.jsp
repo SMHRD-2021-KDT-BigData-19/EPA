@@ -66,41 +66,41 @@
 <div class="panel-body">
     <table class="table table-hover table-striped">
         <tr>
-            <td><b>제목</b></td>
-            <td>${vo.BD_T}</td>
+            <td class="boardtd"><b>제목</b></td>
+            <td class="boardtd">${vo.BD_T}</td>
         </tr>
 
         <tr>
-            <td><b>내용</b></td>
+            <td class="boardtd"><b>내용</b></td>
             
             <% // 스크립틀릿
     			 	pageContext.setAttribute("newLine", "\n");
     			  %>
     			
-    		<td>${fn:replace(vo.BD_C, newLine, "<br>") }</td>
+    		<td class="boardtd">${fn:replace(vo.BD_C, newLine, "<br>") }</td>
         </tr>
         
         <tr id="midium">
-            <td><b>작성자</b></td>
-            <td>${vo.MEM_ID}</td>
+            <td class="boardtd"><b>작성자</b></td>
+            <td class="boardtd">${vo.MEM_ID}</td>
         </tr>
         
         <tr id="small">
-            <td style="text-align: right;"></td>
-            <td style="text-align: right;">작성일&nbsp;:&nbsp;&nbsp;${vo.BD_DATE}&nbsp;
+            <td style="text-align: right;" class="boardtd"></td>
+            <td style="text-align: right;" class="boardtd">작성일&nbsp;:&nbsp;&nbsp;${vo.BD_DATE}&nbsp;
             <button onclick="goUpdate()">수정</button>
             <button onclick="goDelete()">삭제</button>
             <button onclick="goList()">목록</button>
             </td>
         </tr>
-        
+     <c:forEach items="${comment}" var="c">   
      <tr>
-        <c:forEach items="${comment}" var="c">
+       
             <td>${c.MEM_ID}</td>
             <td>${c.COM_C}<br></td>
-            
-        </c:forEach>
+       
         </tr>
+         </c:forEach>
      <tr>
          <td><b>댓글</b></td>
            

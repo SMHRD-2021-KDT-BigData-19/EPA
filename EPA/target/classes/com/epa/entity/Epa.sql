@@ -11,12 +11,4 @@ alter table MEM_TB change GOOGlE_ID Google_ID varchar(100);
 
 commit
 
-insert into COMMENT_TB (MEM_ID,COM_C)
-        values (77,88)
-        where BD_NO = 1;
-        
-        select MEM_ID from MEM_TB where MEM_ID='77'
-        select count(*)
-      from MEM_TB
-      where
-      MEM_ID='77'
+select * from BOARD_TB where BD_HEAD = '운동루틴';
