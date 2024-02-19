@@ -90,8 +90,8 @@ font-family: 'NPSfontBold';
 <div class="image-container">
     <div class="row">
         <div class="image-with-text">
-            <img src="${cpath}/resources/img/스쿼트.jpg" alt="Image 1">
-            <p>스쿼트</p>
+            <img src="${cpath}/resources/img/스탠딩사이드크런치.jpg" alt="Image 1">
+            <p>스탠딩사이드크런치</p>
         </div>
         <div class="image-with-text">
             <img src="${cpath}/resources/img/푸쉬업.jpg" alt="Image 2">
@@ -104,12 +104,12 @@ font-family: 'NPSfontBold';
     </div>
     <div class="row">
         <div class="image-with-text">
-            <img src="${cpath}/resources/img/v업.jpg" alt="Image 4">
-            <p>v업</p>
+            <img src="${cpath}/resources/img/레그레이즈.jpg" alt="Image 4">
+            <p>레그레이즈</p>
         </div>
         <div class="image-with-text">
-            <img src="${cpath}/resources/img/레그레이즈.jpg" alt="Image 5">
-            <p>레그레이즈</p>
+            <img src="${cpath}/resources/img/v업.jpg" alt="Image 5">
+            <p>v업</p>
         </div>
         <div class="image-with-text">
             <img src="${cpath}/resources/img/런지.jpg" alt="Image 6">
