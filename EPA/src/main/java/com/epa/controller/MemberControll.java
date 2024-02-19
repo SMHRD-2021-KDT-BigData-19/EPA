@@ -35,7 +35,7 @@ public class MemberControll {
 	@RequestMapping("/joinInsert.do")
 	public String joinInsert(Member vo) {
 		mapper.joinInsert(vo);
-		return "mainLogin";
+		return "main";
 	}
 
 	@PostMapping("/Login.do")
@@ -142,14 +142,35 @@ public class MemberControll {
 
 	@RequestMapping("/mypage.do")
 	public ModelAndView mypage(HttpSession session, Model model) {
-		Member currentMember = (Member) session.getAttribute("loginMember");
-		String memM = mapper.getMEM_M(currentMember.getMEM_ID());
+	    try {
+	        Member currentMember = (Member) session.getAttribute("loginMember");
 
-		// 모델에 MEM_M 값을 담아서 뷰로 전달
-		model.addAttribute("memM", memM);
+	        if (currentMember != null) {
+	            String memM = mapper.getMEM_M(currentMember.getMEM_ID());
 
-		// ModelAndView 객체를 사용하여 뷰 이름과 모델을 함께 반환
-		return new ModelAndView("mypage");
+	            // memM이 null인지 확인 후 모델에 추가
+	            if (memM != null) {
+	                // 모델에 MEM_M 값을 추가합니다.
+	                model.addAttribute("memM", memM);
+	            } else {
+	                // memM이 null인 경우 로그를 추가합니다.
+	                System.out.println("MEM_M이 null입니다.");
+	            }
+
+	            // ModelAndView 객체를 사용하여 뷰 이름과 모델을 함께 반환
+	            return new ModelAndView("mypage");
+	        } else {
+	            // currentMember가 null인 경우 로그를 추가합니다.
+	            System.out.println("현재 멤버가 null입니다.");
+	        }
+	    } catch (Exception e) {
+	        // 예외가 발생한 경우 로그를 추가합니다.
+	        System.out.println("mypage 메서드에서 예외 발생");
+	        e.printStackTrace();
+	    }
+
+	    // 오류가 발생한 경우 적절한 뷰를 반환합니다.
+	    return new ModelAndView("error"); // "error" 뷰를 생성하는 것이 좋습니다.
 	}
 
 	@RequestMapping("/delete.do")

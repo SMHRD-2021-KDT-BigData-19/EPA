@@ -69,18 +69,46 @@
 		MEM_ID = #{MEM_ID}
 	</delete>
 
-	<select id="readMember" resultType="com.epa.entity.Member">
-		select *
-		from MEM_TB
-		where
-		MEM_ID=#{MEM_ID}
+	<!-- <select id="readMember" resultType="com.epa.entity.Member"> select 
+		* from MEM_TB where MEM_ID=#{MEM_ID} </select> <select id="readMemberWithIDPW" 
+		resultType="com.epa.entity.Member"> select * from MEM_TB where MEM_ID=#{MEM_ID} 
+		and MEM_PW=#{MEM_PW} </select> -->
+
+	<!-- 해당 MEM_ID가 LOGIN_TB에 존재하는지 확인 -->
+	<select id="checkLoginRecord" parameterType="java.lang.String"
+		resultType="int">
+		SELECT COUNT(*) FROM LOGIN_TB WHERE MEM_ID = #{memId}
 	</select>
 
-	<select id="readMemberWithIDPW"
-		resultType="com.epa.entity.Member">
-		select *
-		from MEM_TB
-		where MEM_ID=#{MEM_ID} and
-		MEM_PW=#{MEM_PW}
+	<!-- MEM_ID가 LOGIN_TB에 존재하면 ATTEND_COUNT 업데이트 -->
+	<update id="updateLoginRecord" parameterType="java.lang.String">
+		UPDATE LOGIN_TB SET
+		ATTEND_COUNT = ATTEND_COUNT + 1 WHERE MEM_ID = #{memId}
+	</update>
+
+	<!-- MEM_ID가 LOGIN_TB에 존재하지 않으면 레코드 삽입 -->
+	<insert id="insertLoginRecord" parameterType="java.lang.String">
+		INSERT INTO
+		LOGIN_TB (MEM_ID, ATTEND_COUNT) VALUES (#{memId}, 1)
+	</insert>
+
+	<update id="attend">
+		UPDATE LOGIN_TB
+		SET ATTEND_COUNT = ATTEND_COUNT
+		WHERE
+		MEM_ID = #{memId}
+	</update>
+
+
+	<select id="getAttendCount" parameterType="java.lang.String"
+		resultType="java.lang.Integer">
+		SELECT ATTEND_COUNT FROM LOGIN_TB WHERE MEM_ID = #{memId}
 	</select>
+
+	<update id="updateLastAttendDate">
+		UPDATE LOGIN_TB
+		SET LAST_ATTEND_DATE = #{lastAttendDate}
+		WHERE MEM_ID = #{mem_ID}
+	</update>
+
 </mapper>

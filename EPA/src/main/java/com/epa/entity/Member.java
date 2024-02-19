@@ -1,5 +1,7 @@
 package com.epa.entity;
 
+import java.sql.Timestamp;
+
 public class Member {
 	private String MEM_ID;
 	private String MEM_PW;
@@ -86,6 +88,10 @@ public class Member {
 	}
 	public void setMEM_M(String mEM_M) {
 		MEM_M = mEM_M;
+	}
+	public Timestamp getLAST_ATTEND_DATE() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
