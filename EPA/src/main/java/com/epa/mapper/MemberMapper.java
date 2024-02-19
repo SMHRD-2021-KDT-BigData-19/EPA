@@ -3,6 +3,7 @@ package com.epa.mapper;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -39,7 +40,7 @@ public interface MemberMapper {
 
 	public void attend(String mem_ID);
 
-	public void updateLastAttendDate(String mem_ID, Date currentDate);
+	public void updateLastAttendDate(String mem_ID, LocalDateTime localDateTime);
 
 	public void updateLastAttendDate(@Param("mem_ID") String mem_ID, @Param("lastAttendDate") Timestamp lastAttendDate);
 	

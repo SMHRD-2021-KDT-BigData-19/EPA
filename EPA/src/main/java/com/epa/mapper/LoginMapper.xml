@@ -4,15 +4,13 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.epa.mapper.MemberMapper">
 
-	<update id="attend" parameterType="java.lang.String">
-		UPDATE LOGIN_TB
-		SET
-		ATTEND_COUNT = CASE
-		WHEN LAST_ATTEND_DATE IS NULL OR LAST_ATTEND_DATE != CURRENT_DATE THEN ATTEND_COUNT + 1
-		ELSE ATTEND_COUNT
-		END,
-		LAST_ATTEND_DATE = CURRENT_DATE
-		WHERE MEM_ID = #{memId}
-	</update>
+<update id="attend" parameterType="String">
+    <![CDATA[
+    UPDATE LOGIN_TB
+    SET ATTEND_COUNT = ATTEND_COUNT + 1
+    WHERE MEM_ID = #{memId}
+    AND LAST_ATTEND_DATE < CURRENT_DATE
+    ]]>
+</update>
 
 </mapper>
