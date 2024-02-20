@@ -13,14 +13,16 @@
         #wirter {
             background-color: #3F568B;
             color: aliceblue;
-            border-radius: 10px;
+            border-radius: 10px;    
         }
+        
         form {
             margin-top: -100px;
         }
         #category {
         	width: 120px;
         }
+        
     </style>
 </head>
 <body>

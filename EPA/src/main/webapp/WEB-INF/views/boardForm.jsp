@@ -10,17 +10,39 @@
     <link rel="stylesheet" href="${cpath}/resources/css/style.css">
     <link rel="stylesheet" href="${cpath}/resources/css/community.css">
     <style>
-        #wirter {
-            background-color: #3F568B;
-            color: aliceblue;
-            border-radius: 10px;
-        }
+       #wirter {
+        background-color: #FFC0CB;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold; 
+        cursor: pointer;
+        border-radius: 10px;
+        
+    }
+
+    #wirter:hover {
+        background-color: #FF8E99;
+    }
+   
         form {
             margin-top: -100px;
         }
         #category {
         	width: 120px;
+        	height:35px;
         }
+        footer {
+        margin-top: 30px; /* 푸터 위 여백 추가 */
+    }
+    #postForm > label > b{
+    font-size:20px;}
+    #content{
+    height: 250px}
     </style>
 </head>
 <body>
