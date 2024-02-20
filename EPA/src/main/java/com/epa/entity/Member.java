@@ -87,5 +87,13 @@ public class Member {
 	public void setMEM_M(String mEM_M) {
 		MEM_M = mEM_M;
 	}
+	@Override
+	public String toString() {
+		return "Member [MEM_ID=" + MEM_ID + ", MEM_PW=" + MEM_PW + ", MEM_NM=" + MEM_NM + ", MEM_AGE=" + MEM_AGE
+				+ ", MEM_H=" + MEM_H + ", MEM_W=" + MEM_W + ", MEM_G=" + MEM_G + ", MEM_IMG=" + MEM_IMG + ", MEM_EMAIL="
+				+ MEM_EMAIL + ", JOIN_DATE=" + JOIN_DATE + ", TEAR=" + TEAR + ", MEM_M=" + MEM_M + "]";
+	}
+	
+	
 
 }

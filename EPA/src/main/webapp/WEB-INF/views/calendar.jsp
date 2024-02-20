@@ -189,6 +189,12 @@ background-color:#FFE3EE;}
   <div id='calendar-container'  style="text-align: center;">
     <div id='calendar'></div>
   </div>
+ <c:forEach items="${list}" var="b">
+ ${b.EXPL_ID}
+ ${b.EX_SDATE}
+ ${b.EX_FDATE}
+ ${b.PN_COLOR}
+ </c:forEach>
   <form action="${cpath}/calInsert.do" method="post">
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -212,7 +218,7 @@ background-color:#FFE3EE;}
           운동시작시간 : <input type="datetime-local" name="EX_SDATE" id="EX_SDATE" /><br /><br>
           운동종료시간 : <input type="datetime-local" name="EX_FDATE" id="EX_FDATE" /><br /><br>
           배경색상 :
-          <select name="P_COLOR" id="P_COLOR">
+          <select name="PN_COLOR" >
               <option value="red">빨강색</option>
               <option value="orange">주황색</option>
               <option value="pink">핑크색</option>
@@ -233,7 +239,7 @@ background-color:#FFE3EE;}
     </div>
   </div>
 </form>
-  <script>
+    <script>
   (function(){
      $(function(){
        // calendar element 취득
@@ -244,8 +250,8 @@ background-color:#FFE3EE;}
          expandRows: true, // 화면에 맞게 높이 재설정
          slotMinTime: '08:00', // Day 캘린더에서 시작 시간
          slotMaxTime: '20:00', // Day 캘린더에서 종료 시간
-        /*   customButtons:{
-            mySaveButton:{
+          customButtons:{
+            /* mySaveButton:{
              text: "루틴저장하기",
              click: function() {
                   if (confirm("저장하시겠습니까?")) {
@@ -254,8 +260,8 @@ background-color:#FFE3EE;}
                    
                 }            
                 }
-            }
-          }, */
+            } */
+          },
          headerToolbar: {
            left: 'prev,next today',
            center: 'title',
@@ -275,30 +281,31 @@ background-color:#FFE3EE;}
            var startDate = new Date(arg.start).toISOString().substring(0, 16);
            var endDate = new Date(arg.end).toISOString().substring(0, 16);
            $("#EX_ID").val('code1');
-           $("#EXPL_ID").val("");
+           $("#EXPL_ID").val('');
            $("#EX_SDATE").val(startDate);
            $("#EX_FDATE").val(endDate);
-           $("#P_COLOR").val("pink"); // 기본 색상 설정
+           $("#P_COLOR").val('pink'); // 기본 색상 설정
 
            
            // '추가' 버튼 클릭 이벤트 핸들러 설정
            $("#saveChanges").off("click").on("click", function() {
              var eventData = {
-               title: $(list.EXPL_ID).val(), // 사용자가 입력한 일정 이름
-               start: $(list.EX_SDATE).val(), // 사용자가 선택한 시작 시간
-               end: $(list.EX_FDATE).val(), // 사용자가 선택한 종료 시간
-               color: $(list.P_COLOR).val() // 사용자가 선택한 배경색상
+               title: $("#EXPL_ID").val(), // 사용자가 입력한 일정 이름
+               start: $("#EX_SDATE").val(), // 사용자가 선택한 시작 시간
+               end: $("#EX_FDATE").val(), // 사용자가 선택한 종료 시간
+               color: $("#P_COLOR").val(), // 사용자가 선택한 배경색상
              };
              if (eventData.title && eventData.start && eventData.end) {
                if (eventData.start > eventData.end) {
                  alert("시작 시간이 종료 시간보다 늦을 수 없습니다.");
                } else {
                  calendar.addEvent(eventData);
-                 $("#exampleModal").modal("hide");
+                 
                  
                }
              } else {
                alert("비어있는 일정을 채워주세요.");
+               
              }
              
             $("#cancelButton").off("click").on("click", function() {
@@ -320,6 +327,7 @@ background-color:#FFE3EE;}
     });
   })();
 </script>
+
 <footer>
       <div class="inner">
          <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>

@@ -4,23 +4,18 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="com.epa.mapper.CalendarMapper">
      
-     <select id="calendar" resultType="com.epa.entity.calendar">
-        select * from PLAN_TB
+     <select id="calendar" 
+        resultType="com.epa.entity.calendar">
+        select * from PLAN_TB where MEM_ID=#{MEM_ID}
     </select>
      
+     
      <insert id="calInsert" parameterType="com.epa.entity.calendar">
-        insert into PLAN_TB (EX_ID,EXPL_ID,MEM_ID,EX_SDATE,EX_FDATE,P_COLOR)
-        values (#{EX_ID},#{EXPL_ID},#{MEM_ID},#{EX_SDATE},#{EX_FDATE},#{P_COLOR})
+        insert into PLAN_TB (EX_ID,EXPL_ID,MEM_ID,EX_SDATE,EX_FDATE,PN_COLOR)
+        values (#{EX_ID},#{EXPL_ID},#{MEM_ID},#{EX_SDATE},#{EX_FDATE},#{PN_COLOR})
     </insert>
-   
+  
     
-    <delete id="calDelete" parameterType="int">
-        delete from PLAN_TB where PL_NO=#{PL_NO}
-    </delete>
-    
-    <update id="calUpdate" parameterType="com.epa.entity.calendar">
-        update PLAN_TB set EX_SDATE=#{EX_SDATE}, EX_FDATE=#{EX_FDATE}
-        where PL_NO=#{PL_NO}
-    </update>
+  
     
 </mapper>

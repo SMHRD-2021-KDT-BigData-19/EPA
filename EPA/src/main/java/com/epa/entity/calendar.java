@@ -1,21 +1,23 @@
 package com.epa.entity;
 
 public class calendar {
-	private int PL_NO;
+	private int PL_BUNHO;
+	
 	private String EX_ID; //운동코드
+	private String EXPL_ID; //일정이름 
  	private String MEM_ID;
- 	private String EXPL_ID; //일정이름 
  	private String EX_SDATE; //시작시간
  	private String EX_FDATE;  //종료시간
- 	private String P_COLOR;
  	private String EX_R;
  	private String RT_D;
+ 	private String PN_COLOR;
  	
-	public int getPL_NO() {
-		return PL_NO;
+
+	public int getPL_BUNHO() {
+		return PL_BUNHO;
 	}
-	public void setPL_NO(int pL_NO) {
-		PL_NO = pL_NO;
+	public void setPL_BUNHO(int pL_BUNHO) {
+		PL_BUNHO = pL_BUNHO;
 	}
 	public String getEX_ID() {
 		return EX_ID;
@@ -36,11 +38,12 @@ public class calendar {
 		EXPL_ID = eXPL_ID;
 	}
 	
-	public String getP_COLOR() {
-		return P_COLOR;
+	
+	public String getPN_COLOR() {
+		return PN_COLOR;
 	}
-	public void setP_COLOR(String p_COLOR) {
-		P_COLOR = p_COLOR;
+	public void setPN_COLOR(String pN_COLOR) {
+		PN_COLOR = pN_COLOR;
 	}
 	public String getEX_SDATE() {
 		return EX_SDATE;
@@ -68,10 +71,12 @@ public class calendar {
 	}
 	@Override
 	public String toString() {
-		return "calendar [PL_NO=" + PL_NO + ", EX_ID=" + EX_ID + ", MEM_ID=" + MEM_ID + ", EXPL_ID=" + EXPL_ID
-				+ ", EX_SDATE=" + EX_SDATE + ", EX_FDATE=" + EX_FDATE + ", P_COLOR=" + P_COLOR + ", EX_R=" + EX_R
-				+ ", RT_D=" + RT_D + "]";
+		return "calendar [PL_BUNHO=" + PL_BUNHO + ", EX_ID=" + EX_ID + ", EXPL_ID=" + EXPL_ID + ", MEM_ID=" + MEM_ID
+				+ ", EX_SDATE=" + EX_SDATE + ", EX_FDATE=" + EX_FDATE + ", EX_R=" + EX_R + ", RT_D=" + RT_D
+				+ ", PN_COLOR=" + PN_COLOR + "]";
 	}
+	
+
 	
 	
  	

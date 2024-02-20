@@ -90,11 +90,9 @@
 					value="수정하기" class="submit">
 			</form>
 		</div>
-
-
 		<div class="bar">
 			<div class="progress-text">
-				<b>이번 달 운동 목표 진행률 
+				<b>이번 달 운동 목표 진행률 </b>
 			</div>
 			<progress class="progress1" value="25" max="31"></progress>
 		</div>
@@ -105,7 +103,7 @@
 		</div>
 		<progress class="progress2" value="3" max="30"></progress>
 		<div class="button-container">
-			<a href="${cpath}/calendar" class="btn-3d khaki">운동루틴 설정</a> 
+			<a href="${cpath}/calendar.do" class="btn-3d khaki">운동루틴 설정</a> 
 			<a href="${cpath}/level" class="btn-3d powderblue">등급 확인</a> 
 			<a href="${cpath}/mypagecorrection" class="btn-3d lightpink">회원정보 수정</a>
 		</div>
