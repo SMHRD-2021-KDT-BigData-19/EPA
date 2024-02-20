@@ -321,14 +321,11 @@ background-color:#FFE3EE;}
       
       
       // 풀캘린더에 비동기로 데이터를 가져와서 등록하는 코드
-     
-      
       
       $.ajax({
     	  url : "calendarRest",
     	  type : "post",
     	  success : function(data){
-    		  console.log(data);
     		  
     		  for(let i = 0; i < data.length; i++){
     			  
@@ -339,9 +336,8 @@ background-color:#FFE3EE;}
     		               color: data[i].pn_COLOR, // 사용자가 선택한 배경색상
     		             };
     			  calendar.addEvent(dd);
-    			  console.log(dd);
+    			 
     		  }
-    		  
     		  
     	  }, error : function(){
     		  alert("error!");
