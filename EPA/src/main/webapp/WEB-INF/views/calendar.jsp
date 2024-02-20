@@ -189,12 +189,7 @@ background-color:#FFE3EE;}
   <div id='calendar-container'  style="text-align: center;">
     <div id='calendar'></div>
   </div>
- <c:forEach items="${list}" var="b">
- ${b.EXPL_ID}
- ${b.EX_SDATE}
- ${b.EX_FDATE}
- ${b.PN_COLOR}
- </c:forEach>
+
   <form action="${cpath}/calInsert.do" method="post">
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -242,6 +237,7 @@ background-color:#FFE3EE;}
     <script>
   (function(){
      $(function(){
+
        // calendar element 취득
        var calendarEl = $('#calendar')[0];
        // full-calendar 생성하기
@@ -300,8 +296,6 @@ background-color:#FFE3EE;}
                  alert("시작 시간이 종료 시간보다 늦을 수 없습니다.");
                } else {
                  calendar.addEvent(eventData);
-                 
-                 
                }
              } else {
                alert("비어있는 일정을 채워주세요.");
@@ -324,8 +318,48 @@ background-color:#FFE3EE;}
       });
       // 캘린더 랜더링
       calendar.render();
+      
+      
+      // 풀캘린더에 비동기로 데이터를 가져와서 등록하는 코드
+     
+      
+      
+      $.ajax({
+    	  url : "calendarRest",
+    	  type : "post",
+    	  success : function(data){
+    		  console.log(data);
+    		  
+    		  for(let i = 0; i < data.length; i++){
+    			  
+    			  var dd = {
+    		               title: data[i].expl_ID + "", // 사용자가 입력한 일정 이름
+    		               start: data[i].ex_SDATE, // 사용자가 선택한 시작 시간
+    		               end: data[i].ex_FDATE, // 사용자가 선택한 종료 시간
+    		               color: data[i].pn_COLOR, // 사용자가 선택한 배경색상
+    		             };
+    			  calendar.addEvent(dd);
+    			  console.log(dd);
+    		  }
+    		  
+    		  
+    	  }, error : function(){
+    		  alert("error!");
+    	  }
+      });
+      
+      
+      
+      
     });
   })();
+  
+  
+  
+  
+ 
+  
+  
 </script>
 
 <footer>

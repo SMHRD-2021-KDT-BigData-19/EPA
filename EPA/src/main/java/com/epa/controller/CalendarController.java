@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.epa.entity.Member;
 import com.epa.entity.calendar;
@@ -22,26 +22,32 @@ public class CalendarController {
 
 	/* 캘린더화면 */
 	@RequestMapping("/calendar.do")
-	public String calendar(HttpSession session, Model model, calendar vo) {
+	public String calendar(HttpSession session, Model model) {
 		Member loginMember = (Member) session.getAttribute("loginMember");
 		// System.out.println(loginMember.toString());
 		List<calendar> list = calmapper.calendar(loginMember.getMEM_ID());
-//		for(calendar vo : list) {
-//			System.out.println(vo.toString()); 
-//			}
-		calmapper.calInsert(vo);
-
+		
 		
 		 model.addAttribute("list", list);
 		  
 		return "calendar";
 	}
+	
+	@RequestMapping("/calendarRest") // 캘린더 데이터 비동기 방식으로 응답
+	public @ResponseBody List<calendar> calendarRest(HttpSession session, Model model) {
+		Member loginMember = (Member) session.getAttribute("loginMember");
+		// System.out.println(loginMember.toString());
+		List<calendar> list = calmapper.calendar(loginMember.getMEM_ID());
+		return list;
+	}
 
 	
-	  
-	 
-	
-	
+	/* 운동루틴 추가 */
+	@RequestMapping("/calInsert.do")
+	public String calInsert(calendar vo) {
+		calmapper.calInsert(vo);
+		return "redirect:/calendar.do";
+	}
 	 
 
 }
