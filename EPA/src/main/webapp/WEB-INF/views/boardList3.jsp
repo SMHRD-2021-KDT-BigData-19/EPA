@@ -15,8 +15,39 @@
       tr:hover {
       background-color: #f5f5f5;
       }
-      .hidden {
-      display: none;
+      
+      
+    #wirter {
+        background-color: #FFC0CB;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold; 
+        cursor: pointer;
+        border-radius: 10px;
+        margin-left: 1170px
+    }
+
+    #wirter:hover {
+        background-color: #FF8E99;
+    }
+   
+    tr{
+    font-family: 'SejonghospitalBold';}
+     table thead tr th {
+        text-align: center;
+    }
+       footer {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          color: #fff;
+          padding: 10px 0;
+          text-align: center;
       }
     </style>
 </head>

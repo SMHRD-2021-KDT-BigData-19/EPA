@@ -23,12 +23,49 @@
             width: 900px;
             height: 25px;
             font-size: 15px;
+            margin-top: 20px;
         }
         button {
-            background-color: #3F568B;
-            color: aliceblue;
+            background-color: #dcdcdc;
+            color: white;
             border-radius: 5px;
+            border: none; 
+	        border-radius: 5px;
+	        padding: 8px 16px; 
+	        margin-right: 10px; 
+	        cursor: pointer; 
         }
+            button:hover {
+        background-color: #a0a0a0; 
+    }
+        #jak{
+        width:70px;
+        margin-top:10px;
+        margin-left:900px;
+         background-color: #FFC0CB; 
+        color: white; 
+        border: none; 
+        border-radius: 5px; 
+        padding: 8px 16px;
+        cursor: pointer; }
+        
+        #jak:hover {
+        background-color: #FF8E99; 
+    }
+        
+     body > div.panel-body{
+    font-family: 'IBMPlexSansKR-Regular';} 
+    
+      body > div.panel-body > table > tbody > tr> td > b{
+      margin-left:20px;}
+      
+      #midium > td:nth-child(1) > b{
+      font-size:16px;
+      white-space: nowrap;
+      margin-left:10px}/* 텍스트 줄 바꿈 방지 */
+      
+      
+      
     </style>
 </head>
 <body>
@@ -56,8 +93,7 @@
     <a href="${cpath}/join.do">회원가입</a>
 </header>
 <div class="navbar">
-    <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png"width="150" height="80"></img></a>
-    <a id="logo" href="main.html">EPA</a>
+     <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></img></a>
     <a href="./info.html">운동정보</a>
     <a href="./community.html">커뮤니티</a>
     <a href="./use.html">EPA이용방법</a>
@@ -93,7 +129,7 @@
             <button onclick="goList()">목록</button>
             </td>
         </tr>
-     <c:forEach items="${comment}" var="c">   
+     <c:forEach items="${comment}" var="c" >   
      <tr>
        
             <td>${c.MEM_ID}</td>
@@ -109,7 +145,7 @@
          <input type="hidden" name="MEM_ID" value="${loginMember.MEM_ID}">
          <input type="text" name="COM_C">
          <input type="hidden" name="BD_NO" value="${vo.BD_NO}">
-         <button type="submit">작성</button></form>
+         <button type="submit" id="jak">작성</button></form>
          </td>
   
      </tr>
