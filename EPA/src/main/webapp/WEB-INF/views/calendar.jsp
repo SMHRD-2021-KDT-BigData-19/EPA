@@ -227,7 +227,7 @@ background-color:#FFE3EE;}
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary" id="saveChanges">추가</button>
-          <button type="button" class="btn btn-secondary" id="cancelButton">취소</button>
+          <button type="button" class="btn btn-secondary" id="cancelButton" >취소</button>
           
         </div>
       </div>
@@ -302,23 +302,18 @@ background-color:#FFE3EE;}
                
              }
              
+             
             $("#cancelButton").off("click").on("click", function() {
                 $("#exampleModal").modal("hide"); // 모달을 숨깁니다.
               });
            });
-           $("#deleteEvent").hide(); // 새 이벤트 추가시 '삭제' 버튼 숨김
+     
          },
-         eventClick: function(info) {
-           var eventObj = info.event;
-           if (confirm("이 이벤트를 삭제하시겠습니까?")) {
-               info.event.remove(); // 이벤트 삭제
-         }
-         },
+       
 
       });
       // 캘린더 랜더링
       calendar.render();
-      
       
       // 풀캘린더에 비동기로 데이터를 가져와서 등록하는 코드
       
@@ -327,10 +322,14 @@ background-color:#FFE3EE;}
     	  type : "post",
     	  success : function(data){
     		  
+    		  console.log(data);
+    		  
     		  for(let i = 0; i < data.length; i++){
     			  
+    			  
     			  var dd = {
-    		               title: data[i].expl_ID + "", // 사용자가 입력한 일정 이름
+    		               title: data[i].expl_ID, // 사용자가 입력한 일정 이름
+    		               url : "myScDelete.do?pl_BUNHO=" + data[i].pl_BUNHO,
     		               start: data[i].ex_SDATE, // 사용자가 선택한 시작 시간
     		               end: data[i].ex_FDATE, // 사용자가 선택한 종료 시간
     		               color: data[i].pn_COLOR, // 사용자가 선택한 배경색상
@@ -349,12 +348,6 @@ background-color:#FFE3EE;}
       
     });
   })();
-  
-  
-  
-  
- 
-  
   
 </script>
 

@@ -14,6 +14,10 @@
         insert into PLAN_TB (EX_ID,EXPL_ID,MEM_ID,EX_SDATE,EX_FDATE,PN_COLOR)
         values (#{EX_ID},#{EXPL_ID},#{MEM_ID},#{EX_SDATE},#{EX_FDATE},#{PN_COLOR})
     </insert>
+    
+    <delete id="calendarDelete">
+        delete from PLAN_TB where PL_BUNHO=#{thePL_BUNHO}
+    </delete>
   
     
   

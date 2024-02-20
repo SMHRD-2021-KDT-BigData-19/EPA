@@ -17,6 +17,8 @@ public interface CalendarMapper {
 
 	public void calInsert(com.epa.entity.calendar vo);
 
+	public void calendarDelete(int thePL_BUNHO);
+
 	
 
 	
