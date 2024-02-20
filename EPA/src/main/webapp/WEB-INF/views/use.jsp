@@ -38,7 +38,7 @@
   <video id="videoElement" width="400" autoplay></video>
   <canvas id="canvasElement" width="400" height="300" style="display: none;"></canvas>
   
-  
+  ㄴ
   
   
 <footer>
