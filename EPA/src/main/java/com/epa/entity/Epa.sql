@@ -1,7 +1,7 @@
 use epa;
 show tables;
 
-select*from MEM_TB;
+select*from PLAN_TB
 
 /*컬럼 추가*/
 alter table MEM_TB add google_ID VARCHAR(100);

@@ -1,6 +1,7 @@
 package com.epa.mapper;
 
 
+
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -10,15 +11,17 @@ import com.epa.entity.calendar;
 @Repository
 public interface CalendarMapper {
 	
-	public void calInsert(calendar vo);
+	
 
-	public void calUpdate(calendar vo);
+	public List<calendar> calendar(String mem_ID);
 
-	public void calDelete(int pL_NO);
+	public void calInsert(com.epa.entity.calendar vo);
 
 	
 
-	public List<calendar> calendar();
+	
+
+	
 
 
 
