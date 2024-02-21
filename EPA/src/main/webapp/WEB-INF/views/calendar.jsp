@@ -180,7 +180,7 @@ background-color:#FFE3EE;}
  
 </header>
 <div class="navbar">
-  <a href="${cpath}/"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
+  <a href="${cpath}/main.do"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
    <a href="${cpath}/info.do">운동정보</a>
     <a href="${cpath}/boardList.do">커뮤니티</a>
     <a href="${cpath}/use.do">EPA이용방법</a>

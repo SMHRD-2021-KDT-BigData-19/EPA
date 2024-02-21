@@ -41,14 +41,13 @@
      table thead tr th {
         text-align: center;
     }
-       footer {
-         
+        footer {
+          position: fixed;
           bottom: 0;
           width: 100%;
           color: #fff;
           padding: 10px 0;
           text-align: center;
-        margin-top: 30px;
       }
       table{
     width:90%;}
@@ -70,7 +69,7 @@
     <a href="${cpath}/join.do">회원가입</a>
 </header>
 <div class="navbar">
-  	<a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png"width="150" height="80"></img></a>
+  	<a href="${cpath}/main.do"><img id="icon" src="${cpath}/resources/img/mainlogo.png"width="150" height="80"></img></a>
     <a href="${cpath}/info.do">운동정보</a>
     <a href="${cpath}/boardList.do">커뮤니티</a>
     <a href="${cpath}/use.do">EPA이용방법</a>
