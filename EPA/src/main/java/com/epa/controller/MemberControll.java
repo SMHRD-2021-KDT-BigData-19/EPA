@@ -145,12 +145,13 @@ public class MemberControll {
 	public ModelAndView mypage(HttpSession session, Model model) {
 		Member currentMember = (Member) session.getAttribute("loginMember");
 		String memM = mapper.getMEM_M(currentMember.getMEM_ID());
-
+		session.setAttribute("memM", memM); // memM을 세션에 저장
+		
 		// 모델에 MEM_M 값을 담아서 뷰로 전달
 		model.addAttribute("memM", memM);
 
 		// ModelAndView 객체를 사용하여 뷰 이름과 모델을 함께 반환
-		return new ModelAndView("mypage");
+		return new ModelAndView("redirect:/Tear.do");
 	}
 
 	@RequestMapping("/delete.do")

@@ -14,6 +14,57 @@
 <link rel="stylesheet" href="${cpath}/resources/css/style.css">
 <title>Your Website</title>
 <style>
+#memMContainer {
+	font-family: 'SejonghospitalBold';
+	font-size: 20px;
+	margin-left: 50px;
+}
+
+#MEM_M {
+	margin-top: 20px;
+	width: 400px;
+	height: 70px;
+	position: absolute;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 16px; /* 텍스트 크기 설정 */
+	resize: none; /* 사용자가 텍스트 상자 크기를 조정하지 못하도록  */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	font-family: 'SejonghospitalBold';
+}
+
+.submit {
+	margin-top: 125px;
+	margin-left: 320px;
+	font-family: 'SejonghospitalBold';
+	background-color: #dcdcdc;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 12px;
+	transition-duration: 0.4s;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+}
+body>div.container>div.profile-card {
+	margin-bottom: 30px
+}
+
+body>div.container>div.profile-card>form>img {
+	margin-left: 110px
+}
+
+.container {
+	margin-bottom: 30px; /* 프로필 카드 아래 여백 추가 */
+}
+
 .circle-container {
 	position: relative;
 }
@@ -178,9 +229,16 @@ progress.levelpro2 {
 	</div>
 	<div class="container">
 		<div class="profile-card">
-			<img src="${cpath}/resources/css/img/사용자.png" alt="프로필 사진">
-			<h2>${memId}님</h2>
-			<h4 id="message">헤어진 기념 바프할거다.....</h4>
+			<form action="${cpath}/message.do" method="post">
+				<img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
+				<h2>${memId}님</h2>
+				<br>
+				<br>
+				<br>
+				<div id="memMContainer">${memM}</div>
+				<input type="text" name="MEM_M" id="MEM_M" placeholder="${memM}">
+				<input type="submit" value="수정하기" class="submit">
+			</form>
 		</div>
 		<div class="profile-text">
 			<div class="circle-container">
@@ -239,6 +297,12 @@ progress.levelpro2 {
 					<b>운동 완료 횟수</b>
 				</div>
 				<progress class="levelpro2" value="3" max="70"></progress>
+			</div>
+			<div class="button-container">
+				<a href="${cpath}/calendar.do" class="btn-3d khaki">운동루틴 설정</a> <a
+					href="${cpath}/Tear.do" class="btn-3d powderblue">등급 확인</a> <a
+					href="${cpath}/mypagecorrection" class="btn-3d lightpink">회원정보
+					수정</a>
 			</div>
 		</div>
 	</div>
