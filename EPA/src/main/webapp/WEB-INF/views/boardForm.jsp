@@ -35,6 +35,8 @@
         #category {
         	width: 120px;
         	height:35px;
+        	font-family: 'SejonghospitalBold';
+}
         }
         footer {
         margin-top: 30px; /* 푸터 위 여백 추가 */
@@ -43,6 +45,10 @@
     font-size:20px;}
     #content{
     height: 250px}
+    
+   label{
+   font-family: 'SejonghospitalBold';
+}
     </style>
 </head>
 <body>
@@ -72,7 +78,7 @@
         <option value="운동루틴">운동루틴</option>
         <option value="오운완">오운완</option>
         <option value="식단관리">식단관리</option>
-    	</select>
+    	</select><br>
 
         <label for="content"><b>내용</b></label>
         <textarea id="content" name="BD_C"></textarea>

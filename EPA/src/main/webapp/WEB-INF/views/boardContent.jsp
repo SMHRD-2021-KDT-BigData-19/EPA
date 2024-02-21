@@ -64,8 +64,19 @@
       white-space: nowrap;
       margin-left:10px}/* 텍스트 줄 바꿈 방지 */
       
+        footer {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          color: #fff;
+          padding: 10px 0;
+          text-align: center;
+      }
       
-      
+      .comment-text {
+      margin-left: 30px;
+		}
+    
     </style>
 </head>
 <body>
@@ -82,6 +93,7 @@
 		location.href="${cpath}/boardList.do";
 	
 	}
+	
 </script>
 <header>
     <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
@@ -131,10 +143,8 @@
         </tr>
      <c:forEach items="${comment}" var="c" >   
      <tr>
-       
-            <td>${c.MEM_ID}</td>
-            <td>${c.COM_C}<br></td>
-       
+       <td><span class="comment-text">${c.MEM_ID}</span></td>
+	   <td><span class="comment-text">${c.COM_C}<br></span></td>
         </tr>
          </c:forEach>
      <tr>

@@ -29,7 +29,7 @@
         font-weight: bold; 
         cursor: pointer;
         border-radius: 10px;
-        margin-left: 1170px
+       margin-left: 1300px;
     }
 
     #wirter:hover {
@@ -41,6 +41,8 @@
      table thead tr th {
         text-align: center;
     }
+    table{
+    width:90%;}
     </style>
 </head>
 <body>
