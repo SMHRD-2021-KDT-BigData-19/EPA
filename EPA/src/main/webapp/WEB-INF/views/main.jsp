@@ -23,10 +23,10 @@
 </header>
 <div class="navbar">
     <a href="#"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></img></a>
-    <a href="${cpath}/info.do">운동정보</a>
-    <a href="${cpath}/boardList.do">커뮤니티</a>
+    <a href="a">운동정보</a>
+    <a href="a">커뮤니티</a>
     <a href="${cpath}/use.do">EPA이용방법</a>
-    <a href="${cpath}/mypage.do">마이페이지</a>
+    <a href="a">마이페이지</a>
 </div>
 <video width="100%" height="auto" autoplay muted loop>
     <source src="${cpath}/resources/video/epa_video.mp4" type="video/mp4">
