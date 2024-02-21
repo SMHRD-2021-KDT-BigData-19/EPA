@@ -12,12 +12,7 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'Yeongdeok Sea';
-    src:url('./font/Yeongdeok\ Sea.ttf') format('woff'),
-        url('./font/Yeongdeok\ Sea.ttf') format('woff2');
-    font-weight: 400;
-} 
+
 @font-face {
     font-family: 'NPSfontBold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
@@ -32,6 +27,12 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 /* 로그인 하이퍼링크 클릭 색상 */

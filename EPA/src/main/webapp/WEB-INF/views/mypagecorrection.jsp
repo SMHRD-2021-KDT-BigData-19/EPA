@@ -10,21 +10,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="${cpath}/resources/css/style.css">
+   <link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
+	rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Your Website</title>
 </head>
 <style>
-    .btn-save{
-        font-family: 'NPSfontBold';
-        margin-top: -30px;
-        font-size:16px;
-        margin-left: 50px;
-    }
-    .btn-cancel{
-        font-family: 'NPSfontBold';
-        margin-top: -30px;
-        background-color:#d3d3d3;
-    }
-    
+    	.btn-save{
+	        font-family: 'NPSfontBold';
+	        margin-top: -30px;
+	        font-size:16px;
+	        margin-left: 100px;
+   	 }
+    	.btn-cancel{
+	        font-family: 'NPSfontBold';
+	        margin-top: -30px;
+	        background-color:#d3d3d3;
+   	 }
+    	
        .container {
             display: flex;
             flex-direction: column;
@@ -41,11 +45,6 @@
             margin-bottom: 0;
             position: relative;
         }
-        .profile-card {
-            margin-bottom: 30px;
-                left: -800px;
-                height:400px !important;
-        }
         .footer {
             margin-top: 30px;
             background-color: #f5f5f5;
@@ -57,38 +56,39 @@
         }
         
   		body > div.container > div:nth-child(2) > form{
-  		margin-right:250px;
-  		background-color: whitesmoke;
-    	width: 300px; 
-	    height: 450px; 
-	    padding: 40px;
-	    border: 1px solid #ccc;
-	    flex-direction: column; 
-	    align-items: center; 
-	    margin-left: 50px;
-	    position: relative; 
-    	border-radius: 50px;
-		margin-top:50px;
-        }
+	  		margin-right: 620px;
+		    width: 300px;
+		    height: 450px;
+		    padding: 40px;
+		    flex-direction: column;
+		    align-items: center;
+		    margin-left: 50px;
+		    position: relative;
+		    border-radius: 50px;
+		    margin-top: -70px;}
 
         
         #MEM_PW,#MEM_NM,#MEM_EMAIL,#MEM_H,#MEM_W{
-        width: 300px; 
-    	height: 30px;
-    	font-family: 'SOGANGUNIVERSITYTTF'; }
-        
-       
-       .corr_text {
-    margin-bottom: 30px; 
-    margin-top: -650px; 
-    margin-left: 140px;
-    font-family: 'NPSfontBold'; 
-    font-size:20px;
-}
+	        width: 400px; 
+	    	height: 40px;
+	    	font-family: 'SOGANGUNIVERSITYTTF';
+	    	border-radius:20px;
+	    	border: 1px solid lightgray;}
+	        
+     
 
-label{
-font-family: 'SejonghospitalBold';}
-        
+		label{
+		font-family: 'SejonghospitalBold';}
+			
+        footer {
+        position: absolute;
+         margin-top:50px;
+          bottom: 0;
+          width: 100%;
+          color: #fff;
+          padding: 10px 0;
+          text-align: center;
+      }
         
 </style>
 <body>
@@ -105,15 +105,11 @@ font-family: 'SejonghospitalBold';}
     <a href="${cpath}/mypage.do">마이페이지</a>
 </div>
     <div class="container">
-        <div class="profile-card">
-            <img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
-            <h2>${memId}님</h2><br><br>
-            <h4 id="message">헤어진 기념 바프할거다.....</h4>
-            <br><br>
+        <div>
+          
         </div>
         
-        <div>
-         <p class="corr_text">회원 정보를 수정하세요!</p>
+        <div>  
         <form action="${cpath}/update.do" method="post">
         	<label for="password">비밀번호</label><br>
             <input type="password" id="MEM_PW" name="MEM_PW" placeholder="변경할 비밀번호를 입력해 주세요"><br><br>

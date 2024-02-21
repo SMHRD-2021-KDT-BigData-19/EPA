@@ -218,6 +218,8 @@ form input[type="radio"]{
     top: -60px;
     margin-left: 100px;
 }
+#MEM_ID{
+margin-right:78px;}
 
 </style>
 </head>
