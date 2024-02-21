@@ -48,4 +48,9 @@ public class viewsController {
 	@RequestMapping("/level")
 	public void level() {
 	}
+	
+	@RequestMapping("/stretching")
+	public void stretching() {
+	}
+	
 }

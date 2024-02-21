@@ -56,20 +56,20 @@
 
 /* 운동 전 스트레칭하기 버튼 스타일 */
 .button{
-margin-top: 20px; /* 버튼을 아래로 조금 내림 */
-display: block; /* 버튼을 인라인 블록 요소로 변경 */
-margin-left: 70%;
-background-color: white;
-color: black;
-border: 2px solid lightblue;
-width: 200px;
-height: 50px;
-border-radius: 10px;
-font-weight: bold;
-text-align: center;
-line-height: 50px;
-font-family: 'NPSfontBold';
-}
+	margin-top: 20px; 
+	display: block; 
+	margin-left: 70%;
+	background-color: white;
+	color: black;
+	border: 2px solid lightblue;
+	width: 200px;
+	height: 50px;
+	border-radius: 10px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 50px;
+	font-family: 'NPSfontBold';
+	}
   
 </style>
 <body>
@@ -86,7 +86,7 @@ font-family: 'NPSfontBold';
     <a href="${cpath}/mypage.do">마이페이지</a>
 </div>
 <h1 id="info_text">운동 선택 후 당신의 자세를 확인하세요!</h1>
-<a href="${cpath}/stretching" class="button">운동 전 스트레칭하기</a>
+<a href="${cpath}/stretching.do" class="button">운동 전 스트레칭하기</a>
 <div class="image-container">
     <div class="row">
         <div class="image-with-text">
