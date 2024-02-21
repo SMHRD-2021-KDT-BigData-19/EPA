@@ -303,9 +303,10 @@ background-color:#FFE3EE;}
              }
              
              
-            $("#cancelButton").off("click").on("click", function() {
-                $("#exampleModal").modal("hide"); // 모달을 숨깁니다.
-              });
+             $("#cancelButton").off("click").on("click", function() {
+            	    $("#exampleModal").modal("hide"); // 모달을 숨깁니다.
+            	});
+              
            });
      
          },
@@ -314,6 +315,12 @@ background-color:#FFE3EE;}
       });
       // 캘린더 랜더링
       calendar.render();
+      
+      $("#cancelButton").off("click").on("click", function() {
+    	    document.getElementById("exampleModal").click(); // 모달을 닫습니다.
+    	});
+      
+      
       
       // 풀캘린더에 비동기로 데이터를 가져와서 등록하는 코드
       
