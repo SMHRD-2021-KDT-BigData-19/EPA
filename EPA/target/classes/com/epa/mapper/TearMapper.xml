@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.epa.mapper.TearMapper">
+
+    <resultMap id="TearResultMap" type="com.epa.entity.TearVO">
+        <result property="MEM_ID" column="MEM_ID"/>
+        <result property="TEAR" column="TEAR"/>
+        <result property="ATTEND_COUNT" column="ATTEND_COUNT"/>
+        <result property="EX_RCOUNT" column="EX_RCOUNT"/>
+    </resultMap>
+
+    <select id="getTearInfo" parameterType="java.lang.String" resultMap="TearResultMap">
+        SELECT MEM_ID, TEAR, ATTEND_COUNT, EX_RCOUNT FROM TEAR_TB WHERE MEM_ID = #{memId}
+    </select>
+
+</mapper>

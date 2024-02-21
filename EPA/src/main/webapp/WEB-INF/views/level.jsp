@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.*"%>
+
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <c:set var="memId" value="${sessionScope.loginMember.MEM_ID}" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,6 +159,7 @@ progress.levelpro2 {
 	color: white !important;
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 	<header>
@@ -180,14 +184,51 @@ progress.levelpro2 {
 		</div>
 		<div class="profile-text">
 			<div class="circle-container">
-				<h2>${memId}님의현재등급은 "중급자"입니다!</h2>
-				<div class="circle-text">중급자</div>
+				<h2>${memId}님의현재
+					등급은
+					<c:choose>
+						<c:when test="${tearVO.ATTEND_COUNT <= 1}">
+                "입문"
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT <= 10}">
+                "초급"
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT <= 30}">
+                "중급"
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT >= 50}">
+                "상급"
+            </c:when>
+					</c:choose>
+					"입니다!
+				</h2>
+				<div class="circle-text">
+					<c:choose>
+						<c:when test="${tearVO.ATTEND_COUNT <= 1}">
+                "입문"
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT <= 30}">
+                "초급"
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT <= 90}">
+                "중급"
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT <= 180}">
+                "상급"
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT >= 365}">
+                "마스터"
+            </c:when>
+					</c:choose>
+				</div>
 			</div>
+
 			<div class="levelbar">
 				<div class="leveltext">
 					<b>출석 수</b>
 				</div>
-				<progress class="levelpro1" value="${ATTEND_COUNT}" max="70"></progress>
+				<c:set var="attendCount" value="${tearVO.ATTEND_COUNT}" />
+				<progress class="levelpro1" value="${attendCount}" max="70"></progress>
 			</div>
 
 			<div class="levelbar">
@@ -198,11 +239,11 @@ progress.levelpro2 {
 			</div>
 		</div>
 	</div>
-	    <div class="attendance-button">
-        <form action="${cpath}/attend" method="post">
-            <button type="submit">출석하기</button>
-        </form>
-    </div>
+	<div class="attendance-button">
+		<form action="${cpath}/attend" method="post">
+			<button type="submit">출석하기</button>
+		</form>
+	</div>
 	<footer>
 		<div class="inner">
 			<div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
