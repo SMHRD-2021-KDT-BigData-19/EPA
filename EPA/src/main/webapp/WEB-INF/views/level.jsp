@@ -190,23 +190,6 @@ progress.levelpro2 {
 						<c:when test="${tearVO.ATTEND_COUNT <= 1}">
                 "입문"
             </c:when>
-						<c:when test="${tearVO.ATTEND_COUNT <= 10}">
-                "초급"
-            </c:when>
-						<c:when test="${tearVO.ATTEND_COUNT <= 30}">
-                "중급"
-            </c:when>
-						<c:when test="${tearVO.ATTEND_COUNT >= 50}">
-                "상급"
-            </c:when>
-					</c:choose>
-					"입니다!
-				</h2>
-				<div class="circle-text">
-					<c:choose>
-						<c:when test="${tearVO.ATTEND_COUNT <= 1}">
-                "입문"
-            </c:when>
 						<c:when test="${tearVO.ATTEND_COUNT <= 30}">
                 "초급"
             </c:when>
@@ -218,6 +201,26 @@ progress.levelpro2 {
             </c:when>
 						<c:when test="${tearVO.ATTEND_COUNT >= 365}">
                 "마스터"
+            </c:when>
+					</c:choose>
+					입니다!
+				</h2>
+				<div class="circle-text">
+					<c:choose>
+						<c:when test="${tearVO.ATTEND_COUNT <= 1}">
+                입문
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT <= 30}">
+                초급
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT <= 90}">
+                중급
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT <= 180}">
+                상급
+            </c:when>
+						<c:when test="${tearVO.ATTEND_COUNT >= 365}">
+                마스터
             </c:when>
 					</c:choose>
 				</div>
@@ -240,7 +243,7 @@ progress.levelpro2 {
 		</div>
 	</div>
 	<div class="attendance-button">
-		<form action="${cpath}/attend" method="post">
+		<form action="${cpath}/updateTear" method="post">
 			<button type="submit">출석하기</button>
 		</form>
 	</div>

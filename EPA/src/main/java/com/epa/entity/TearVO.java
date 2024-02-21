@@ -1,17 +1,29 @@
 package com.epa.entity;
 
+import java.util.Date;
+
 public class TearVO {
     private String MEM_ID;
     private String TEAR;
     private int ATTEND_COUNT;
     private int EX_RCOUNT;
+    private String LASTDATE;
     
     
+    
+    public String getLASTDATE() {
+		return LASTDATE;
+	}
 
-    @Override
+	public void setLASTDATE(String LASTDATE) {
+		this.LASTDATE = LASTDATE;
+	}
+
+	
+	@Override
 	public String toString() {
 		return "TearVO [MEM_ID=" + MEM_ID + ", TEAR=" + TEAR + ", ATTEND_COUNT=" + ATTEND_COUNT + ", EX_RCOUNT="
-				+ EX_RCOUNT + "]";
+				+ EX_RCOUNT + ", LASTDATE=" + LASTDATE + "]";
 	}
 
 	// Getters and Setters

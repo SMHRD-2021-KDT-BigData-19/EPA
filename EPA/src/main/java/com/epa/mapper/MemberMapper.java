@@ -38,6 +38,9 @@ public interface MemberMapper {
 	public String mbidCheck(String mEM_ID);
 
 
+	public void joinTear(Member vo);
+
+
 
 
 

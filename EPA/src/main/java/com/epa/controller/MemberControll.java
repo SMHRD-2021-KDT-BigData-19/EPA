@@ -35,6 +35,7 @@ public class MemberControll {
 	@RequestMapping("/joinInsert.do")
 	public String joinInsert(Member vo) {
 		mapper.joinInsert(vo);
+		mapper.joinTear(vo);
 		return "mainLogin";
 	}
 

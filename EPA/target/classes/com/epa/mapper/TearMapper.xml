@@ -13,7 +13,7 @@
     </resultMap>
 
     <select id="getTearInfo" parameterType="java.lang.String" resultMap="TearResultMap">
-        SELECT MEM_ID, TEAR, ATTEND_COUNT, EX_RCOUNT FROM TEAR_TB WHERE MEM_ID = #{memId}
+        SELECT MEM_ID, TEAR, ATTEND_COUNT, EX_RCOUNT, LASTDATE FROM TEAR_TB WHERE MEM_ID = #{memId}
     </select>
 
 </mapper>

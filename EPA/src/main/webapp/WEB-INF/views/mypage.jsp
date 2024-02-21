@@ -104,7 +104,7 @@
 		<progress class="progress2" value="3" max="30"></progress>
 		<div class="button-container">
 			<a href="${cpath}/calendar.do" class="btn-3d khaki">운동루틴 설정</a> 
-			<a href="${cpath}/level" class="btn-3d powderblue">등급 확인</a> 
+			<a href="${cpath}/Tear.do" class="btn-3d powderblue">등급 확인</a> 
 			<a href="${cpath}/mypagecorrection" class="btn-3d lightpink">회원정보 수정</a>
 		</div>
 	</div>

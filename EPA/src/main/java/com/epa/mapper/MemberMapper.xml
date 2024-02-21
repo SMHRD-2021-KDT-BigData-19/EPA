@@ -3,6 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.epa.mapper.MemberMapper">
+    
+    <insert id="joinTear" parameterType="com.epa.entity.Member">
+        INSERT INTO TEAR_TB 
+        VALUES(#{MEM_ID}, '입문', 0, 0, now())
+    </insert>
 
 	<insert id="joinInsert" parameterType="com.epa.entity.Member">
 		insert into MEM_TB
