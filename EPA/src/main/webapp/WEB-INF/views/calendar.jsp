@@ -173,14 +173,12 @@ background-color:#FFE3EE;}
 </head>
 <body style="padding:10px;">
 <header>
-  
-      <a href="${cpath}/Logout.do">로그아웃</a>
-      <!--     <span>&nbsp;</span>
-    <a href="./join.html">회원가입</a> -->
+      <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
+    <a href="${cpath}/Logout.do">로그아웃</a>
  
 </header>
 <div class="navbar">
-  <a href="${cpath}/main.do"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
+  <a href="${cpath}/mainLogin.do"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
    <a href="${cpath}/info.do">운동정보</a>
     <a href="${cpath}/boardList.do">커뮤니티</a>
     <a href="${cpath}/use.do">EPA이용방법</a>

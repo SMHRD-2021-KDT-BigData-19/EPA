@@ -305,8 +305,8 @@ progress.progress2 {color:white!important;}
     font-family: 'NPSfontBold';
 }
 
-.btn-3d.powderblue:hover    {background-color: powderblue;}
-.btn-3d.khaki:hover  {background-color: khaki;}
+
+.btn-3d.khaki:hover  {background-color: powderblue;}
 .btn-3d.purple:hover {background-color: lightpink;}
 
 
@@ -315,21 +315,10 @@ progress.progress2 {color:white!important;}
 }
 
 .btn-3d.khaki {
-    background-color: khaki;
+    background-color: powderblue;
     box-shadow: 0 0 0 1px khaki inset,
 }
 .btn-3d.khaki:active {
-    box-shadow: 0 0 0 1px khaki inset,
-          0 0 0 2px rgba(255,255,255,0.15) inset,
-          0 0 0 1px rgba(0,0,0,0.4);
-}
-
-.btn-3d.powderblue {
-    background-color: powderblue;
-    box-shadow: 0 0 0 1px powderblue inset,
-}
-
-.btn-3d.powderblue:active {
     box-shadow: 0 0 0 1px powderblue inset,
           0 0 0 2px rgba(255,255,255,0.15) inset,
           0 0 0 1px rgba(0,0,0,0.4);

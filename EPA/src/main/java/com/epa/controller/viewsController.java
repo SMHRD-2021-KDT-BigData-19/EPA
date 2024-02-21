@@ -57,4 +57,7 @@ public class viewsController {
 	public void exercise() {
 	}
 	
+	@RequestMapping("/mainLogin.do")
+	public void mainLogin() {
+	}
 }
