@@ -42,12 +42,13 @@
         text-align: center;
     }
        footer {
-          position: fixed;
+         
           bottom: 0;
           width: 100%;
           color: #fff;
           padding: 10px 0;
           text-align: center;
+        margin-top: 30px;
       }
       table{
     width:90%;}

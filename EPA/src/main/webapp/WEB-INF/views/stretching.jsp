@@ -24,9 +24,10 @@
     padding: 0; 
 }
 .roww img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     margin-bottom: 0;
+    filter: brightness(90%) saturate(80%) hue-rotate(10deg);
 }
 
 
@@ -64,31 +65,31 @@
     <div class="roww">
         <div class="image-with-text">
            <a href="https://www.youtube.com/watch?v=XdFhIyu_7Vw&t=12s">
-            <img src="${cpath}/resources/css/img/스트레칭1.jpg" alt="Image 1"></a> 
+            <img src="${cpath}/resources/img/스트레칭1.jpg" alt="Image 1"></a> 
            
         </div>
         <div class="image-with-text">
             <a href="https://www.youtube.com/watch?v=ahbAnkN4KJ0&t=3s">
-                <img src="${cpath}/resources/css/img/스트레칭2.jpg" alt="Image 2"></a>
+                <img src="${cpath}/resources/img/스트레칭2.jpg" alt="Image 2"></a>
            
         </div>
         <div class="image-with-text">
             <a href="https://www.youtube.com/watch?v=7gR50n00rQ4">
-                <img src="${cpath}/resources/css/img/스트레칭3.jpg" alt="Image 4"></a>
+                <img src="${cpath}/resources/img/스트레칭3.jpg" alt="Image 4"></a>
         </div>
     </div>
     <div class="roww">
         <div class="image-with-text">
           <a href="https://www.youtube.com/watch?v=WVIk4Aja4b4">
-            <img src="${cpath}/resources/css/img/스트레칭4.jpg" alt="Image 4"></a>  
+            <img src="${cpath}/resources/img/스트레칭4.jpg" alt="Image 4"></a>  
         </div>
         <div class="image-with-text">
             <a href="https://www.youtube.com/watch?v=cJqOpyhy9rI">
-                <img src="${cpath}/resources/css/img/스트레칭5.jpg" alt="Image 5"> </a>
+                <img src="${cpath}/resources/img/스트레칭5.jpg" alt="Image 5"> </a>
         </div>
         <div class="image-with-text">
             <a href="https://www.youtube.com/watch?v=yyjOhsNEqtE">
-                <img src="${cpath}/resources/css/img/스트레칭6.jpg" alt="Image 6"></a>
+                <img src="${cpath}/resources/img/스트레칭6.jpg" alt="Image 6"></a>
 
         </div>
     </div>

@@ -53,4 +53,8 @@ public class viewsController {
 	public void stretching() {
 	}
 	
+	@RequestMapping("/exercise")
+	public void exercise() {
+	}
+	
 }
