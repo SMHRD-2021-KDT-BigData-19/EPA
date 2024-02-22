@@ -27,6 +27,7 @@
     max-width: 100%; 
     height: auto; /* 이미지 비율 유지 */
     margin-bottom: 0; /* 이미지 아래 여백 제거 */
+    border: 1px solid lightblue;
 }
 
 .image-with-text {
@@ -58,7 +59,7 @@
 .button{
 	margin-top: 20px; 
 	display: block; 
-	margin-left: 70%;
+	margin-left: 82%;
 	background-color: white;
 	color: black;
 	border: 2px solid lightblue;

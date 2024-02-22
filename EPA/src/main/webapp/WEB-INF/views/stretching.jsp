@@ -28,6 +28,7 @@
     height: auto;
     margin-bottom: 0;
     filter: brightness(90%) saturate(80%) hue-rotate(10deg);
+    border: 1px solid lightblue;
 }
 
 
