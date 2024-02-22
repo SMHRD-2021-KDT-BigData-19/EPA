@@ -52,6 +52,7 @@
         #jak:hover {
         background-color: #FF8E99; 
     }
+
         
      body > div.panel-body{
     font-family: 'IBMPlexSansKR-Regular';} 
@@ -64,14 +65,6 @@
       white-space: nowrap;
       margin-left:10px}/* 텍스트 줄 바꿈 방지 */
       
-        footer {
-          position: fixed;
-          bottom: 0;
-          width: 100%;
-          color: #fff;
-          padding: 10px 0;
-          text-align: center;
-      }
       
       .comment-text {
       margin-left: 30px;
@@ -94,6 +87,34 @@
 	
 	}
 	
+	$(document).ready(function(){
+	    adjustFooterPosition(); // 페이지 로드 시 푸터 위치 조정
+
+	    $(window).resize(function(){
+	        adjustFooterPosition(); // 윈도우 크기 변경 시 푸터 위치 재조정
+	    });
+
+	    $(document).on('DOMContentLoaded', function(){
+	        adjustFooterPosition(); // DOMContentLoaded 이벤트 발생 시 푸터 위치 조정
+	    });
+	});
+
+	function adjustFooterPosition() {
+	    var contentHeight = $('body').height(); // 콘텐츠의 높이
+	    var windowHeight = $(window).height(); // 화면의 높이
+
+	    if (contentHeight < windowHeight) {
+	        $('footer').css({
+	            'position': 'fixed',
+	            'bottom': '0',
+	            'width': '100%'
+	        });
+	    } else {
+	        $('footer').css({
+	            'position': 'static' // 콘텐츠가 화면보다 클 때는 푸터를 페이지 내에서 유동적으로 위치시킵니다.
+	        });
+	    }
+	}
 </script>
 <header>
     <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>

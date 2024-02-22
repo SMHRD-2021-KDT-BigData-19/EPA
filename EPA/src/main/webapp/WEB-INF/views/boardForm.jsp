@@ -38,9 +38,7 @@
         	font-family: 'SejonghospitalBold';
 }
         }
-        footer {
-        margin-top: 30px; /* 푸터 위 여백 추가 */
-    }
+       
     #postForm > label > b{
     font-size:20px;}
     #content{
