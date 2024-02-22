@@ -35,12 +35,12 @@
 	margin-left: -95px;
 }
 
-body > div.container > div.profile-card > form:nth-child(1) > img{
-margin-left:30px;}  
-  
+body>div.container>div.profile-card>form:nth-child(1)>img {
+	margin-left: 30px;
+}
+
 .submit {
 	margin-top: 121px;
-	
 	font-family: 'SejonghospitalBold';
 	background-color: #dcdcdc;
 	border: none;
@@ -69,10 +69,6 @@ body>div.container>div.profile-card>form>img {
 .container {
 	margin-bottom: 30px; /* 프로필 카드 아래 여백 추가 */
 }
-
-
-
-
 
 .profile-text h2 {
 	color: black;
@@ -190,15 +186,17 @@ progress.levelpro1 {
 progress.levelpro2 {
 	color: white !important;
 }
+
 .button-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    margin-top: -100px;
-    position: absolute;
-    margin-left: 210px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	margin-top: -100px;
+	position: absolute;
+	margin-left: 210px;
 }
-.attend{
+
+.attend {
 	font-family: 'SejonghospitalBold';
 	background-color: #dcdcdc;
 	border: none;
@@ -212,67 +210,66 @@ progress.levelpro2 {
 	border-radius: 12px;
 	transition-duration: 0.4s;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	margin-left:-50px;
+	margin-left: -50px;
 }
+
 footer {
-        margin-top: 30px; /* 푸터 위 여백 추가 */
-    }
+	margin-top: 30px; /* 푸터 위 여백 추가 */
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 	<header>
-	<a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
-    <a href="${cpath}/Logout.do">로그아웃</a>
+		<a href="#"><img id="login_icon"
+			src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
+		<a href="${cpath}/Logout.do">로그아웃</a>
 	</header>
 	<div class="navbar">
-	<a href="${cpath}/mainLogin.do"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
-   <a href="${cpath}/info.do">운동정보</a>
-    <a href="${cpath}/boardList.do">커뮤니티</a>
-    <a href="${cpath}/use.do">EPA이용방법</a>
-    <a href="${cpath}/mypage.do">마이페이지</a>
+		<a href="${cpath}/mainLogin.do"><img id="icon"
+			src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
+		<a href="${cpath}/info.do">운동정보</a> <a href="${cpath}/boardList.do">커뮤니티</a>
+		<a href="${cpath}/use.do">EPA이용방법</a> <a href="${cpath}/mypage.do">마이페이지</a>
 	</div>
 	<div class="container">
 		<div class="profile-card">
 			<form action="${cpath}/message.do" method="post">
 				<img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
 				<h2>${memId}님</h2>
-				<br>
-				<br>
-				<br>
+				<br> <br> <br>
 				<div id="memMContainer">${memM}</div>
 				<input type="text" name="MEM_M" id="MEM_M" placeholder="${memM}">
 				<input type="submit" value="수정하기" class="submit">
 			</form>
 			<form action="${cpath}/updateTear" method="post">
-			<button type="submit" class="attend">출석하기</button>
-		</form>
+				<button type="submit" class="attend">출석하기</button>
+			</form>
 		</div>
 		<div class="profile-text">
-			
-				<h2>${memId}님의 현재
-					등급은
-					<c:choose>
-						<c:when test="${tearVO.ATTEND_COUNT <= 1}">
+
+			<h2>${memId}님의
+				현재 등급은
+				<c:choose>
+					<c:when test="${tearVO.ATTEND_COUNT <= 1}">
                 "입문"
             </c:when>
-						<c:when test="${tearVO.ATTEND_COUNT <= 30}">
+					<c:when test="${tearVO.ATTEND_COUNT <= 30}">
                 "초급"
             </c:when>
-						<c:when test="${tearVO.ATTEND_COUNT <= 90}">
+					<c:when test="${tearVO.ATTEND_COUNT <= 90}">
                 "중급"
             </c:when>
-						<c:when test="${tearVO.ATTEND_COUNT <= 180}">
+					<c:when test="${tearVO.ATTEND_COUNT <= 180}">
                 "상급"
             </c:when>
-						<c:when test="${tearVO.ATTEND_COUNT >= 365}">
+					<c:when test="${tearVO.ATTEND_COUNT >= 365}">
                 "마스터"
             </c:when>
-					</c:choose>
-					입니다!!
-				</h2>
-				
-			
+				</c:choose>
+				입니다!!
+			</h2>
+
+
 
 			<div class="levelbar">
 				<div class="leveltext">
@@ -289,14 +286,15 @@ footer {
 				<progress class="levelpro2" value="3" max="70"></progress>
 			</div>
 			<div class="button-container">
-				<a href="${cpath}/calendar.do" class="btn-3d khaki">운동루틴 설정</a> 
-				<a href="${cpath}/mypagecorrection" class="btn-3d lightpink">회원정보 수정</a>
+				<a href="${cpath}/calendar.do" class="btn-3d khaki">운동루틴 설정</a> <a
+					href="${cpath}/mypagecorrection" class="btn-3d lightpink">회원정보
+					수정</a>
 			</div>
 		</div>
 	</div>
-	
-		
-	
+
+
+
 	<footer>
 		<div class="inner">
 			<div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
