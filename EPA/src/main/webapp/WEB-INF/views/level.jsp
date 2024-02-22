@@ -17,7 +17,7 @@
 #memMContainer {
 	font-family: 'SejonghospitalBold';
 	font-size: 20px;
-	margin-left: 50px;
+	margin-left: -40px;
 }
 
 #MEM_M {
@@ -32,11 +32,15 @@
 	resize: none; /* 사용자가 텍스트 상자 크기를 조정하지 못하도록  */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	font-family: 'SejonghospitalBold';
+	margin-left: -95px;
 }
 
+body > div.container > div.profile-card > form:nth-child(1) > img{
+margin-left:30px;}  
+  
 .submit {
-	margin-top: 125px;
-	margin-left: 320px;
+	margin-top: 121px;
+	
 	font-family: 'SejonghospitalBold';
 	background-color: #dcdcdc;
 	border: none;
@@ -47,9 +51,10 @@
 	display: inline-block;
 	font-size: 16px;
 	cursor: pointer;
-	border-radius: 12px;
+	border-radius: 5px;
 	transition-duration: 0.4s;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin-left: 115px;
 }
 
 }
@@ -72,7 +77,7 @@ body>div.container>div.profile-card>form>img {
 .profile-text h2 {
 	color: black;
 	margin-bottom: 70%;
-	margin-left: 225px;
+	margin-left: 290px;
 	font-family: 'NPSfontBold';
 }
 
@@ -93,7 +98,7 @@ body>div.container>div.profile-card>form>img {
 
 .levelpro1 {
 	position: absolute;
-	top: 40px;
+	top: -30px;
 	left: 100px;
 	width: 500px;
 	height: 50px;
@@ -104,7 +109,7 @@ body>div.container>div.profile-card>form>img {
 .levelpro2 {
 	margin-top: 200px;
 	position: absolute;
-	top: -60px;
+	top: -90px;
 	left: 100px;
 	width: 500px;
 	height: 50px;
@@ -114,7 +119,7 @@ body>div.container>div.profile-card>form>img {
 
 .leveltext {
 	position: absolute;
-	top: 20px;
+	top: -50px;
 	right: -250px;
 	transform: translateX(-50%);
 	font-size: 16px;
@@ -133,7 +138,7 @@ progress::after {
 
 .leveltext2 {
 	position: absolute;
-	top: -50px; /* progress 위로  */
+	top: -80px;
 	right: -300px;
 	transform: translateX(-50%);
 	font-size: 16px;
@@ -185,6 +190,33 @@ progress.levelpro1 {
 progress.levelpro2 {
 	color: white !important;
 }
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: -100px;
+    position: absolute;
+    margin-left: 210px;
+}
+.attend{
+	font-family: 'SejonghospitalBold';
+	background-color: #dcdcdc;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 12px;
+	transition-duration: 0.4s;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin-left:-50px;
+}
+footer {
+        margin-top: 30px; /* 푸터 위 여백 추가 */
+    }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
@@ -212,10 +244,13 @@ progress.levelpro2 {
 				<input type="text" name="MEM_M" id="MEM_M" placeholder="${memM}">
 				<input type="submit" value="수정하기" class="submit">
 			</form>
+			<form action="${cpath}/updateTear" method="post">
+			<button type="submit" class="attend">출석하기</button>
+		</form>
 		</div>
 		<div class="profile-text">
 			
-				<h2>${memId}님의현재
+				<h2>${memId}님의 현재
 					등급은
 					<c:choose>
 						<c:when test="${tearVO.ATTEND_COUNT <= 1}">
@@ -234,7 +269,7 @@ progress.levelpro2 {
                 "마스터"
             </c:when>
 					</c:choose>
-					입니다!
+					입니다!!
 				</h2>
 				
 			
@@ -259,11 +294,9 @@ progress.levelpro2 {
 			</div>
 		</div>
 	</div>
-	<div class="attendance-button">
-		<form action="${cpath}/updateTear" method="post">
-			<button type="submit">출석하기</button>
-		</form>
-	</div>
+	
+		
+	
 	<footer>
 		<div class="inner">
 			<div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
