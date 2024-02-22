@@ -38,7 +38,7 @@
     padding: 10px;
     display: inline-block; 
     border-radius: 10px; 
-    margin-left: 25%;
+    margin-left: 30%;
     width: fit-content; /* 내용에 맞게 너비 설정 */
     font-family: 'NPSfontBold';
 }

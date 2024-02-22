@@ -18,6 +18,8 @@
 	font-family: 'SejonghospitalBold';
 	font-size: 20px;
 	margin-left: -40px;
+    overflow: hidden; /* 텍스트가 넘칠 경우 숨김 처리 */
+white-space: nowrap; 
 }
 
 #MEM_M {
@@ -33,6 +35,7 @@
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	font-family: 'SejonghospitalBold';
 	margin-left: -95px;
+	overflow: hidden; 
 }
 
 body>div.container>div.profile-card>form:nth-child(1)>img {
@@ -40,7 +43,7 @@ body>div.container>div.profile-card>form:nth-child(1)>img {
 }
 
 .submit {
-	margin-top: 121px;
+	margin-top: 62%;
 	font-family: 'SejonghospitalBold';
 	background-color: #dcdcdc;
 	border: none;
@@ -55,6 +58,13 @@ body>div.container>div.profile-card>form:nth-child(1)>img {
 	transition-duration: 0.4s;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	margin-left: 115px;
+    position: absolute;
+    bottom: 10px; /* 원하는 위치로 조정 */
+    right: 120px; /* 원하는 위치로 조정 */
+}
+
+.submit:hover {
+    background-color: gray
 }
 
 }
@@ -67,14 +77,19 @@ body>div.container>div.profile-card>form>img {
 }
 
 .container {
-	margin-bottom: 30px; /* 프로필 카드 아래 여백 추가 */
+	margin-bottom: 30px; 
 }
 
 .profile-text h2 {
-	color: black;
-	margin-bottom: 70%;
-	margin-left: 290px;
-	font-family: 'NPSfontBold';
+	position: absolute; 
+    top: 0%; 
+    left: 70%; 
+    transform: translate(-20%, -50%); 
+    color: black;
+    font-family: 'NPSfontBold';
+    text-align: center; 
+    z-index: 1;
+    white-space: nowrap;
 }
 
 .profile-text h3 {
@@ -95,7 +110,6 @@ body>div.container>div.profile-card>form>img {
 .levelpro1 {
 	position: absolute;
 	top: -30px;
-	left: 100px;
 	width: 500px;
 	height: 50px;
 	background-image: linear-gradient(to right, red, red);
@@ -106,7 +120,6 @@ body>div.container>div.profile-card>form>img {
 	margin-top: 200px;
 	position: absolute;
 	top: -90px;
-	left: 100px;
 	width: 500px;
 	height: 50px;
 	background-image: linear-gradient(to right, red, red);
@@ -116,9 +129,9 @@ body>div.container>div.profile-card>form>img {
 .leveltext {
 	position: absolute;
 	top: -50px;
-	right: -250px;
+	right: -330px;
 	transform: translateX(-50%);
-	font-size: 16px;
+	font-size: 20px;
 	font-family: 'NPSfontBold';
 }
 /* progress 진행률 숫자로 표현하기 */
@@ -135,9 +148,9 @@ progress::after {
 .leveltext2 {
 	position: absolute;
 	top: -80px;
-	right: -300px;
+	right: -400px;
 	transform: translateX(-50%);
-	font-size: 16px;
+	font-size: 20px;
 	margin-top: 160px;
 	font-family: 'NPSfontBold';
 }
@@ -193,7 +206,7 @@ progress.levelpro2 {
 	align-items: flex-start;
 	margin-top: -100px;
 	position: absolute;
-	margin-left: 210px;
+	margin-left: 230px;
 }
 
 .attend {
@@ -216,6 +229,12 @@ progress.levelpro2 {
 footer {
 	margin-top: 30px; /* 푸터 위 여백 추가 */
 }
+
+#ques{
+margin-top: 50px;
+margin-right:60px;
+float: right;}
+
 </style>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
@@ -231,12 +250,13 @@ footer {
 		<a href="${cpath}/info.do">운동정보</a> <a href="${cpath}/boardList.do">커뮤니티</a>
 		<a href="${cpath}/use.do">EPA이용방법</a> <a href="${cpath}/mypage.do">마이페이지</a>
 	</div>
+	<a id="ques"><img src="${cpath}/resources/img/ques.png" width="50" height="50"></a>
 	<div class="container">
 		<div class="profile-card">
 			<form action="${cpath}/message.do" method="post">
 				<img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
 				<h2>${memId}님</h2>
-				<br> <br> <br>
+				<br> <br><br>
 				<div id="memMContainer">${memM}</div>
 				<input type="text" name="MEM_M" id="MEM_M" placeholder="${memM}">
 				<input type="submit" value="수정하기" class="submit">
@@ -245,32 +265,30 @@ footer {
 				<button type="submit" class="attend">출석하기</button>
 			</form>
 		</div>
+		
 		<div class="profile-text">
 
-			<h2>${memId}님의
+			<h2 id="id_">${memId}님의
 				현재 등급은
 				<c:choose>
 					<c:when test="${tearVO.ATTEND_COUNT <= 1}">
-                "입문"
+                <span style="color: red;">"입문"</span> 
             </c:when>
 					<c:when test="${tearVO.ATTEND_COUNT <= 30}">
-                "초급"
+                <span style="color: red;">"초급"</span> 
             </c:when>
 					<c:when test="${tearVO.ATTEND_COUNT <= 90}">
-                "중급"
+                <span style="color: red;">"중급"</span>
             </c:when>
 					<c:when test="${tearVO.ATTEND_COUNT <= 180}">
-                "상급"
+                <span style="color: red;">"상급"</span>
             </c:when>
 					<c:when test="${tearVO.ATTEND_COUNT >= 365}">
-                "마스터"
+               <span style="color: red;">"마스터"</span>
             </c:when>
 				</c:choose>
-				입니다!!
+				입니다!
 			</h2>
-
-
-
 			<div class="levelbar">
 				<div class="leveltext">
 					<b>출석 수</b>
@@ -292,9 +310,6 @@ footer {
 			</div>
 		</div>
 	</div>
-
-
-
 	<footer>
 		<div class="inner">
 			<div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
@@ -303,5 +318,47 @@ footer {
 			<div class="footer-contact">Designed by 바른자세</div>
 		</div>
 	</footer>
+<script>
+    window.onload = function() {
+        var memMContainer = document.getElementById("memMContainer");
+        var memMInput = document.getElementById("MEM_M");
+
+        memMInput.addEventListener("input", function() {
+            var textWidth = this.scrollWidth;
+            var inputWidth = this.offsetWidth;
+            if (textWidth > inputWidth) {
+                this.style.width = textWidth + "px";
+            } else {
+                this.style.width = "400px"; // 기본 너비로 복원
+            }
+        });
+    };
+    
+    // 아이콘 요소에 마우스 오버 이벤트를 추가하여 말풍선을 보여줍니다.
+    document.getElementById("ques").addEventListener("mouseover", function() {
+        // 말풍선이 표시될 위치 계산
+        var iconPosition = this.getBoundingClientRect();
+        var tooltip = document.createElement("div");
+        tooltip.innerHTML = "등급: 입문, 초급, 중급, 상급, 마스터"; // 말풍선 내용 설정
+
+        // 말풍선 스타일 설정
+        tooltip.style.position = "absolute";
+        tooltip.style.top = (iconPosition.top - 30) + "px"; // 아이콘 위에 위치하도록 설정
+        tooltip.style.left = (iconPosition.left + 30) + "px"; // 아이콘 오른쪽에 위치하도록 설정
+        tooltip.style.backgroundColor = "lightgray";
+        tooltip.style.padding = "5px";
+        tooltip.style.borderRadius = "5px";
+        tooltip.style.zIndex = "9999";
+
+        // 말풍선을 body에 추가
+        document.body.appendChild(tooltip);
+
+        // 아이콘에서 마우스를 벗어났을 때 말풍선을 제거합니다.
+        this.addEventListener("mouseout", function() {
+            document.body.removeChild(tooltip);
+        });
+    });
+
+</script>
 </body>
 </html>
