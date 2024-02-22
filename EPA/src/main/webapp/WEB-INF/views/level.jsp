@@ -84,7 +84,7 @@ body>div.container>div.profile-card>form>img {
 	position: absolute; 
     top: 0%; 
     left: 70%; 
-    transform: translate(-20%, -50%); 
+    transform: translate(-25%, -50%); 
     color: black;
     font-family: 'NPSfontBold';
     text-align: center; 
