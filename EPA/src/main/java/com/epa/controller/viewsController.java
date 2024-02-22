@@ -1,12 +1,15 @@
 package com.epa.controller;
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.epa.entity.Board;
 import com.epa.entity.Member;
 
 
@@ -53,7 +56,18 @@ public class viewsController {
 
 
 	@RequestMapping("/use.do")
-	public void use() {
+	public String use(HttpSession session) {
+	    try {
+	        Member currentMember = (Member) session.getAttribute("loginMember");
+	        if (currentMember == null) {    
+	            return "use";
+	        }
+
+	        return "useafter"; // 로그인되어 있으면 boardList.jsp로 이동
+	    } catch (Exception e) {
+	       
+	        return "use";
+	    }
 	}
 
 	@RequestMapping("/mypage1.do")
