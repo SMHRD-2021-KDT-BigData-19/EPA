@@ -145,6 +145,12 @@ public class MemberControll {
 	public ModelAndView mypage(HttpSession session, Model model) {
 	    try {
 	        Member currentMember = (Member) session.getAttribute("loginMember");
+	        if (currentMember == null) {
+	            // 로그인되어 있지 않은 경우
+	            model.addAttribute("errorMessage", "로그인 후 이용해주세요.");
+	            return new ModelAndView("main");
+	        }
+
 	        String memM = mapper.getMEM_M(currentMember.getMEM_ID());
 	        session.setAttribute("memM", memM); // memM을 세션에 저장
 
@@ -158,9 +164,11 @@ public class MemberControll {
 	        e.printStackTrace();
 
 	        // Redirect to main.jsp in case of an error
+	        model.addAttribute("errorMessage", "로그인 후 이용해주세요.");
 	        return new ModelAndView("main");
 	    }
 	}
+
 
 
 	@RequestMapping("/delete.do")
