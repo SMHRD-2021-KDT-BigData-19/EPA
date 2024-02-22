@@ -139,7 +139,7 @@
                 <a href="${cpath}/delete.do" class="btn-cancel">탈퇴</a>
         </form>
         </div>
-    ㄴ
+    
     <footer>
         <div class="inner">
             <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>

@@ -331,7 +331,7 @@ background-color:#FFE3EE;}
     		  
     		  for(let i = 0; i < data.length; i++){
     			  
-    			  ㄴ
+    			  
     			  var dd = {
     		               title: data[i].expl_ID, // 사용자가 입력한 일정 이름
     		               url : "myScDelete.do?pl_BUNHO=" + data[i].pl_BUNHO,

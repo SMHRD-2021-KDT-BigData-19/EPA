@@ -36,7 +36,7 @@ public class MemberControll {
 	public String joinInsert(Member vo) {
 		mapper.joinInsert(vo);
 		mapper.joinTear(vo);
-		return "mainLogin";
+		return "main";
 	}
 
 	@PostMapping("/Login.do")
