@@ -311,7 +311,7 @@ float: right;}
 		</div>
 	</div>
 	<footer>
-		<div class="inner">
+		<div class="inner">ㄴ
 			<div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
 			<div class="footer-copyright">Copyright 2024 All ⓒ rights
 				reserved</div>

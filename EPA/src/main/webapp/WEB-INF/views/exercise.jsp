@@ -39,7 +39,7 @@
   <canvas id="canvasElement" width="400" height="300" style="display: none;"></canvas>
 <footer>
     <div class="inner">
-      <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다</div>
+      <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
       <div class="footer-copyright">Copyright 2024 All ⓒ rights reserved</div>
       <div class="footer-contact">Designed by 바른자세</div>
     </div>
