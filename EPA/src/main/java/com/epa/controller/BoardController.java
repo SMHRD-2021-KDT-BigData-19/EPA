@@ -2,6 +2,8 @@ package com.epa.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,7 @@ import com.epa.mapper.BoardMapper;
 
 import com.epa.entity.Board;
 import com.epa.entity.Comment;
+import com.epa.entity.Member;
 
 @Controller
 public class BoardController {
@@ -20,12 +23,28 @@ public class BoardController {
 	private BoardMapper mapper;
 
 	@RequestMapping("/boardList.do")
-	public String boardList(Model model) {
-		List<Board> list = mapper.boardList();
-		model.addAttribute("list", list);
-		return "boardList";
+	public String boardList(HttpSession session, Model model) {
+	    try {
+	        Member currentMember = (Member) session.getAttribute("loginMember");
+	        if (currentMember == null) {
+	            // 로그인되어 있지 않은 경우
+	            model.addAttribute("errorMessage", "로그인 후 이용해주세요.");
+	            return "main";
+	        }
 
+	        // 로그인된 경우
+	        List<Board> list = mapper.boardList();
+	        model.addAttribute("list", list);
+
+	        return "boardList"; // 로그인되어 있으면 boardList.jsp로 이동
+	    } catch (Exception e) {
+	        // 예외가 발생한 경우
+	        e.printStackTrace();
+	        model.addAttribute("errorMessage", "로그인 후 이용해주세요.");
+	        return "main";
+	    }
 	}
+
 	@RequestMapping("/boardList2.do")
 	public String boardList2(Model model) {
 		List<Board> list2 = mapper.boardList2();
