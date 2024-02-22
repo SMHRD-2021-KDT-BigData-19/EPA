@@ -24,7 +24,7 @@
 	<div class="navbar">
 		<a href="#"><img id="icon"
 			src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></img></a>
-		<a href="${cpath}/main.do">운동정보</a> <a href="${cpath}/main.do">커뮤니티</a>
+		<a href="${cpath}/info.do">운동정보</a> <a href="${cpath}/main.do">커뮤니티</a>
 		<a href="${cpath}/mainLogin.do">EPA이용방법</a> <a href="${cpath}/mypage.do">마이페이지</a>
 		<div class="error-message">
 			<c:if test="${not empty errorMessage}">

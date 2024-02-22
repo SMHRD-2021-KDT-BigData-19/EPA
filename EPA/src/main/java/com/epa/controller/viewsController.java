@@ -1,8 +1,13 @@
 package com.epa.controller;
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.epa.entity.Member;
 
 
 
@@ -25,8 +30,27 @@ public class viewsController {
 	}
 
 	@RequestMapping("/info.do")
-	public void info() {
+	public String info(HttpSession session, Model model) {
+	    try {
+	        Member currentMember = (Member) session.getAttribute("loginMember");
+	        if (currentMember == null) {
+	            // 로그인되어 있지 않은 경우
+	            model.addAttribute("errorMessage", "로그인 후 이용해주세요.");
+	            return "main";
+	        }
+
+	        // 로그인된 경우
+	        // 추가적인 처리를 할 수 있으면 여기에 작성
+
+	        return "info"; // 로그인되어 있으면 info.jsp로 이동
+	    } catch (Exception e) {
+	        // 예외가 발생한 경우
+	        e.printStackTrace();
+	        model.addAttribute("errorMessage", "로그인 후 이용해주세요.");
+	        return "main";
+	    }
 	}
+
 
 	@RequestMapping("/use.do")
 	public void use() {
