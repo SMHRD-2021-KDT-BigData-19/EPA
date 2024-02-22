@@ -67,7 +67,7 @@ CREATE TABLE BOARD_TB (
 
 desc PLAN_TB;
 
-select * from PLAN_TB;
+select * from TEAR_TB;
 
 
 

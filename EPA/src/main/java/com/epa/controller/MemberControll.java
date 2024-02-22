@@ -143,16 +143,25 @@ public class MemberControll {
 
 	@RequestMapping("/mypage.do")
 	public ModelAndView mypage(HttpSession session, Model model) {
-		Member currentMember = (Member) session.getAttribute("loginMember");
-		String memM = mapper.getMEM_M(currentMember.getMEM_ID());
-		session.setAttribute("memM", memM); // memM을 세션에 저장
-		
-		// 모델에 MEM_M 값을 담아서 뷰로 전달
-		model.addAttribute("memM", memM);
+	    try {
+	        Member currentMember = (Member) session.getAttribute("loginMember");
+	        String memM = mapper.getMEM_M(currentMember.getMEM_ID());
+	        session.setAttribute("memM", memM); // memM을 세션에 저장
 
-		// ModelAndView 객체를 사용하여 뷰 이름과 모델을 함께 반환
-		return new ModelAndView("redirect:/Tear.do");
+	        // 모델에 MEM_M 값을 담아서 뷰로 전달
+	        model.addAttribute("memM", memM);
+
+	        // ModelAndView 객체를 사용하여 뷰 이름과 모델을 함께 반환
+	        return new ModelAndView("redirect:/Tear.do");
+	    } catch (Exception e) {
+	        // Handle the error, for example, log it
+	        e.printStackTrace();
+
+	        // Redirect to main.jsp in case of an error
+	        return new ModelAndView("main");
+	    }
 	}
+
 
 	@RequestMapping("/delete.do")
 	public String deleteMember(HttpSession session) {
