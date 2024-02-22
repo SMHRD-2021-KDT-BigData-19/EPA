@@ -334,21 +334,35 @@ float: right;}
         });
     };
     
-    // 아이콘 요소에 마우스 오버 이벤트를 추가하여 말풍선을 보여줍니다.
     document.getElementById("ques").addEventListener("mouseover", function() {
         // 말풍선이 표시될 위치 계산
         var iconPosition = this.getBoundingClientRect();
         var tooltip = document.createElement("div");
-        tooltip.innerHTML = "등급: 입문, 초급, 중급, 상급, 마스터"; // 말풍선 내용 설정
+        tooltip.innerHTML = "*등급은 출석 수를 반영합니다.<br>" +
+        					"<span style='font-size: 15px;'>(단, 출석 수 반영은 회원가입 후 다음 날부터 적용됩니다.)</span><br>" +
+                            "입문 : 2회 미만<br>" +
+                            "초급 : 2회 ~ 30회<br>" +
+                            "중급 : 31회 ~ 90회<br>" +
+                            "상급 : 91회 ~ 180회<br>" +
+                            "마스터 : 365회 이상"; // 말풍선 내용 설정
 
         // 말풍선 스타일 설정
         tooltip.style.position = "absolute";
-        tooltip.style.top = (iconPosition.top - 30) + "px"; // 아이콘 위에 위치하도록 설정
-        tooltip.style.left = (iconPosition.left + 30) + "px"; // 아이콘 오른쪽에 위치하도록 설정
-        tooltip.style.backgroundColor = "lightgray";
-        tooltip.style.padding = "5px";
+        tooltip.style.top = (iconPosition.top + 30) + "px"; // 아이콘 위에 위치하도록 설정
+        tooltip.style.right = (window.innerWidth - iconPosition.right + 30) + "px"; // 아이콘 왼쪽에 위치하도록 설정
+        tooltip.style.backgroundColor = "white";
+        tooltip.style.color = "black"; 
+        tooltip.style.padding = "15px"; 
         tooltip.style.borderRadius = "5px";
+        tooltip.style.border = "2px solid black"; 
         tooltip.style.zIndex = "9999";
+        tooltip.style.border = "1px solid #ccc"; 
+        tooltip.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.1)"; 
+        tooltip.style.maxWidth = "300px"; 
+        tooltip.style.lineHeight = "1.6"; // 줄 간격 설정
+        tooltip.style.fontFamily = "'omyu_pretty', Arial, sans-serif"; 
+        tooltip.style.fontSize = "18px";
+     
 
         // 말풍선을 body에 추가
         document.body.appendChild(tooltip);
@@ -358,7 +372,6 @@ float: right;}
             document.body.removeChild(tooltip);
         });
     });
-
 </script>
 </body>
 </html>
