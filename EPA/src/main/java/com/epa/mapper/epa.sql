@@ -65,7 +65,7 @@ CREATE TABLE BOARD_TB (
 );
 
 
-desc PLAN_TB;
+desc IMAGE;
 
 select * from TEAR_TB;
 

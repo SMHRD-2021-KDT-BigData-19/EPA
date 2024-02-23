@@ -30,10 +30,10 @@
             color: white;
             border-radius: 5px;
             border: none; 
-	        border-radius: 5px;
-	        padding: 8px 16px; 
-	        margin-right: 10px; 
-	        cursor: pointer; 
+           border-radius: 5px;
+           padding: 8px 16px; 
+           margin-right: 10px; 
+           cursor: pointer; 
         }
             button:hover {
         background-color: #a0a0a0; 
@@ -52,7 +52,6 @@
         #jak:hover {
         background-color: #FF8E99; 
     }
-
         
      body > div.panel-body{
     font-family: 'IBMPlexSansKR-Regular';} 
@@ -65,63 +64,43 @@
       white-space: nowrap;
       margin-left:10px}/* 텍스트 줄 바꿈 방지 */
       
+        footer {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          color: #fff;
+          padding: 10px 0;
+          text-align: center;
+      }
       
       .comment-text {
       margin-left: 30px;
-		}
+      }
     
     </style>
 </head>
 <body>
 <script type="text/javascript">
-	function goDelete() {
-		location.href="<c:url value='/boardDelete.do/${vo.BD_NO}'/>";
-		
-	}
-	function goUpdate() {
-		location.href="${cpath}/boardUpdateForm.do?BD_NO=${vo.BD_NO}";
-	
-	}
-	function goList() {
-		location.href="${cpath}/boardList.do";
-	
-	}
-	
-	$(document).ready(function(){
-	    adjustFooterPosition(); // 페이지 로드 시 푸터 위치 조정
-
-	    $(window).resize(function(){
-	        adjustFooterPosition(); // 윈도우 크기 변경 시 푸터 위치 재조정
-	    });
-
-	    $(document).on('DOMContentLoaded', function(){
-	        adjustFooterPosition(); // DOMContentLoaded 이벤트 발생 시 푸터 위치 조정
-	    });
-	});
-
-	function adjustFooterPosition() {
-	    var contentHeight = $('body').height(); // 콘텐츠의 높이
-	    var windowHeight = $(window).height(); // 화면의 높이
-
-	    if (contentHeight < windowHeight) {
-	        $('footer').css({
-	            'position': 'fixed',
-	            'bottom': '0',
-	            'width': '100%'
-	        });
-	    } else {
-	        $('footer').css({
-	            'position': 'static' // 콘텐츠가 화면보다 클 때는 푸터를 페이지 내에서 유동적으로 위치시킵니다.
-	        });
-	    }
-	}
+   function goDelete() {
+      location.href="<c:url value='/boardDelete.do/${vo.BD_NO}'/>";
+      
+   }
+   function goUpdate() {
+      location.href="${cpath}/boardUpdateForm.do?BD_NO=${vo.BD_NO}";
+   
+   }
+   function goList() {
+      location.href="${cpath}/boardList.do";
+   
+   }
+   
 </script>
 <header>
     <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
     <a href="${cpath}/Logout.do">로그아웃</a>
 </header>
 <div class="navbar">
-     <a href="${cpath}/mainLogin.do"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></img></a>
+     <a href="${cpath}/main.do"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></img></a>
      <a href="${cpath}/info.do">운동정보</a>
     <a href="${cpath}/boardList.do">커뮤니티</a>
     <a href="${cpath}/use.do">EPA이용방법</a>
@@ -138,11 +117,16 @@
             <td class="boardtd"><b>내용</b></td>
             
             <% // 스크립틀릿
-    			 	pageContext.setAttribute("newLine", "\n");
-    			  %>
-    			
-    		<td class="boardtd">${fn:replace(vo.BD_C, newLine, "<br>") }</td>
+                 pageContext.setAttribute("newLine", "\n");
+               %>
+             
+          <td class="boardtd">
+          <c:forEach items="${Ivo}" var="i">
+          <img src="http://172.30.1.66:8080/imgEPA/${vo.BD_NO}/${i.file}">
+          </c:forEach>
+          ${fn:replace(vo.BD_C, newLine, "<br>") }</td>
         </tr>
+        
         
         <tr id="midium">
             <td class="boardtd"><b>작성자</b></td>
@@ -160,7 +144,7 @@
      <c:forEach items="${comment}" var="c" >   
      <tr>
        <td><span class="comment-text">${c.MEM_ID}</span></td>
-	   <td><span class="comment-text">${c.COM_C}<br></span></td>
+      <td><span class="comment-text">${c.COM_C}<br></span></td>
         </tr>
          </c:forEach>
      <tr>
@@ -180,7 +164,7 @@
  </div>
     <footer>
         <div class="inner">
-          <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
+          <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다</div>
           <div class="footer-copyright">Copyright 2024 All ⓒ rights reserved</div>
           <div class="footer-contact">Designed by 바른자세</div>
         </div>

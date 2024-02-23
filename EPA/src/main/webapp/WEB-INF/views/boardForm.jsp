@@ -33,12 +33,14 @@
             margin-top: -100px;
         }
         #category {
-        	width: 120px;
-        	height:35px;
-        	font-family: 'SejonghospitalBold';
+           width: 120px;
+           height:35px;
+           font-family: 'SejonghospitalBold';
 }
         }
-       
+        footer {
+        margin-top: 30px; /* 푸터 위 여백 추가 */
+    }
     #postForm > label > b{
     font-size:20px;}
     #content{
@@ -50,28 +52,47 @@
     </style>
 </head>
 <body>
+<script type="text/javascript">
+
+   function readURL(input) {
+      var file = input.files[0] 
+      console.log(file)
+      if (file != '') {
+         var reader = new FileReader();
+         reader.readAsDataURL(file);
+         reader.onload = function (e) { 
+        console.log(e.target)
+      console.log(e.target.result)
+           $('#preview').attr('src', e.target.result);
+          }
+      }
+  }  
+</script>
 <header>
  <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
     <a href="${cpath}/Logout.do">로그아웃</a>
 </header>
 <div class="navbar">
-    <a href="${cpath}/mainLogin.do"><img id="icon" src="${cpath}/resources/img/mainlogo.png"width="150" height="80"></img></a>
+    <a href="${cpath}/main.do"><img id="icon" src="${cpath}/resources/img/mainlogo.png"width="150" height="80"></img></a>
     <a href="${cpath}/info.do">운동정보</a>
     <a href="${cpath}/boardList.do">커뮤니티</a>
     <a href="${cpath}/use.do">EPA이용방법</a>
     <a href="${cpath}/mypage.do">마이페이지</a>
 </div>
 <div class="container">
-    <form id="postForm" action="${cpath}/boardInsert.do" method="post">
+    <form id="postForm" action="${cpath}/boardInsert.do" method="post" enctype="multipart/form-data">
         <label for="title"><b>제목</b></label>
         <input type="text" id="title" name="BD_T">
         <input type="hidden" id="writer" name="MEM_ID" value="${loginMember.MEM_ID}">
         <label for="category"><b>카테고리</b></label>
-    	<select id="category" name="BD_HEAD">
+       <select id="category" name="BD_HEAD">
         <option value="운동루틴">운동루틴</option>
         <option value="오운완">오운완</option>
         <option value="식단관리">식단관리</option>
-    	</select><br>
+       </select><br>
+       
+       <input type="file" class="real-upload" accept="image/*" id="file" name="file" required multiple>
+       
 
         <label for="content"><b>내용</b></label>
         <textarea id="content" name="BD_C"></textarea>
@@ -81,7 +102,7 @@
 </div>
     <footer>
         <div class="inner">
-          <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
+          <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다</div>
           <div class="footer-copyright">Copyright 2024 All ⓒ rights reserved</div>
           <div class="footer-contact">Designed by 바른자세</div>
         </div>

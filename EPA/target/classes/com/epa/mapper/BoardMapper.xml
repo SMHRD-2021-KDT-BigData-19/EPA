@@ -18,7 +18,7 @@
         select * from BOARD_TB where BD_HEAD = '식단관리'
     </select>
      
-     <insert id="boardInsert" parameterType="com.epa.entity.Board">
+     <insert id="boardInsert" parameterType="com.epa.entity.Board" keyProperty="BD_NO" useGeneratedKeys="true">
         insert into BOARD_TB (BD_T,BD_HEAD,BD_C,MEM_ID)
         values (#{BD_T},#{BD_HEAD},#{BD_C},#{MEM_ID})
     </insert>
@@ -27,6 +27,16 @@
         insert into COMMENT_TB (MEM_ID,COM_C,BD_NO)
         values (#{MEM_ID},#{COM_C},#{BD_NO})
     </insert>
+    
+    <insert id="imageUp" parameterType="com.epa.entity.image">
+        insert into IMAGE (file,BD_NO,filePath)
+        values (#{file},#{BD_NO},#{filePath})
+    </insert>
+    
+    <select id="imageContent" parameterType="int"
+        resultType="com.epa.entity.imageList">
+        select * from IMAGE where BD_NO=#{BD_NO}
+    </select>
     
     <select id="boardContent" parameterType="int"
         resultType="com.epa.entity.Board">

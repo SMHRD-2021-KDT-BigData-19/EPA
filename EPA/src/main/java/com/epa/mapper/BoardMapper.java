@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import com.epa.entity.Board;
 import com.epa.entity.Comment;
+import com.epa.entity.image;
+import com.epa.entity.imageList;
 
 @Repository
 public interface BoardMapper {
@@ -30,6 +32,10 @@ public interface BoardMapper {
 	public List<Board> boardList3();
 
 	public List<Board> boardList4();
+
+	public void imageUp(image ivo);
+
+	public List<imageList> imageContent(int bD_NO);
 
 	
 
