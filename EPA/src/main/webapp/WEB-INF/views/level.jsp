@@ -28,7 +28,7 @@
 	height: 70px;
 	position: absolute;
 	border: 2px solid #ccc;
-	border-radius: 10px;s
+	border-radius: 10px;
 	padding: 10px;
 	font-size: 16px; /* 텍스트 크기 설정 */
 	resize: none; /* 사용자가 텍스트 상자 크기를 조정하지 못하도록  */

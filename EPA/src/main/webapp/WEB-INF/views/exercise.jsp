@@ -19,8 +19,13 @@
   #videoElement{
      width: 600px;
     margin-top: 30px;
-    margin-left: 50px;
+    margin-left: 100px;
     height: 600px;}
+    
+  #ex_video{
+  width:600px;
+  height:600px;
+  margin-left:100px;}
   
 </style>
 <body>
@@ -35,7 +40,10 @@
       <a href="${cpath}/use.do">EPA이용방법</a>
        <a href="${cpath}/mypage.do">마이페이지</a>
    </div>
-  <video id="videoElement" width="400" autoplay></video>
+  <video id="videoElement" autoplay></video>
+  <video id="ex_video" autoplay muted loop>
+		<source src="${cpath}/resources/video/스탠딩 사이드 크런치.mp4" type="video/mp4">
+	</video>
   <canvas id="canvasElement" width="400" height="300" style="display: none;"></canvas>
 <footer>
     <div class="inner">
