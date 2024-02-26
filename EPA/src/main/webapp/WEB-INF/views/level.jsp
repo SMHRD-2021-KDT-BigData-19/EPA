@@ -28,18 +28,18 @@
 	height: 70px;
 	position: absolute;
 	border: 2px solid #ccc;
-	border-radius: 10px;
+	border-radius: 10px;s
 	padding: 10px;
 	font-size: 16px; /* 텍스트 크기 설정 */
 	resize: none; /* 사용자가 텍스트 상자 크기를 조정하지 못하도록  */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	font-family: 'SejonghospitalBold';
-	margin-left: -95px;
+	margin-left: -110px;
 	overflow: hidden;
 }
 
 body>div.container>div.profile-card>form:nth-child(1)>img {
-	margin-left: 30px;
+	margin-left: 0px;
 }
 
 .submit {
