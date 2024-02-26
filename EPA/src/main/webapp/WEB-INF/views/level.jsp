@@ -18,8 +18,8 @@
 	font-family: 'SejonghospitalBold';
 	font-size: 20px;
 	margin-left: -40px;
-    overflow: hidden; /* 텍스트가 넘칠 경우 숨김 처리 */
-white-space: nowrap; 
+	overflow: hidden; /* 텍스트가 넘칠 경우 숨김 처리 */
+	white-space: nowrap;
 }
 
 #MEM_M {
@@ -35,7 +35,7 @@ white-space: nowrap;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	font-family: 'SejonghospitalBold';
 	margin-left: -95px;
-	overflow: hidden; 
+	overflow: hidden;
 }
 
 body>div.container>div.profile-card>form:nth-child(1)>img {
@@ -58,13 +58,13 @@ body>div.container>div.profile-card>form:nth-child(1)>img {
 	transition-duration: 0.4s;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	margin-left: 115px;
-    position: absolute;
-    bottom: 10px; /* 원하는 위치로 조정 */
-    right: 120px; /* 원하는 위치로 조정 */
+	position: absolute;
+	bottom: 10px; /* 원하는 위치로 조정 */
+	right: 120px; /* 원하는 위치로 조정 */
 }
 
 .submit:hover {
-    background-color: gray
+	background-color: gray
 }
 
 }
@@ -77,19 +77,19 @@ body>div.container>div.profile-card>form>img {
 }
 
 .container {
-	margin-bottom: 30px; 
+	margin-bottom: 30px;
 }
 
 .profile-text h2 {
-	position: absolute; 
-    top: 0%; 
-    left: 70%; 
-    transform: translate(-25%, -50%); 
-    color: black;
-    font-family: 'NPSfontBold';
-    text-align: center; 
-    z-index: 1;
-    white-space: nowrap;
+	position: absolute;
+	top: 0%;
+	left: 70%;
+	transform: translate(-25%, -50%);
+	color: black;
+	font-family: 'NPSfontBold';
+	text-align: center;
+	z-index: 1;
+	white-space: nowrap;
 }
 
 .profile-text h3 {
@@ -230,11 +230,11 @@ footer {
 	margin-top: 30px; /* 푸터 위 여백 추가 */
 }
 
-#ques{
-margin-top: 50px;
-margin-right:60px;
-float: right;}
-
+#ques {
+	margin-top: 50px;
+	margin-right: 60px;
+	float: right;
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
@@ -250,13 +250,23 @@ float: right;}
 		<a href="${cpath}/info.do">운동정보</a> <a href="${cpath}/boardList.do">커뮤니티</a>
 		<a href="${cpath}/use.do">EPA이용방법</a> <a href="${cpath}/mypage.do">마이페이지</a>
 	</div>
-	<a id="ques"><img src="${cpath}/resources/img/ques.png" width="50" height="50"></a>
+	<a id="ques"><img src="${cpath}/resources/img/ques.png" width="50"
+		height="50"></a>
 	<div class="container">
 		<div class="profile-card">
 			<form action="${cpath}/message.do" method="post">
-				<img src="${cpath}/resources/img/사용자.png" alt="프로필 사진">
+				<img
+					src="<c:choose>
+    <c:when test='${tearVO.ATTEND_COUNT <= 1}'>${cpath}/resources/img/Tear/입문.jpg</c:when>
+    <c:when test='${tearVO.ATTEND_COUNT <= 30}'>${cpath}/resources/img/Tear/초급.jpg</c:when>
+    <c:when test='${tearVO.ATTEND_COUNT <= 90}'>${cpath}/resources/img/Tear/중급.jpg</c:when>
+    <c:when test='${tearVO.ATTEND_COUNT <= 180}'>${cpath}/resources/img/Tear/상급.jpg</c:when>
+    <c:when test='${tearVO.ATTEND_COUNT >= 365}'>${cpath}/resources/img/Tear/마스터.jpg</c:when>
+    <c:otherwise>${cpath}/resources/img/default_profile.png</c:otherwise>
+</c:choose>"
+					alt="프로필 사진">
 				<h2>${memId}님</h2>
-				<br> <br><br>
+				<br> <br> <br>
 				<div id="memMContainer">${memM}</div>
 				<input type="text" name="MEM_M" id="MEM_M" placeholder="${memM}">
 				<input type="submit" value="수정하기" class="submit">
@@ -265,27 +275,27 @@ float: right;}
 				<button type="submit" class="attend">출석하기</button>
 			</form>
 		</div>
-		
+
 		<div class="profile-text">
 
 			<h2 id="id_">${memId}님의
 				현재 등급은
 				<c:choose>
 					<c:when test="${tearVO.ATTEND_COUNT <= 1}">
-                <span style="color: red;">"입문"</span> 
-            </c:when>
+						<span style="color: red;">"입문"</span>
+					</c:when>
 					<c:when test="${tearVO.ATTEND_COUNT <= 30}">
-                <span style="color: red;">"초급"</span> 
-            </c:when>
+						<span style="color: red;">"초급"</span>
+					</c:when>
 					<c:when test="${tearVO.ATTEND_COUNT <= 90}">
-                <span style="color: red;">"중급"</span>
-            </c:when>
+						<span style="color: red;">"중급"</span>
+					</c:when>
 					<c:when test="${tearVO.ATTEND_COUNT <= 180}">
-                <span style="color: red;">"상급"</span>
-            </c:when>
+						<span style="color: red;">"상급"</span>
+					</c:when>
 					<c:when test="${tearVO.ATTEND_COUNT >= 365}">
-               <span style="color: red;">"마스터"</span>
-            </c:when>
+						<span style="color: red;">"마스터"</span>
+					</c:when>
 				</c:choose>
 				입니다!
 			</h2>
@@ -318,60 +328,63 @@ float: right;}
 			<div class="footer-contact">Designed by 바른자세</div>
 		</div>
 	</footer>
-<script>
-    window.onload = function() {
-        var memMContainer = document.getElementById("memMContainer");
-        var memMInput = document.getElementById("MEM_M");
+	<script>
+		window.onload = function() {
+			var memMContainer = document.getElementById("memMContainer");
+			var memMInput = document.getElementById("MEM_M");
 
-        memMInput.addEventListener("input", function() {
-            var textWidth = this.scrollWidth;
-            var inputWidth = this.offsetWidth;
-            if (textWidth > inputWidth) {
-                this.style.width = textWidth + "px";
-            } else {
-                this.style.width = "400px"; // 기본 너비로 복원
-            }
-        });
-    };
-    
-    document.getElementById("ques").addEventListener("mouseover", function() {
-        // 말풍선이 표시될 위치 계산
-        var iconPosition = this.getBoundingClientRect();
-        var tooltip = document.createElement("div");
-        tooltip.innerHTML = "*등급은 출석 수를 반영합니다.<br>" +
-        					"<span style='font-size: 15px;'>(단, 출석 수 반영은 회원가입 후 다음 날부터 적용됩니다.)</span><br>" +
-                            "입문 : 2회 미만<br>" +
-                            "초급 : 2회 ~ 30회<br>" +
-                            "중급 : 31회 ~ 90회<br>" +
-                            "상급 : 91회 ~ 180회<br>" +
-                            "마스터 : 365회 이상"; // 말풍선 내용 설정
+			memMInput.addEventListener("input", function() {
+				var textWidth = this.scrollWidth;
+				var inputWidth = this.offsetWidth;
+				if (textWidth > inputWidth) {
+					this.style.width = textWidth + "px";
+				} else {
+					this.style.width = "400px"; // 기본 너비로 복원
+				}
+			});
+		};
 
-        // 말풍선 스타일 설정
-        tooltip.style.position = "absolute";
-        tooltip.style.top = (iconPosition.top + 30) + "px"; // 아이콘 위에 위치하도록 설정
-        tooltip.style.right = (window.innerWidth - iconPosition.right + 30) + "px"; // 아이콘 왼쪽에 위치하도록 설정
-        tooltip.style.backgroundColor = "white";
-        tooltip.style.color = "black"; 
-        tooltip.style.padding = "15px"; 
-        tooltip.style.borderRadius = "5px";
-        tooltip.style.border = "2px solid black"; 
-        tooltip.style.zIndex = "9999";
-        tooltip.style.border = "1px solid #ccc"; 
-        tooltip.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.1)"; 
-        tooltip.style.maxWidth = "300px"; 
-        tooltip.style.lineHeight = "1.6"; // 줄 간격 설정
-        tooltip.style.fontFamily = "'omyu_pretty', Arial, sans-serif"; 
-        tooltip.style.fontSize = "18px";
-     
+		document
+				.getElementById("ques")
+				.addEventListener(
+						"mouseover",
+						function() {
+							// 말풍선이 표시될 위치 계산
+							var iconPosition = this.getBoundingClientRect();
+							var tooltip = document.createElement("div");
+							tooltip.innerHTML = "*등급은 출석 수를 반영합니다.<br>"
+									+ "<span style='font-size: 15px;'>(단, 출석 수 반영은 회원가입 후 다음 날부터 적용됩니다.)</span><br>"
+									+ "입문 : 2회 미만<br>" + "초급 : 2회 ~ 30회<br>"
+									+ "중급 : 31회 ~ 90회<br>"
+									+ "상급 : 91회 ~ 180회<br>" + "마스터 : 365회 이상"; // 말풍선 내용 설정
 
-        // 말풍선을 body에 추가
-        document.body.appendChild(tooltip);
+							// 말풍선 스타일 설정
+							tooltip.style.position = "absolute";
+							tooltip.style.top = (iconPosition.top + 30) + "px"; // 아이콘 위에 위치하도록 설정
+							tooltip.style.right = (window.innerWidth
+									- iconPosition.right + 30)
+									+ "px"; // 아이콘 왼쪽에 위치하도록 설정
+							tooltip.style.backgroundColor = "white";
+							tooltip.style.color = "black";
+							tooltip.style.padding = "15px";
+							tooltip.style.borderRadius = "5px";
+							tooltip.style.border = "2px solid black";
+							tooltip.style.zIndex = "9999";
+							tooltip.style.border = "1px solid #ccc";
+							tooltip.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.1)";
+							tooltip.style.maxWidth = "300px";
+							tooltip.style.lineHeight = "1.6"; // 줄 간격 설정
+							tooltip.style.fontFamily = "'omyu_pretty', Arial, sans-serif";
+							tooltip.style.fontSize = "18px";
 
-        // 아이콘에서 마우스를 벗어났을 때 말풍선을 제거합니다.
-        this.addEventListener("mouseout", function() {
-            document.body.removeChild(tooltip);
-        });
-    });
-</script>
+							// 말풍선을 body에 추가
+							document.body.appendChild(tooltip);
+
+							// 아이콘에서 마우스를 벗어났을 때 말풍선을 제거합니다.
+							this.addEventListener("mouseout", function() {
+								document.body.removeChild(tooltip);
+							});
+						});
+	</script>
 </body>
 </html>
