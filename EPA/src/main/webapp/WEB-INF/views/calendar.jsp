@@ -297,7 +297,7 @@ background-color:#FFE3EE;}
                }
              } else {
                alert("비어있는 일정을 채워주세요.");
-               
+               return false;
              }
              
              

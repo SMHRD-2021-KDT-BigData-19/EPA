@@ -94,9 +94,19 @@
    
    }
    function commentDelete() {
-	      location.href="<c:url value='/commentDelete.do'/>";
-	      
-	   }
+	    // id 값으로 가져오기
+	    var COM_NO = $('#COM_NO').val();
+	    $.ajax({
+	        url: "${cpath}/commentDelete.do",
+	        type: "post",
+	        data: {COM_NO:COM_NO}, // 'COM_NO' 파라미터 전달
+	        dataType: 'json',
+	        complete: function() {
+	            location.reload();
+	            
+	        }
+	    });
+	}
    
    
 </script>
@@ -149,7 +159,7 @@
      <c:forEach items="${comment}" var="c" >   
      <tr>
        <td><span class="comment-text">${c.MEM_ID}</span></td>
-      <td><span class="comment-text">${c.COM_C}</span><button onclick="commentDelete()">삭제</button></td>
+       <td><span class="comment-text">${c.COM_C}</span>&nbsp;&nbsp;<button id="COM_NO" onclick="commentDelete()" value="${c.COM_NO}">삭제</button></td>
         </tr>
          </c:forEach>
      <tr>
