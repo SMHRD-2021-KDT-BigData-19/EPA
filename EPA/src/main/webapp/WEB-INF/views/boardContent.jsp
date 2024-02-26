@@ -149,7 +149,7 @@
      <c:forEach items="${comment}" var="c" >   
      <tr>
        <td><span class="comment-text">${c.MEM_ID}</span></td>
-      <td><span class="comment-text">${c.COM_C}</span><button onclick="goCommentDelete('${c.COM_NO}')">삭제</button></td>
+      <td><span class="comment-text">${c.COM_C}</span><button onclick="commentDelete()">삭제</button></td>
         </tr>
          </c:forEach>
      <tr>

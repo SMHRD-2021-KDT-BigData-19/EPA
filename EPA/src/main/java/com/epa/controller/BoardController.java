@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -152,9 +153,9 @@ public class BoardController {
       return "redirect:/boardList.do";
    }
    @RequestMapping("/commentDelete.do")
-   public String commentDelete(@PathVariable("COM_NO") int COM_NO,Comment co) {
+   public String commentDelete(@RequestParam("COM_NO") int COM_NO,Comment co) {
 
-      mapper.boardDelete(COM_NO);
+      mapper.commentDelete(COM_NO);
 
       return "redirect:/boardContent.do/"+co.getBD_NO();
    }

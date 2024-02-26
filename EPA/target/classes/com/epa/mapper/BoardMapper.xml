@@ -29,13 +29,13 @@
     </insert>
     
     <insert id="imageUp" parameterType="com.epa.entity.image">
-        insert into IMAGE (file,BD_NO,filePath)
+        insert into IMAGE_TB (file,BD_NO,filePath)
         values (#{file},#{BD_NO},#{filePath})
     </insert>
     
     <select id="imageContent" parameterType="int"
         resultType="com.epa.entity.imageList">
-        select * from IMAGE where BD_NO=#{BD_NO}
+        select * from IMAGE_TB where BD_NO=#{BD_NO}
     </select>
     
     <select id="boardContent" parameterType="int"
@@ -48,13 +48,15 @@
         select * from COMMENT_TB where BD_NO=#{BD_NO}
     </select>
     
+    <delete id="commentDelete" parameterType="int">
+        delete from COMMENT_TB where COM_NO=#{COM_NO}
+    </delete>
+    
     <delete id="boardDelete" parameterType="int">
         delete from BOARD_TB where BD_NO=#{BD_NO}
     </delete>
     
-    <delete id="deleteComment" parameterType="int">
-        delete from COMMENT_TB where COM_NO=#{COM_NO}
-    </delete>
+    
     
     <update id="boardUpdate" parameterType="com.epa.entity.Board">
         update BOARD_TB set BD_T=#{BD_T}, BD_C=#{BD_C}
