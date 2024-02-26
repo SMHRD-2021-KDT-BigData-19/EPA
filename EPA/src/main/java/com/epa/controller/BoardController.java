@@ -135,7 +135,6 @@ public class BoardController {
       List<Comment> comment = mapper.commnetContent(BD_NO);
       
       List<imageList> Ivo = mapper.imageContent(BD_NO);
-      System.out.println(Ivo.toString());
 
       model.addAttribute("vo", vo);
       model.addAttribute("comment",comment);
@@ -152,11 +151,10 @@ public class BoardController {
 
       return "redirect:/boardList.do";
    }
+   
    @RequestMapping("/commentDelete.do")
-   public String commentDelete(@RequestParam("COM_NO") int COM_NO,Comment co) {
-
-      mapper.commentDelete(COM_NO);
-
+   public String commentDelete(Comment co) {
+      mapper.commentDelete(co.getCOM_NO());
       return "redirect:/boardContent.do/"+co.getBD_NO();
    }
 
