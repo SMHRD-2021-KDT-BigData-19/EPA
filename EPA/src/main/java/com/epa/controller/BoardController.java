@@ -9,12 +9,15 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -152,10 +155,14 @@ public class BoardController {
       return "redirect:/boardList.do";
    }
    
-   @RequestMapping("/commentDelete.do")
-   public String commentDelete(Comment co) {
-      mapper.commentDelete(co.getCOM_NO());
-      return "redirect:/boardContent.do/"+co.getBD_NO();
+   @PostMapping("/commentDelete.do")
+   public String commentDelete(@RequestParam("COM_NO") int COM_NO) {
+       // 주어진 COM_NO를 사용하여 댓글 삭제 로직을 수행합니다.
+       // 여기서 mapper.commentDelete(COM_NO)는 댓글을 삭제하는 매퍼 메서드를 호출하는 것으로 가정합니다.
+       mapper.commentDelete(COM_NO);
+
+       // 댓글 삭제 후에는 boardContent 페이지로 리다이렉트합니다.
+       return "redirect:/boardContent.do";
    }
 
    @RequestMapping("/boardUpdateForm.do")

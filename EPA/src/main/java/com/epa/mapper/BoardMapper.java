@@ -37,7 +37,15 @@ public interface BoardMapper {
 
 	public List<imageList> imageContent(int bD_NO);
 
-	public void commentDelete(int com_NO);
+	public void commentDelete(int cOM_NO);
+
+	
+
+
+
+	
+
+
 
 
 	

@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <c:set var="memId" value="${sessionScope.loginMember.MEM_ID}" />
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,5 +147,6 @@
             <div class="footer-contact">Designed by 바른자세</div>
         </div>
     </footer>
+    </div>
 </body>
 </html>

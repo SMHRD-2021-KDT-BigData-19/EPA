@@ -45,4 +45,10 @@ public class Comment {
 		D_DATE = d_DATE;
 	}
 
+	@Override
+	public String toString() {
+		return "Comment [COM_NO=" + COM_NO + ", BD_NO=" + BD_NO + ", MEM_ID=" + MEM_ID + ", COM_RE=" + COM_RE
+				+ ", COM_C=" + COM_C + ", D_DATE=" + D_DATE + "]";
+	}
+
 }
