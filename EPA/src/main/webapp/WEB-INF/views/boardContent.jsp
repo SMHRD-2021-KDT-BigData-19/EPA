@@ -93,6 +93,11 @@
       location.href="${cpath}/boardList.do";
    
    }
+   function commentDelete() {
+	      location.href="<c:url value='/commentDelete.do'/>";
+	      
+	   }
+   
    
 </script>
 <header>
@@ -144,7 +149,7 @@
      <c:forEach items="${comment}" var="c" >   
      <tr>
        <td><span class="comment-text">${c.MEM_ID}</span></td>
-      <td><span class="comment-text">${c.COM_C}<br></span></td>
+      <td><span class="comment-text">${c.COM_C}</span><button onclick="goCommentDelete('${c.COM_NO}')">삭제</button></td>
         </tr>
          </c:forEach>
      <tr>
@@ -155,6 +160,7 @@
          <input type="hidden" name="MEM_ID" value="${loginMember.MEM_ID}">
          <input type="text" name="COM_C">
          <input type="hidden" name="BD_NO" value="${vo.BD_NO}">
+         
          <button type="submit" id="jak">작성</button></form>
          </td>
   

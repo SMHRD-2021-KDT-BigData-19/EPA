@@ -1,7 +1,9 @@
 package com.epa.controller;
 
 import com.epa.entity.Member;
+import com.epa.entity.ProfileList;
 import com.epa.entity.TearVO;
+import com.epa.mapper.MemberMapper;
 import com.epa.mapper.TearMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,10 +22,12 @@ public class TearController {
 
     @Autowired
     private TearMapper tearMapper;
+    
 
     @GetMapping("/Tear.do")
     public String level(HttpSession session, Model model) {
         Member info = (Member) session.getAttribute("loginMember");
+        
         // info가 null이면 처리
         if (info == null) {
             // 예외 처리 또는 다른 작업 수행
@@ -39,7 +43,6 @@ public class TearController {
             return "login";
         }
 
-        System.out.println(tearVO.toString());
         model.addAttribute("tearVO", tearVO);
 
         return "level";

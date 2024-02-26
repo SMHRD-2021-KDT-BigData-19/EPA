@@ -11,4 +11,3 @@ alter table MEM_TB change GOOGlE_ID Google_ID varchar(100);
 
 commit
 
-select * from BOARD_TB where BD_HEAD = '운동루틴';

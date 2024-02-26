@@ -14,7 +14,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -78,9 +77,6 @@ public class BoardController {
          // user_id, category, title, content DB에 업로드
          mapper.boardInsert(vo);
          
-         System.out.println("새로 생성된 post_id: " + vo.getBD_NO());
-         System.out.println("테스트 실행");
-         System.out.println(file);
          
          int BD_NO = vo.getBD_NO();
          
@@ -94,7 +90,6 @@ public class BoardController {
          for(int i = 0; i<list.size(); i++) {
             String fileRealName = list.get(i).getOriginalFilename();
             
-            System.out.println("파일명 :" + fileRealName);
             
             // 폴더가 존재하지 않으면 생성
             File folder = new File(uploadFolder);
@@ -117,7 +112,7 @@ public class BoardController {
             // 게시물 이미지 DB에 저장
             // picture_id = i+1, post_id = post_id, folder = uploadFolder, file_name = fileRealName
             image Ivo = new image(fileRealName,BD_NO, uploadFolder);
-            System.out.println(Ivo.toString());
+            
             
             mapper.imageUp(Ivo);
             
@@ -156,6 +151,13 @@ public class BoardController {
 
       return "redirect:/boardList.do";
    }
+   @RequestMapping("/commentDelete.do")
+   public String commentDelete(@PathVariable("COM_NO") int COM_NO,Comment co) {
+
+      mapper.boardDelete(COM_NO);
+
+      return "redirect:/boardContent.do/"+co.getBD_NO();
+   }
 
    @RequestMapping("/boardUpdateForm.do")
    public String boardUpdateForm(int BD_NO, Model model) {
@@ -172,6 +174,7 @@ public class BoardController {
 
       return "redirect:/boardList.do";
    }
+   
    
    
 

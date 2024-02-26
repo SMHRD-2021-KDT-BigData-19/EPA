@@ -52,6 +52,10 @@
         delete from BOARD_TB where BD_NO=#{BD_NO}
     </delete>
     
+    <delete id="deleteComment" parameterType="int">
+        delete from COMMENT_TB where COM_NO=#{COM_NO}
+    </delete>
+    
     <update id="boardUpdate" parameterType="com.epa.entity.Board">
         update BOARD_TB set BD_T=#{BD_T}, BD_C=#{BD_C}
         where BD_NO=#{BD_NO}

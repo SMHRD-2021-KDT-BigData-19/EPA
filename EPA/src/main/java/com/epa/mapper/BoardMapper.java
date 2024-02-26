@@ -37,6 +37,8 @@ public interface BoardMapper {
 
 	public List<imageList> imageContent(int bD_NO);
 
+	public void deleteComment(int com_NO);
+
 	
 
 }

@@ -178,7 +178,7 @@ header{
 
 .profile-card button {
     position: absolute; 
-    bottom: 10px; 
+    bottom: 10px;  
     right: 10px; 
     background-color: gainsboro;
     color: white;

@@ -52,22 +52,6 @@
     </style>
 </head>
 <body>
-<script type="text/javascript">
-
-   function readURL(input) {
-      var file = input.files[0] 
-      console.log(file)
-      if (file != '') {
-         var reader = new FileReader();
-         reader.readAsDataURL(file);
-         reader.onload = function (e) { 
-        console.log(e.target)
-      console.log(e.target.result)
-           $('#preview').attr('src', e.target.result);
-          }
-      }
-  }  
-</script>
 <header>
  <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
     <a href="${cpath}/Logout.do">로그아웃</a>
