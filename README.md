@@ -56,9 +56,11 @@
 ## 5. 핵심 트러블 슈팅
 ### 5.1. 
 
-
+## 6. 그외 트러블슈팅
+<details>
 <div markdown="1">
-
+~~~java 
+  
 </div>
-
+</details>
 
