@@ -129,6 +129,18 @@
       }
 </div>
 </details>
-
+=> 필드 생성자를 가져올때 파일번호를 같이 보내주지않아서 오류가 나는 문제였음 그래서 따로 DTO를 만들어서 파일번호를 넣어서 컨트롤러로 보내줌
+<details>
+<summary><b>개선 코드</b></summary>
+<div markdown="1">
+public imageList(int file_NO, String file, int bD_NO, String filePath) {
+		super();
+		this.file_NO = file_NO;
+		this.file = file;
+		BD_NO = bD_NO;
+		this.filePath = filePath;
+	}
+</div>
+</details>
 </div>
 </details>
