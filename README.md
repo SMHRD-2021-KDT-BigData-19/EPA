@@ -12,7 +12,7 @@
 
 ## 2. 사용 기술
 
-| JavaScript | TypeScript |  React   |  Node   |
+| JavaScript | Python |  React   |  Node   |
 | :--------: | :--------: | :------: | :-----: |
 |  <img src="https://github.com/n0hack/readme-template/assets/151595284/cba04890-eae7-4dce-8769-d4130c0b56cb.png" width="100" height="100"/> |    <img src="https://github.com/n0hack/readme-template/assets/151595284/76433d79-57d7-4626-b32b-8323d551ae1b" width="100" height="100"/>     | ![react] | ![node] |
 
