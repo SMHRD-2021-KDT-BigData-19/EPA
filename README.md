@@ -59,8 +59,14 @@
 ## 6. 그외 트러블슈팅
 <details>
 <div markdown="1">
-~~~java 
-  
+출석 기능
+
+하루에 단 한번만 출석이 가능하게 구현하고자 하였으나
+출석일수가 버튼을 누르면 계속 증가하거나 증가되지 않는 문제가 있었음 
+![error](https://github.com/n0hack/readme-template/assets/151595284/0b448dfa-9a9d-4692-bcd9-d32deec22d24)
+=> 회원가입 단계에서 등급 객체를 추가하여 회원가입 일자로 default 값을 지정, 출석 버튼 클릭 시 TEAR_TB에 LASTDATE를 갱신하여 이전 값과 비교해 날짜가 다른 경우에만 UPDATE 되도록 수정
+![KakaoTalk_20240227_154531080](https://github.com/n0hack/readme-template/assets/151595284/d14a9197-b409-484a-b093-571b0594298b)
+![tnwjd](https://github.com/n0hack/readme-template/assets/151595284/20dfff08-ae9a-4322-bbb3-84601e997425)
 </div>
 </details>
 
