@@ -78,8 +78,7 @@
 <details>
 <summary><b>기존 코드</b></summary>
 <div markdown="1">
-```java
-  
+
       @PostMapping("/boardInsert.do")
       public String boardInsert(Board vo, MultipartHttpServletRequest file) {
          
