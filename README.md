@@ -57,7 +57,8 @@
 ### 5.1. 
 
 ## 6. 그외 트러블슈팅
-<details>출석 기능
+<details>
+  <summary><b>출석 기능</b></summary>
 <div markdown="1">
 
 
