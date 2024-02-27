@@ -11,16 +11,10 @@
 </br>
 
 ## 2. 사용 기술
-#### `Back-end`
-  - Java 17.0.6
-  - Oracle 11
-  - Tomcat 9.0
-  - JSP
-#### `Front-end`
-  - HTML
-  - CSS
-  - JS
-  - JSP
+
+| JavaScript | TypeScript |  React   |  Node   |
+| :--------: | :--------: | :------: | :-----: |
+|   ![js]    |   ![ts]    | ![react] | ![node] |
 
 </br>
 
@@ -61,7 +55,7 @@
 </br>
 
 ## 5. 핵심 트러블 슈팅
-### 5.1. 컨텐츠 필터와 페이징 처리 문제
+### 5.1. 
 
 <div markdown="1">
 
