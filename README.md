@@ -14,7 +14,7 @@
 
 | JavaScript | TypeScript |  React   |  Node   |
 | :--------: | :--------: | :------: | :-----: |
-|   <img src="https://github.com/n0hack/readme-template/assets/151595284/cba04890-eae7-4dce-8769-d4130c0b56cb.png" width="200" height="400"/>    |   ![ts]    | ![react] | ![node] |
+|   <img src="https://github.com/n0hack/readme-template/assets/151595284/cba04890-eae7-4dce-8769-d4130c0b56cb.png" width="100" height="100"/>    |   ![ts]    | ![react] | ![node] |
 
 </br>
 
