@@ -205,7 +205,9 @@ form .id_check {
    margin-top: -50px
    
 }
-
+#password_error{
+	font-size: 13px;
+}
 form input[type="radio"]{
  
 } 
@@ -228,7 +230,7 @@ margin-right:78px;}
 		<div class="login">
 
 			<div>
-				<form action="${cpath}/joinInsert.do" method="post">
+				<form onsubmit="return validatePassword();" action="${cpath}/joinInsert.do" method="post">
 					<h2>회원가입</h2>
 					<h5>*모든 항목 필수 입력*</h5><br><br>
 					
@@ -243,6 +245,7 @@ margin-right:78px;}
 						
 						<h4>비밀번호 확인</h4>
                     	<input type="password" name="confirm_password" id="confirm_password" placeholder="비밀번호 확인" required><br>
+                    	<span id="password_error" style="color: red;"></span>
 				
 						
 						<h4>이메일</h4>
@@ -298,7 +301,19 @@ margin-right:78px;}
         }
     });
 }
-   
+   function validatePassword() {
+       var password = document.getElementsByName("MEM_PW")[0].value;
+       var confirmPassword = document.getElementById("confirm_password").value;
+       var errorText = document.getElementById("password_error");
+
+       if (password !== confirmPassword) {
+           errorText.innerHTML = "비밀번호가 일치하지 않습니다.";
+           return false;
+       } else {
+           errorText.innerHTML = "";
+           return true;
+       }
+   }
    
    </script>
 </body>
