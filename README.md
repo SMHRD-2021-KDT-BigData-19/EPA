@@ -133,13 +133,14 @@
 <details>
 <summary><b>개선 코드</b></summary>
 <div markdown="1">
-public imageList(int file_NO, String file, int bD_NO, String filePath) {
-		super();
-		this.file_NO = file_NO;
-		this.file = file;
-		BD_NO = bD_NO;
-		this.filePath = filePath;
-	}
+	
+	public imageList(int file_NO, String file, int bD_NO, String filePath) {
+			super();
+			this.file_NO = file_NO;
+			this.file = file;
+			BD_NO = bD_NO;
+			this.filePath = filePath;
+		}
 </div>
 </details>
 </div>
