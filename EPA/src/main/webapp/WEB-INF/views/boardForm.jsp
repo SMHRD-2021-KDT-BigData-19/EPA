@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="${cpath}/resources/css/style.css">
     <link rel="stylesheet" href="${cpath}/resources/css/community.css">
     <style>
@@ -38,9 +39,20 @@
            font-family: 'SejonghospitalBold';
 }
         }
-        footer {
-        margin-top: 30px; /* 푸터 위 여백 추가 */
-    }
+ footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #333; /* Adjust the background color as needed */
+    z-index: 100; /* Ensure the footer stays on top of other elements */
+}
+
+.container {
+    padding-bottom: 60px; /* Adjust according to the height of your footer */
+}
     #postForm > label > b{
     font-size:20px;}
     #content{
@@ -52,6 +64,39 @@
     </style>
 </head>
 <body>
+<script type="text/javascript">
+ 	function goForm() {
+		location.href="${cpath}/boardForm.do";
+	}
+ 	$(document).ready(function(){
+ 	    adjustFooterPosition(); // 페이지 로드 시 푸터 위치 조정
+
+ 	    $(window).resize(function(){
+ 	        adjustFooterPosition(); // 윈도우 크기 변경 시 푸터 위치 재조정
+ 	    });
+
+ 	    $(document).on('DOMContentLoaded', function(){
+ 	        adjustFooterPosition(); // DOMContentLoaded 이벤트 발생 시 푸터 위치 조정
+ 	    });
+ 	});
+
+ 	function adjustFooterPosition() {
+ 	    var contentHeight = $('body').height(); // 콘텐츠의 높이
+ 	    var windowHeight = $(window).height(); // 화면의 높이
+
+ 	    if (contentHeight < windowHeight) {
+ 	        $('footer').css({
+ 	            'position': 'fixed',
+ 	            'bottom': '0',
+ 	            'width': '100%'
+ 	        });
+ 	    } else {
+ 	        $('footer').css({
+ 	            'position': 'static' // 콘텐츠가 화면보다 클 때는 푸터를 페이지 내에서 유동적으로 위치시킵니다.
+ 	        });
+ 	    }
+ 	}
+ </script>
 <header>
  <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
     <a href="${cpath}/Logout.do">로그아웃</a>

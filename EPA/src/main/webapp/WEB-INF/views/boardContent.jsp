@@ -40,8 +40,8 @@
     }
         #jak{
         width:70px;
-        margin-top:10px;
-        margin-left:900px;
+        margin-top:-32px;
+        margin-left:930px;
          background-color: #FFC0CB; 
         color: white; 
         border: none; 
@@ -171,7 +171,7 @@
          <input type="text" name="COM_C">
          <input type="hidden" name="BD_NO" value="${vo.BD_NO}">
          
-         <button type="submit" id="jak">작성</button></form>
+         <button type="submit" id="jak">작성</button></form><br>
          </td>
   
      </tr>
