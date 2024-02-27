@@ -14,7 +14,7 @@
 
 | JavaScript | TypeScript |  React   |  Node   |
 | :--------: | :--------: | :------: | :-----: |
-|   ![js]    |   ![ts]    | ![react] | ![node] |
+|   <img src="https://github.com/n0hack/readme-template/assets/151595284/cba04890-eae7-4dce-8769-d4130c0b56cb.png" width="200" height="400"/>    |   ![ts]    | ![react] | ![node] |
 
 </br>
 
@@ -57,19 +57,9 @@
 ## 5. 핵심 트러블 슈팅
 ### 5.1. 
 
-[js] : (https://github.com/n0hack/readme-template/assets/151595284/cba04890-eae7-4dce-8769-d4130c0b56cb)
 
 <div markdown="1">
 
 </div>
 
-## 라이센스
 
-MIT &copy; [NoHack](mailto:lbjp114@gmail.com)
-
-<!-- Stack Icon Refernces -->
-
-[js]: /images/stack/javascript.svg
-[ts]: /images/stack/typescript.svg
-[react]: /images/stack/react.svg
-[node]: /images/stack/node.svg
