@@ -58,7 +58,7 @@
 
 ## 6. 그외 트러블슈팅
 <details>
-  <summary><b>출석 기능</b></summary>
+  <summary><b>출석 기능오류</b></summary>
 <div markdown="1">
 
 하루에 단 한번만 출석이 가능하게 구현하고자 하였으나
@@ -72,7 +72,7 @@
 </details>
 
 <details>
-  <summary><b>게시판 이미지업로드</b></summary>
+  <summary><b>게시판 이미지업로드오류</b></summary>
 <div markdown="1">
 게시판에 이미지를 업로드할 때, 이미지를 컨트롤러로 전송하기 위해 DTO를 사용했습니다. 이 DTO에는 파일 이름, 파일 경로 및 게시판 번호를 필드 생성자로 포함하여 전송했습니다. 그러나 이미지를 불러올 때 DB에서 문제가 발생했습니다.
 <details>
@@ -143,5 +143,105 @@
 		}
 </div>
 </details>
+</div>
+</details>
+
+<details>
+  <summary><b>캘린더 일정등록 오류</b></summary>
+<div markdown="1">
+기존 Fullcalendar API를 사용하여 종료시간이 시작시간보다 작을 때 알림창을 표시하고, 그렇지 않은 경우에는 캘린더에 이벤트를 추가하도록 코드를 작성했습니다. 그러나 이렇게 해도 DB에 값이 전송되지 않는 오류가 발생했습니다. 
+<details>
+  <summary><b>기존 코드</b></summary>
+<div markdown="1">
+	
+  	 select: function(arg) {
+           // 모달을 표시
+           $("#exampleModal").modal("show");
+           var startDate = new Date(arg.start).toISOString().substring(0, 16);
+           var endDate = new Date(arg.end).toISOString().substring(0, 16);
+           $("#EX_ID").val('code1');
+           $("#EXPL_ID").val('');
+           $("#EX_SDATE").val(startDate);
+           $("#EX_FDATE").val(endDate);
+           $("#P_COLOR").val('pink'); // 기본 색상 설정
+
+           
+           // '추가' 버튼 클릭 이벤트 핸들러 설정
+           $("#saveChanges").off("click").on("click", function() {
+             var eventData = {
+               title: $("#EXPL_ID").val(), // 사용자가 입력한 일정 이름
+               start: $("#EX_SDATE").val(), // 사용자가 선택한 시작 시간
+               end: $("#EX_FDATE").val(), // 사용자가 선택한 종료 시간
+               color: $("#P_COLOR").val(), // 사용자가 선택한 배경색상
+             };
+             if (eventData.title && eventData.start && eventData.end) {
+               if (eventData.start > eventData.end) {
+                 alert("시작 시간이 종료 시간보다 늦을 수 없습니다.");
+               } else {
+	         title: $("#EXPL_ID").val(), 
+                 start: $("#EX_SDATE").val(), 
+                 end: $("#EX_FDATE").val(), 
+                 color: $("#P_COLOR").val(),
+                 calendar.addEvent(eventData);
+               }
+             } else {
+	     	
+               alert("비어있는 일정을 채워주세요.");
+               return false;
+             }
+             
+             
+             $("#cancelButton").off("click").on("click", function() {
+            	    $("#exampleModal").modal("hide"); // 모달을 숨깁니다.
+            	});
+              
+           });
+     
+         },
+</div>
+</details>
+=> 이를 해결하기 위해 else 블록에서 값을 추가하는 대신, 별도의 AJAX 요청을 추가하여 값을 받아왔습니다.
+<details>
+  <summary><b>개선 코드</b></summary>
+<div markdown="1">
+      
+      $.ajax({
+    	  url : "calendarRest",
+    	  type : "post",
+    	  success : function(data){
+    		  
+    		  console.log(data);
+    		  
+    		  for(let i = 0; i < data.length; i++){
+    			  
+    			  
+    			  var dd = {
+    		               title: data[i].expl_ID, // 사용자가 입력한 일정 이름
+    		               url : "myScDelete.do?pl_BUNHO=" + data[i].pl_BUNHO,
+    		               start: data[i].ex_SDATE, // 사용자가 선택한 시작 시간
+    		               end: data[i].ex_FDATE, // 사용자가 선택한 종료 시간
+    		               color: data[i].pn_COLOR, // 사용자가 선택한 배경색상
+    		             };
+    			  calendar.addEvent(dd);
+    			 
+    		  }
+    		  
+    	  }, error : function(){
+    		  alert("error!");
+    	  }
+      });
+</div>
+</details>
+
+
+</div>
+</details>
+
+<details>
+  <summary><b>DB컬럼 NAME오류</b></summary>
+<div markdown="1">
+캘린더에 일정을 DB에 등록할 때 일정 이름, 일정 날짜, 운동 코드는 정상적으로 DB에 들어가지만, 일정색이 DB에 들어가지 않는 오류가 발생했습니다. 
+초기에는 일정색의 컬럼 이름을 P_NAME으로 설정했었으나, 이전에 알파벳이 두 번 들어가는 컬럼이 정상적으로 값이 들어갔다는 것을 확인하여, 컬럼 이름을 P_NAME을 PN_NAME으로 수정하였더니 문제가 해결되었습니다.
+![스크린샷 2024-02-27 165811](https://github.com/SMHRD-2021-KDT-BigData-19/EPA/assets/151595284/30eb0bbd-8d29-4cc7-90be-d5c102699ac0)
 </div>
 </details>
