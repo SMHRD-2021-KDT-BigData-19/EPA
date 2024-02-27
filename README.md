@@ -14,7 +14,7 @@
 
 | JavaScript | TypeScript |  React   |  Node   |
 | :--------: | :--------: | :------: | :-----: |
-|   ![js]    |   ![ts]    | ![react] | ![node] |
+|   ![다운로드](https://github.com/n0hack/readme-template/assets/151595284/cba04890-eae7-4dce-8769-d4130c0b56cb)    |   ![ts]    | ![react] | ![node] |
 
 </br>
 
@@ -61,3 +61,4 @@
 
 </div>
 
+[js] : 
