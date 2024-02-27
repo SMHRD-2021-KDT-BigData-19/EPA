@@ -19,7 +19,7 @@
 </br>
 
 ## 3. ERD 설계
-
+![image01](https://github.com/SMHRD-2021-KDT-BigData-19/EPA/assets/151595284/14a664da-2943-437e-ac78-d707920a9368)
 
 
 ## 4. 핵심 기능
