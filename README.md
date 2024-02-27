@@ -12,9 +12,9 @@
 
 ## 2. 사용 기술
 
-| JavaScript | Python |  Spring  |  Mediapipe   |
-| :--------: | :--------: | :------: | :-----: | 
-|  <img src="https://github.com/n0hack/readme-template/assets/151595284/cba04890-eae7-4dce-8769-d4130c0b56cb.png" width="100" height="100"/> |    <img src="https://github.com/n0hack/readme-template/assets/151595284/76433d79-57d7-4626-b32b-8323d551ae1b" width="100" height="100"/>     | <img src="https://github.com/n0hack/readme-template/assets/151595284/72f17840-9db3-489d-b895-b62dcedf7149" width="100" height="100"/>| <img src="https://github.com/n0hack/readme-template/assets/151595284/54b5b452-7ff5-46a6-ab4b-cb02eed2c0fe" width="100" height="100"/> |
+| JavaScript | Python |  Spring  |  Mediapipe   | Falsk |
+| :--------: | :--------: | :------: | :-----: | :-----: |
+|  <img src="https://github.com/n0hack/readme-template/assets/151595284/cba04890-eae7-4dce-8769-d4130c0b56cb.png" width="100" height="100"/> |    <img src="https://github.com/n0hack/readme-template/assets/151595284/76433d79-57d7-4626-b32b-8323d551ae1b" width="100" height="100"/>     | <img src="https://github.com/n0hack/readme-template/assets/151595284/72f17840-9db3-489d-b895-b62dcedf7149" width="100" height="100"/>| <img src="https://github.com/n0hack/readme-template/assets/151595284/54b5b452-7ff5-46a6-ab4b-cb02eed2c0fe" width="100" height="100"/> | <img src="https://github.com/n0hack/readme-template/assets/151595284/72f17840-9db3-489d-b895-b62dcedf7149" width="100" height="100"/> |
 
 </br>
 
