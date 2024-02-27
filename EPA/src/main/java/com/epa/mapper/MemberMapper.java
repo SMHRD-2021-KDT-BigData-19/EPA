@@ -2,8 +2,7 @@ package com.epa.mapper;
 
 
 import com.epa.entity.Member;
-import com.epa.entity.Profile;
-import com.epa.entity.ProfileList;
+
 
 public interface MemberMapper {
 	

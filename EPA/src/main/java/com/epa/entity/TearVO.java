@@ -1,6 +1,5 @@
 package com.epa.entity;
 
-import java.util.Date;
 
 public class TearVO {
     private String MEM_ID;
