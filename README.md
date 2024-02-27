@@ -14,7 +14,7 @@
 
 | JavaScript | TypeScript |  React   |  Node   |
 | :--------: | :--------: | :------: | :-----: |
-|   ![다운로드](https://github.com/n0hack/readme-template/assets/151595284/cba04890-eae7-4dce-8769-d4130c0b56cb)    |   ![ts]    | ![react] | ![node] |
+|   ![js]    |   ![ts]    | ![react] | ![node] |
 
 </br>
 
@@ -56,6 +56,8 @@
 
 ## 5. 핵심 트러블 슈팅
 ### 5.1. 
+
+[js] : https://github.com/n0hack/readme-template/assets/151595284/cba04890-eae7-4dce-8769-d4130c0b56cb
 
 <div markdown="1">
 
