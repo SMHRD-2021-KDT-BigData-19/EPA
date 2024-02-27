@@ -46,12 +46,12 @@
     color: #fff;
     padding: 10px 0;
     text-align: center;
-    background-color: #333; /* Adjust the background color as needed */
-    z-index: 100; /* Ensure the footer stays on top of other elements */
+    background-color: #333;
+    z-index: 100; 
 }
 
 .container {
-    padding-bottom: 60px; /* Adjust according to the height of your footer */
+    padding-bottom: 60px; 
 }
     #postForm > label > b{
     font-size:20px;}
