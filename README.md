@@ -79,7 +79,8 @@
 <summary><b>기존 코드</b></summary>
 <div markdown="1">
 ```java
-  @PostMapping("/boardInsert.do")
+  
+      @PostMapping("/boardInsert.do")
       public String boardInsert(Board vo, MultipartHttpServletRequest file) {
          
          // user_id, category, title, content DB에 업로드
