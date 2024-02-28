@@ -139,6 +139,7 @@
           <c:forEach items="${Ivo}" var="i">
           <img src="http://172.30.1.66:8080/imgEPA/${vo.BD_NO}/${i.file}">
           </c:forEach>
+          <br>
           ${fn:replace(vo.BD_C, newLine, "<br>") }</td>
         </tr>
         
