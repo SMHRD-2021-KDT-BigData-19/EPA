@@ -56,7 +56,7 @@
 ## 🌟 핵심 트러블 슈팅
 ### 1️⃣ 
 
-## 그외 트러블슈팅
+## 📍그외 트러블슈팅
 <details>
   <summary><b>출석 기능오류</b></summary>
 <div markdown="1">
