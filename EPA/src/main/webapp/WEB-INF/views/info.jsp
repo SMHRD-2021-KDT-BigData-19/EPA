@@ -94,26 +94,36 @@
             <p>스탠딩사이드크런치</p>
         </div>
         <div class="image-with-text">
+            <a href="#" onclick="showAlert()">
             <img src="${cpath}/resources/img/푸쉬업.jpg" alt="Image 2">
             <p>푸쉬업</p>
+            </a>
         </div>
         <div class="image-with-text">
+        	<a href="#" onclick="showAlert()">
             <img src="${cpath}/resources/img/싯업.jpg" alt="Image 3">
             <p>싯업</p>
+            </a>
         </div>
     </div>
     <div class="row">
         <div class="image-with-text">
+            <a href="#" onclick="showAlert()">
             <img src="${cpath}/resources/img/레그레이즈.jpg" alt="Image 4">
             <p>레그레이즈</p>
+            </a>
         </div>
         <div class="image-with-text">
+        	<a href="#" onclick="showAlert()">
             <img src="${cpath}/resources/img/v업.jpg" alt="Image 5">
             <p>v업</p>
+            </a>
         </div>
         <div class="image-with-text">
+            <a href="#" onclick="showAlert()">
             <img src="${cpath}/resources/img/런지.jpg" alt="Image 6">
             <p>런지</p>
+            </a>
         </div>
     </div>
 </div>
@@ -124,5 +134,10 @@
       <div class="footer-contact">Designed by 바른자세</div>
     </div>
 </footer>
+<script>
+    function showAlert() {
+        alert("미구현입니다");
+    }
+</script>
 </body>
 </html>

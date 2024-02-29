@@ -36,17 +36,18 @@
 }
 
 #ex_video {
-	width: 600px;
-	height: 600px;
-	position: absolute;
-	margin-right: 50px;
-	right: 0;
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    bottom: 0;
+    right: 70px; /* 조절 가능한 값으로 설정, 예: 300px */
 }
 
 #processedImage {
-	width: 600px;
-	height: 600px;
-	margin-left: 100px;
+    width: 600px;
+    height: 400px;
+	margin-top: 60px;
+	margin-left : 40px;
 }
 
 #startButton, #stopButton {
@@ -73,11 +74,12 @@
 	display: none;
 	margin: 0 auto;
 }
+
 footer {
-    position: absolute;
-    margin-top: auto;
-    width: 100%;
-    margin-bottom:-200px;
+	position: absolute;
+	margin-top: auto;
+	width: 100%;
+	margin-bottom: -200px;
 }
 </style>
 <body>
