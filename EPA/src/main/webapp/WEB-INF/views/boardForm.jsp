@@ -120,7 +120,7 @@
         <option value="식단관리">식단관리</option>
        </select><br>
        
-       <input type="file" class="real-upload" accept="image/*" id="file" name="file" required multiple>
+       <input type="file" class="real-upload" accept="image/*" id="file" name="file" multiple>
        
 
         <label for="content"><b>내용</b></label>

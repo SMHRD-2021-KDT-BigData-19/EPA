@@ -136,9 +136,18 @@
                %>
              
           <td class="boardtd">
-          <c:forEach items="${Ivo}" var="i">
-          <img src="http://172.30.1.66:8080/imgEPA/${vo.BD_NO}/${i.file}">
-          </c:forEach>
+           <c:choose>
+        <c:when test="${not empty Ivo}">
+	            <c:forEach items="${Ivo}" var="i">
+	                <c:if test="${not empty i.file}">
+	                    <img src="http://172.30.1.66:8080/imgEPA/${vo.BD_NO}/${i.file}">
+	                </c:if>
+	            </c:forEach>
+	        </c:when>
+	        <c:otherwise>
+	            <!-- 파일이 없을 때 아무것도 표시하지 않음 -->
+	        </c:otherwise>
+	    </c:choose>
           <br>
           ${fn:replace(vo.BD_C, newLine, "<br>") }</td>
         </tr>
