@@ -33,6 +33,27 @@
     height: 600px;
     margin-left: 100px;
   }
+  #startButton, #stopButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  #startButton:hover, #stopButton:hover {
+    background-color: #45a049;
+  }
+  #startButton {
+    display: block;
+    margin: 0 auto;
+  }
+  #stopButton {
+    display: none;
+    margin: 0 auto;
+  }
 </style>
 <body>
   <header>
