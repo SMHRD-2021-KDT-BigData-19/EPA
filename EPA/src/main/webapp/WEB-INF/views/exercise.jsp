@@ -38,7 +38,9 @@
 #ex_video {
 	width: 600px;
 	height: 600px;
-	margin-left: 800px;
+	position: absolute;
+	margin-right: 50px;
+	right: 0;
 }
 
 #processedImage {
@@ -70,6 +72,12 @@
 #stopButton {
 	display: none;
 	margin: 0 auto;
+}
+footer {
+    position: absolute;
+    margin-top: auto;
+    width: 100%;
+    margin-bottom:-200px;
 }
 </style>
 <body>
