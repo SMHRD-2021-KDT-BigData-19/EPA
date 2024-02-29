@@ -17,6 +17,10 @@
     <select id="boardList4" resultType="com.epa.entity.Board">
         select * from BOARD_TB where BD_HEAD = '식단관리'
     </select>
+    
+    <select id="search" parameterType="String" resultType="com.epa.entity.Board">
+       SELECT * FROM BOARD_TB WHERE BD_T LIKE CONCAT('%', #{res}, '%')
+    </select>
      
      <insert id="boardInsert" parameterType="com.epa.entity.Board" keyProperty="BD_NO" useGeneratedKeys="true">
         insert into BOARD_TB (BD_T,BD_HEAD,BD_C,MEM_ID)

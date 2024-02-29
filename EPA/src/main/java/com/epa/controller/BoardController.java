@@ -12,11 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -79,19 +80,22 @@ public class BoardController {
       List<Board> list4 = mapper.boardList4();
       model.addAttribute("list4", list4);
       return "boardList4";
-
    }
-
-
+   
+   @PostMapping("/search.do")
+   public @ResponseBody List<Board> search(String input) {
+     String res = input;
+     
+     List<Board> list5 = mapper.search(res);
+      
+      return list5;
+   }
 
    @RequestMapping("/boardForm.do")
    public void boardForm() {
 
    }
-   
-   
-
-
+ 
    @PostMapping("/boardInsert.do")
       public String boardInsert(Board vo, MultipartHttpServletRequest file) {
          
@@ -196,6 +200,15 @@ public class BoardController {
       mapper.boardUpdate(vo);
 
       return "redirect:/boardList.do";
+   }
+   
+   @GetMapping("/searchContent.do/{BD_NO}")
+   public @ResponseBody String searchContent(@PathVariable int BD_NO, Model model) {
+      
+      Board vo = mapper.boardContent(BD_NO);
+      System.out.println(BD_NO);
+      model.addAttribute("vo", vo);
+      return "redirect:/boardContent.do/"+vo.getBD_NO();
    }
    
 

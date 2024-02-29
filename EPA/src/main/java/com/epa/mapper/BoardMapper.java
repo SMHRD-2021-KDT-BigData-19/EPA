@@ -39,6 +39,8 @@ public interface BoardMapper {
 
 	public void commentDelete(int cOM_NO);
 
+	public List<Board> search(String res);
+
 	
 
 
