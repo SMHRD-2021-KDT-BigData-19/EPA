@@ -305,7 +305,7 @@ footer {
                <b>출석 수</b>
             </div>
             <c:set var="attendCount" value="${tearVO.ATTEND_COUNT}" />
-            <progress class="levelpro1" value="${attendCount}" max="70"></progress>
+            <progress class="levelpro1" value="${attendCount}" max="365"></progress>
          </div>
 
          <div class="levelbar">
@@ -313,7 +313,7 @@ footer {
                <b>운동 완료 횟수</b>
             </div>
             <c:set var="exerciseCount" value="${tearVO.EX_RCOUNT}" />
-			<progress class="levelpro2" value="${exerciseCount}" max="70"></progress>
+			<progress class="levelpro2" value="${exerciseCount}" max="100"></progress>
 
          </div>
          <div class="button-container">
