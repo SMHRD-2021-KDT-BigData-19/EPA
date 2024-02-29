@@ -14,38 +14,50 @@
 </head>
 <style>
   #videoElement, #canvasElement {
-    transform: scaleX(-1); /* 영상 좌우 반전을 위한 CSS 속성 */
+    transform: scaleX(-1);
   }
   #videoElement{
-     width: 600px;
+    width: 600px;
     margin-top: 30px;
     margin-left: 100px;
-    height: 600px;}
-    
+    height: 600px;
+    display: none;
+  }
   #ex_video{
-  width:600px;
-  height:600px;
-  margin-left:100px;}
-  
+    width:600px;
+    height:600px;
+    margin-left:100px;
+  }
+  #processedImage {
+    width: 600px;
+    height: 600px;
+    margin-left: 100px;
+  }
 </style>
 <body>
-<header>
-<a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
+  <header>
+    <a href="#"><img id="login_icon" src="${cpath}/resources/img/login.png" width="20" height="20"></img></a>
     <a href="${cpath}/Logout.do">로그아웃</a>
-   </header>
-   <div class="navbar">
-      <a href="${cpath}/mainLogin.do"><img id="icon"src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></img></a>
-      <a href="${cpath}/info.do">운동정보</a> 
-      <a href="${cpath}/boardList.do">커뮤니티</a>
-      <a href="${cpath}/use.do">EPA이용방법</a>
-       <a href="${cpath}/mypage.do">마이페이지</a>
-   </div>
+  </header>
+  <div class="navbar">
+    <a href="${cpath}/mainLogin.do"><img id="icon"src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></img></a>
+    <a href="${cpath}/info.do">운동정보</a> 
+    <a href="${cpath}/boardList.do">커뮤니티</a>
+    <a href="${cpath}/use.do">EPA이용방법</a>
+    <a href="${cpath}/mypage.do">마이페이지</a>
+  </div>
+  <button id="startButton">시작하기</button>
+  <button id="stopButton" style="display:none;">종료하기</button>
+  <img id="processedImage" src="" alt="Processed Image" style="display:none;"> <!-- 초기에는 이미지를 숨김 처리 -->
   <video id="videoElement" autoplay></video>
   <video id="ex_video" autoplay muted loop>
-		<source src="${cpath}/resources/video/스탠딩 사이드 크런치.mp4" type="video/mp4">
-	</video>
+    <source src="${cpath}/resources/video/스탠딩 사이드 크런치.mp4" type="video/mp4">
+  </video>
+  
   <canvas id="canvasElement" width="400" height="300" style="display: none;"></canvas>
-<footer>
+  
+
+  <footer>
     <div class="inner">
       <div class="footer-message">당신의 올바른 자세를 돕기 위해 EPA가 함께합니다.</div>
       <div class="footer-copyright">Copyright 2024 All ⓒ rights reserved</div>
@@ -53,91 +65,106 @@
     </div>
   </footer>
   <script>
-    // 웹카메라 액세스 권한 요청 및 스트림 표시
+//이미지 요소 가져오기
+  const processedImageElement = document.getElementById('processedImage');
+
+  // 이미지가 로드되었을 때 호출되는 이벤트 핸들러
+  processedImageElement.onload = function() {
+    // 이미지가 로드되면 보여주기
+    processedImageElement.style.display = 'block';
+  };
+
+  // 이미지가 로드되지 않았을 때 호출되는 이벤트 핸들러
+  processedImageElement.onerror = function() {
+    // 이미지가 없으면 숨기기
+    processedImageElement.style.display = 'none';
+  };
+
+  // 시작하기 버튼 요소 가져오기
+  const startButton = document.getElementById('startButton');
+  // 종료하기 버튼 요소 가져오기
+  const stopButton = document.getElementById('stopButton');
+
+  // 시작하기 버튼 클릭 이벤트 핸들러 추가
+  startButton.addEventListener('click', function() {
+    // 비디오 실행
+    startVideo();
+    // 시작하기 버튼 숨기고, 종료하기 버튼 보이기
+    startButton.style.display = 'none';
+    stopButton.style.display = 'block';
+  });
+
+  // 종료하기 버튼 클릭 이벤트 핸들러 추가
+  stopButton.addEventListener('click', function() {
+    // 비디오 종료
+    stopVideo();
+    // setInterval 함수 종료
+    clearInterval(intervalId);
+    // 시작하기 버튼 보이기, 종료하기 버튼 숨기기
+    startButton.style.display = 'block';
+    stopButton.style.display = 'none';
+  });
+
+  // 비디오 실행 함수
+  function startVideo() {
     navigator.mediaDevices.getUserMedia({ video: true })
       .then(function(stream) {
         const video = document.getElementById('videoElement');
         const canvas = document.getElementById('canvasElement');
         const ctx = canvas.getContext('2d');
         
-        video.srcObject = stream; // 웹카메라 스트림을 비디오 요소의 소스로 설정
-        video.play(); // 영상 재생
+        video.srcObject = stream;
+        video.play();
 
-        // 캡처된 영상을 좌우 반전하여 캔버스에 그리는 함수
+        // 비디오 캡처 및 전송 간격 설정
+        intervalId = setInterval(captureFrame, 200);
+
         function captureFrame() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height); // 캔버스 초기화
-          ctx.save(); // 현재 그래픽 상태 저장
-          ctx.scale(-1, 1); // 좌우 반전
-          ctx.drawImage(video, -canvas.width, 0, canvas.width, canvas.height); // 영상을 캔버스에 그림
-          ctx.restore(); // 이전 그래픽 상태로 복원
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.save();
+          ctx.scale(-1, 1);
+          ctx.drawImage(video, -canvas.width, 0, canvas.width, canvas.height);
+          ctx.restore();
           
-          // 캡처된 이미지를 서버로 전송하는 함수 호출
           captureAndSend();
         }
 
-        // 실시간으로 캡처된 이미지를 서버로 전송하는 함수
         function captureAndSend() {
           canvas.toBlob(function(blob) {
             const formData = new FormData();
-            formData.append('image', blob, 'captured_image.jpg'); // Blob 객체를 FormData에 추가
+            formData.append('image', blob, 'captured_image.jpg');
 
             fetch('http://localhost:5000/epa/upload', {
               method: 'POST',
-              body: formData, // FormData 객체 전송
+              body: formData,
               headers: {
-                'Origin': 'http://localhost:8080' // 요청 헤더에 Origin 추가
+                'Origin': 'http://localhost:8080'
               }
             })
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('이미지 업로드 실패');
-              }
-              return response.text(); // 서버로부터 받은 응답 텍스트를 반환
-            })
-            .then(data => {
-              console.log('서버 응답:', data); // 서버로부터 받은 응답 출력
+            .then(response => response.blob())
+            .then(blob => {
+              // 이미지 업데이트
+              processedImageElement.src = URL.createObjectURL(blob);
             })
             .catch(error => {
               console.error('이미지 업로드 오류:', error);
             });
           }, 'image/jpeg');
         }
-
-        setInterval(captureFrame, 1000); // 일정 시간마다 캡처 및 반전 적용 (1초마다)
       })
       .catch(function(err) {
         console.error('웹카메라 액세스 오류:', err);
       });
-    
-    // 웹 소켓 클라이언트 연결
-    //const socket = new WebSocket('ws://localhost:5000/socket');
-    const socket = io('http://localhost:5000');
+  }
 
-    // 연결이 열리면 실행되는 이벤트 핸들러
-    socket.onopen = function(event) {
-      console.log('WebSocket 연결이 열렸습니다.');
-    };
-
-    // 메시지를 받았을 때 실행되는 이벤트 핸들러
-    socket.onmessage = function(event) {
-      console.log('서버로부터 메시지를 받았습니다:', event.data);
-    };
-
-    // 에러가 발생했을 때 실행되는 이벤트 핸들러
-    socket.onerror = function(error) {
-      console.error('WebSocket 오류:', error);
-    };
-
-    // 연결이 닫혔을 때 실행되는 이벤트 핸들러
-    socket.onclose = function(event) {
-      console.log('WebSocket 연결이 닫혔습니다.');
-    };
-
-    // 서버에 메시지를 보내는 함수
-    function sendMessage(message) {
-      socket.send(message);
-    }
-
+  // 비디오 종료 함수
+  function stopVideo() {
+    const video = document.getElementById('videoElement');
+    // 비디오 정지
+    video.pause();
+    // 비디오 소스 제거
+    video.srcObject = null;
+  }
   </script>
 </body>
 </html>
