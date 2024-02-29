@@ -61,9 +61,8 @@
     </delete>
     
     
-    
     <update id="boardUpdate" parameterType="com.epa.entity.Board">
-        update BOARD_TB set BD_T=#{BD_T}, BD_C=#{BD_C}
+        update BOARD_TB set BD_T=#{BD_T},BD_HEAD=#{BD_HEAD},BD_C=#{BD_C}
         where BD_NO=#{BD_NO}
     </update>
     
