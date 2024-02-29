@@ -98,8 +98,8 @@
   <a class="fromCenter" href="${cpath}/boardList3.do">오운완</a>
   <span>&nbsp;&nbsp;&nbsp;</span>
   <a class="fromCenter" href="${cpath}/boardList4.do">식단관리</a>
-  
 </div>
+
 <br>
 <div><button id="wirter" onclick="goForm()">글쓰기</button></div>
 

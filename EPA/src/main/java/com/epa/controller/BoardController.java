@@ -198,8 +198,5 @@ public class BoardController {
       return "redirect:/boardList.do";
    }
    
-   
-   
-
 
 }
