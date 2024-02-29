@@ -17,5 +17,6 @@ public interface TearMapper {
     void updateAttendCount(@Param("memId") String memId, @Param("attendCount") int attendCount);
     void updateLastDate(Map<String, Object> parameters);
     void updateLastDate(@Param("memId") String memId, @Param("lastDate") String lastDate);
+	void updateExerciseCount(String mem_ID);
 
 }

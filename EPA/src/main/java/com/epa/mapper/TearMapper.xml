@@ -21,8 +21,13 @@
 
 	<update id="updateLastDate" parameterType="map">
 		UPDATE TEAR_TB
-		SET LASTDATE = STR_TO_DATE(#{lastDate}, '%Y-%m-%d')
+		SET
+		LASTDATE = STR_TO_DATE(#{lastDate}, '%Y-%m-%d')
 		WHERE MEM_ID = #{memId}
+	</update>
+
+	<update id="updateExerciseCount">
+		UPDATE TEAR_TB SET EX_RCOUNT = EX_RCOUNT + 1 WHERE MEM_ID = #{memId}
 	</update>
 </mapper>
 

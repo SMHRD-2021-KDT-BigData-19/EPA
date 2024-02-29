@@ -74,4 +74,20 @@ public class TearController {
             return "출석되었습니다";
         }
     }
+    
+    @PostMapping(value = "/stopExercise", produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String stopExercise(HttpSession session, Model model) {
+        Member info = (Member) session.getAttribute("loginMember");
+
+        if (info == null) {
+            return "login";
+        }
+
+        // TEAR_TB의 EX_RCOUNT를 1 증가시키는 로직
+        tearMapper.updateExerciseCount(info.getMEM_ID());
+
+        // 클라이언트에게 "운동이 종료되었습니다" 메시지 전달
+        return "운동이 종료되었습니다";
+    }
 }

@@ -1,7 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.*"%>
+
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
+<c:set var="memId" value="${sessionScope.loginMember.MEM_ID}" />
+
+<script>
+	var cpath = "${pageContext.request.contextPath}";
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,16 +122,35 @@
     stopButton.style.display = 'block';
   });
 
-  // 종료하기 버튼 클릭 이벤트 핸들러 추가
   stopButton.addEventListener('click', function() {
-    // 비디오 종료
-    stopVideo();
-    // setInterval 함수 종료
-    clearInterval(intervalId);
-    // 시작하기 버튼 보이기, 종료하기 버튼 숨기기
-    startButton.style.display = 'block';
-    stopButton.style.display = 'none';
-  });
+	    // 비디오 종료
+	    stopVideo();
+	    // setInterval 함수 종료
+	    clearInterval(intervalId);
+
+	    // 비동기로 운동 종료 요청 보내기
+	    fetch(cpath + '/stopExercise', {
+	        method: 'POST',
+	        headers: {
+	            'Content-Type': 'application/json'
+	        },
+	        // 여기에 필요한 데이터를 JSON 형태로 전송할 수 있습니다.
+	        // 예: body: JSON.stringify({ memId: '사용자 아이디' }),
+	    })
+	    .then(response => response.text())
+	    .then(message => {
+	        // 클라이언트에게 받은 메시지를 적절한 방식으로 처리
+	        alert(message);
+	    })
+	    .catch(error => {
+	        console.error('운동 종료 요청 오류:', error);
+	    });
+
+	    // 시작하기 버튼 보이기, 종료하기 버튼 숨기기
+	    startButton.style.display = 'block';
+	    stopButton.style.display = 'none';
+	});
+
 
   // 비디오 실행 함수
   function startVideo() {

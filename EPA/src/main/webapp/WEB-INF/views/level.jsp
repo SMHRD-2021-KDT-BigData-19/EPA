@@ -312,7 +312,9 @@ footer {
             <div class="leveltext2">
                <b>운동 완료 횟수</b>
             </div>
-            <progress class="levelpro2" value="3" max="70"></progress>
+            <c:set var="exerciseCount" value="${tearVO.EX_RCOUNT}" />
+			<progress class="levelpro2" value="${exerciseCount}" max="70"></progress>
+
          </div>
          <div class="button-container">
             <a href="${cpath}/calendar.do" class="btn-3d khaki">운동루틴 설정</a> <a
