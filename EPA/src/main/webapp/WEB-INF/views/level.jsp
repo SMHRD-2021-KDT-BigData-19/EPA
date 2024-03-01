@@ -387,22 +387,30 @@ footer {
                      });
                   });
 
-       function handleAttendance() {
-           // AJAX로 서버에 데이터 요청
-           var xhr = new XMLHttpRequest();
-           xhr.onreadystatechange = function () {
-               if (xhr.readyState === 4 && xhr.status === 200) {
-                   var attendanceMessage = xhr.responseText;
-                   if (attendanceMessage) {
-                       alert(attendanceMessage);
-                   }
-               }
-           };
-           xhr.open("POST", "${cpath}/updateTear", true);
-           xhr.send();
-           
-           return false; // 폼이 실제로 서버로 제출되지 않도록 합니다.
-       }
+      function handleAttendance() {
+          // AJAX로 서버에 데이터 요청
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4) {
+                  if (xhr.status === 200) {
+                      var attendanceMessage = xhr.responseText;
+                      if (attendanceMessage) {
+                          alert(attendanceMessage);
+                          if (attendanceMessage === "출석되었습니다") {
+                              window.location.href = "${cpath}/Tear.do"; // 출석 성공 시 Tear.do로 이동
+                          }
+                      }
+                  } else {
+                      alert("서버 오류가 발생했습니다. 다시 시도해주세요.");
+                  }
+              }
+          };
+          xhr.open("POST", "${cpath}/updateTear", true);
+          xhr.send();
+          
+          return false; // 폼이 실제로 서버로 제출되지 않도록 합니다.
+      }
+
    </script>
 </body>
 </html>

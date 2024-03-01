@@ -99,7 +99,8 @@
   <span>&nbsp;&nbsp;&nbsp;</span>
   <a class="fromCenter" href="${cpath}/boardList4.do">식단관리</a>
 </div>
-
+<input type="text" id="myInput" name="myInput">
+    <button id="submitButton">검색</button>
 <br>
 <div><button id="wirter" onclick="goForm()">글쓰기</button></div>
 
