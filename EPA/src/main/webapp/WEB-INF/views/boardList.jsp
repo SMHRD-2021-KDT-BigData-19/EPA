@@ -129,9 +129,22 @@
     }
     
     
-    
     $(document).ready(function(){
+        // 엔터 키 입력 이벤트 처리
+        $("#myInput").keypress(function(event) {
+            // 눌린 키가 엔터 키인지 확인
+            if (event.which === 13) {
+                // 엔터 키가 눌렸을 때 검색 수행
+                search();
+            }
+        });
+
         $("#submitButton").click(function(){
+            // 검색 버튼 클릭 시 검색 수행
+            search();
+        });
+
+        function search() {
             var inputValue = $("#myInput").val(); // 입력값 가져오기
             $.ajax({
                 type: "POST", // 또는 "GET"
@@ -145,7 +158,7 @@
                     console.error("에러 발생: " + error);
                 }
             });
-        });
+        }
     });
     
     function callBack(data) {

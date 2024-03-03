@@ -7,7 +7,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="387218639784-ae1jch9aurgpjk22c0amliljj0ap16b8.apps.googleusercontent.com"> 
     <title>Document</title>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -161,8 +160,6 @@ h2 {
 			          var id_token = googleUser.getAuthResponse().id_token;
 			     console.log("ID Token:" + id_token);
 			   }
-			
-
        
             </script>
             <div class="submit">
