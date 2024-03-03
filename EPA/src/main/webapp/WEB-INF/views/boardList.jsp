@@ -48,6 +48,31 @@
        margin-left: 600px;
     
     }
+    
+    /* 입력란 스타일 */
+    #myInput {
+        padding: 8px 16px; /* 상하 여백 8px, 좌우 여백 16px */
+        border: none; /* 테두리 없음 */
+        border-radius: 20px; /* 타원형으로 만들기 위해 반지름 설정 */
+        margin-right: 10px; /* 오른쪽 여백 */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 그림자 효과 */
+    }
+
+    /* 검색 버튼 스타일 */
+    #submitButton {
+        padding: 8px 20px; /* 상하 여백 8px, 좌우 여백 20px */
+        border: none; /* 테두리 없음 */
+        border-radius: 20px; /* 타원형으로 만들기 위해 반지름 설정 */
+        background-color: #007bff; /* 배경색 */
+        color: white; /* 글자색 */
+        cursor: pointer; /* 커서 포인터로 변경 */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 효과 */
+    }
+
+    /* 마우스를 올렸을 때 버튼 스타일 */
+    #submitButton:hover {
+        background-color: #0056b3; /* 배경색 변경 */
+    }
     </style>
 </head>
 <body>
