@@ -97,9 +97,11 @@ function adjustFooterPosition() {
 	<h3>* EPA의 모든 서비스는 로그인 후 사용가능합니다!</h3><br>
 	<h2 style="color:blue;">· 운동 정보</h2><br>
 	<h2 style="color:blue;">· 커뮤니티</h2>
-	<h2>- 커뮤니티 탭에서 카테고리별로 글을 작성할 수 있습니다.</h2>
+	<h2>- 커뮤니티 탭에서 카테고리별로 글을 작성할 수 있습니다.<br><br>
+		- "검색할 내용을 입력해주세요."에 검색어를 입력하면, 해당 검색어가 포함된 게시물을 확인 할 수 있습니다.  </h2>
+	
 	<div id="com_img">
-	<a><img src="${cpath}/resources/img/커뮤니티.png" style = "width:600px; height:500px;"></img></a>
+	<a><img src="${cpath}/resources/img/커뮤니티메인.png" style = "width:600px; height:500px;"></img></a>
 	<a><img src="${cpath}/resources/img/커뮤니티작성.png" style = "width:600px; height:500px;""></img></a>
 	</div><br>
 	<h2 style="color:blue;">· 마이페이지</h2>
