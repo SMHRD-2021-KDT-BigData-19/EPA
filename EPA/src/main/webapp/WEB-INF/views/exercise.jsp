@@ -59,6 +59,7 @@
 	cursor: pointer;
 	border-radius: 5px;
 	margin-bottom: 10px;
+	
 }
 
 #startButton:hover, #stopButton:hover {

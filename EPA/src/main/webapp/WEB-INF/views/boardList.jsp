@@ -12,25 +12,31 @@
     <link rel="stylesheet" href="${cpath}/resources/css/community.css">
     <title>boardList</title>
     <style>
+    
+    
       tr:hover {
       background-color: #f5f5f5;
       }
       
       
-    #wirter {
-        background-color: #FFC0CB;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        font-weight: bold; 
-        cursor: pointer;
-        border-radius: 10px;
-       margin-left: 1330px;
-    }
+   #wirter {
+    background-color: #FFC0CB;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 90px;
+    float: left;
+    margin-top: 10px; 
+    margin-right: 80px;
+    margin-bottom: 20px;
+}
 
     #wirter:hover {
         background-color: #FF8E99;
@@ -49,30 +55,43 @@
     
     }
     
-    /* 입력란 스타일 */
-    #myInput {
-        padding: 8px 16px; /* 상하 여백 8px, 좌우 여백 16px */
-        border: none; /* 테두리 없음 */
-        border-radius: 20px; /* 타원형으로 만들기 위해 반지름 설정 */
-        margin-right: 10px; /* 오른쪽 여백 */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 그림자 효과 */
-    }
+  #inputContainer {
+    margin-right: 70px; 
+    float: right;
+    margin-top: 10px; 
+}
 
-    /* 검색 버튼 스타일 */
-    #submitButton {
-        padding: 8px 20px; /* 상하 여백 8px, 좌우 여백 20px */
-        border: none; /* 테두리 없음 */
-        border-radius: 20px; /* 타원형으로 만들기 위해 반지름 설정 */
-        background-color: #007bff; /* 배경색 */
-        color: white; /* 글자색 */
-        cursor: pointer; /* 커서 포인터로 변경 */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 효과 */
-    }
+#myInput {
+    padding: 8px 16px; 
+    border: none; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    float: left; 
+    margin-top:-5px;
+}
 
+/* 검색 버튼 스타일 */
+#submitButton {
+    padding: 15px; 
+    width: 40px; 
+    height: 40px;
+    border: none; 
+    background-image: url('${cpath}/resources/img/검색.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    cursor: pointer; 
+    background-color: transparent;
+    float: left;
+    margin-left: 10px; 
+    margin-top: -5px; 
+}
     /* 마우스를 올렸을 때 버튼 스타일 */
-    #submitButton:hover {
-        background-color: #0056b3; /* 배경색 변경 */
-    }
+   #submitButton:hover {
+    opacity: 0.8; /* 호버 효과 */
+}
+
+
     </style>
 </head>
 <body>
@@ -189,10 +208,15 @@
   <span>&nbsp;&nbsp;&nbsp;</span>
   <a class="fromCenter" href="${cpath}/boardList4.do">식단관리</a>
 </div>
-<input type="text" id="myInput" name="myInput">
-    <button id="submitButton">검색</button>
+
 <br>
-<div><button id="wirter" onclick="goForm()">글쓰기</button></div>
+<div>
+    <button id="wirter" onclick="goForm()">글쓰기</button>
+    <div id="inputContainer">
+       <input type="text" id="myInput" name="myInput" placeholder="검색할 내용을 입력해주세요.">
+        <button id="submitButton"></button>
+    </div>
+</div>
 <div id="list"></div>
 <table id="listTable">
   <thead>
