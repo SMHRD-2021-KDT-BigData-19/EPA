@@ -161,10 +161,12 @@
         <tr id="small">
             <td style="text-align: right;" class="boardtd"></td>
             <td style="text-align: right;" class="boardtd">작성일&nbsp;:&nbsp;&nbsp;${vo.BD_DATE}&nbsp;
-            <c:if test="${not empty loginMember}">
-                    <button onclick="goUpdate()">수정</button>
-                    <button onclick="goDelete()">삭제</button>
-            </c:if>
+             
+	             <c:if test="${loginMember.MEM_ID == vo.MEM_ID}">
+	                    <button onclick="goUpdate()">수정</button>
+	                    <button onclick="goDelete()">삭제</button>
+	           	 </c:if>
+		            
             <button onclick="goList()">목록</button>
             </td>
         </tr>

@@ -201,9 +201,9 @@ background-color:#FFE3EE;}
           운동코드 : 
           
           <select name="EX_ID">
-            <option id="EX_ID" value="code1">운동코드1</option>
-            <option id="EX_ID" value="code2">운동코드2</option>
-            <option id="EX_ID"  value="code3">운동코드3</option>
+            <option id="EX_ID" value="스탠딩사이드크런치">스탠딩사이드크런치</option>
+            <option id="EX_ID" value="런지">런지</option>
+            <option id="EX_ID"  value="푸쉬업">푸쉬업</option>
           </select><br /><br>
           
           일정이름 : <input type="text" name="EXPL_ID" id="EXPL_ID" /><br /><br>
@@ -274,7 +274,7 @@ background-color:#FFE3EE;}
            $("#exampleModal").modal("show");
            var startDate = new Date(arg.start).toISOString().substring(0, 16);
            var endDate = new Date(arg.end).toISOString().substring(0, 16);
-           $("#EX_ID").val('code1');
+           $("#EX_ID").val('스탠딩사이드크런치');
            $("#EXPL_ID").val('');
            $("#EX_SDATE").val(startDate);
            $("#EX_FDATE").val(endDate);
