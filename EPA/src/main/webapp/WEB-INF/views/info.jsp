@@ -101,8 +101,8 @@
         </div>
         <div class="image-with-text">
         	<a href="#" onclick="showAlert()">
-            <img src="${cpath}/resources/img/싯업.jpg" alt="Image 3">
-            <p>싯업</p>
+            <img src="${cpath}/resources/img/런지.jpg" alt="Image 3">
+            <p>런지</p>
             </a>
         </div>
     </div>
@@ -121,8 +121,8 @@
         </div>
         <div class="image-with-text">
             <a href="#" onclick="showAlert()">
-            <img src="${cpath}/resources/img/런지.jpg" alt="Image 6">
-            <p>런지</p>
+            <img src="${cpath}/resources/img/싯업.jpg" alt="Image 6">
+            <p>싯업</p>
             </a>
         </div>
     </div>
