@@ -136,7 +136,6 @@ h2 {
                 <a href="">비밀번호 찾기</a>
                 </div>
             </div>
-              <div class="g-signin2" data-onsuccess="onSignIn"></div>
               
             <!-- 실패 메시지가 있을 경우에만 출력 -->
             <c:if test="${not empty loginError}">
@@ -146,22 +145,6 @@ h2 {
                </script>
             </c:if>
               
-              
-			<script>
-			
-			var cpath = "${cpath}/googleLogin";
-			function onSignIn(googleUser) {
-			     var profile = googleUser.getBasicProfile();
-			     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-			     console.log('Name: ' + profile.getName());
-			     console.log('Image URL: ' + profile.getImageUrl());
-			     console.log('Email: ' + profile.getEmail());
-			     
-			          var id_token = googleUser.getAuthResponse().id_token;
-			     console.log("ID Token:" + id_token);
-			   }
-       
-            </script>
             <div class="submit">
                <input type="submit" value="로그인">
             </div>
