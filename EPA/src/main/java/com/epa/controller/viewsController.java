@@ -93,6 +93,14 @@ public class viewsController {
 	public void exercise() {
 	}
 	
+	@RequestMapping("/exercise2")
+	public void exercise2() {
+	}
+
+	@RequestMapping("/exercise3")
+	public void exercise3() {
+	}
+	
 	@RequestMapping("/mainLogin.do")
 	public void mainLogin() {
 	}

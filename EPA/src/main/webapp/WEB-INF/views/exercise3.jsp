@@ -119,8 +119,8 @@
     const socket = io('http://localhost:5000');
 
     // 'exercise_result' 이벤트를 수신하여 결과를 처리
-    socket.on('exercise_result', function(result) {
-        console.log('Exercise Result:', result);
+    socket.on('exercise_result2', function(result) {
+        console.log('Exercise Result2:', result);
 
         // 결과를 동적으로 생성한 div에 표시
         const resultDisplay = document.getElementById('resultDisplay');
@@ -164,6 +164,8 @@
 
         // 타이머 업데이트 간격 설정 (1초마다)
         timerIntervalId = setInterval(updateTimer, 1000);
+        
+        socket.emit('start_exercise', { exercise: 'pushup' });
     });
 
     stopButton.addEventListener('click', function() {
