@@ -29,10 +29,12 @@
 
     .modal-content {
         background-color: #fefefe;
-        margin: 5% auto;
+        margin: 10% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+        width: 30%; /* 가로 크기를 50%로 조정 */
+        border-radius: 15px; /* 테두리를 둥글게 설정 */
+        text-align: center;
     }
 
     .close {
@@ -157,8 +159,8 @@
                         <span class="close"
                             onclick="document.getElementById('withdrawalModal').style.display='none'">&times;</span>
                         <p>정말로 탈퇴하시겠습니까?</p>
-                        <button id="confirmWithdrawalBtn">네</button>
-                        <button id="cancelWithdrawalBtn">아니오</button>
+                        <a href="${cpath}/delete.do">네</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="${cpath}/mypagecorrection">아니오</a>
                     </div>
                 </div>
             </form>
@@ -170,15 +172,6 @@
                 var modal = document.getElementById("withdrawalModal");
                 modal.style.display = "block";
 
-                // "네" 버튼 클릭 시 delete.do로 이동
-                $("#confirmWithdrawalBtn").on("click", function() {
-                    window.location.href = "${cpath}/delete.do";
-                });
-
-                // "아니오" 버튼 클릭 시 모달 닫기
-                $("#cancelWithdrawalBtn").on("click", function() {
-                	window.location.href = "#";
-                });
             }
         </script>
         <footer>
