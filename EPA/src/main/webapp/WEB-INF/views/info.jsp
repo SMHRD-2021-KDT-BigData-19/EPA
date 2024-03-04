@@ -136,7 +136,7 @@
 </footer>
 <script>
     function showAlert() {
-        alert("미구현입니다");
+        alert("개발 예정입니다!");
     }
 </script>
 </body>

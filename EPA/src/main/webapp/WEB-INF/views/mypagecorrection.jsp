@@ -112,7 +112,7 @@
         <form action="${cpath}/update.do" method="post">
         	<label for="password">비밀번호</label><br>
             <input type="password" id="MEM_PW" name="MEM_PW" placeholder="변경할 비밀번호를 입력해 주세요"><br><br>
-            <input type="password" id="MEM_PW" name="MEM_PW" placeholder="변경할 비밀번호를 한 번 더 입력해 주세요">
+            <input type="password" id="MEM_PW" placeholder="변경할 비밀번호를 한 번 더 입력해 주세요">
             <br><br>
             <label for="nickname">닉네임</label>
             <br>
