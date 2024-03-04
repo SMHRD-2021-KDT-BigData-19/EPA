@@ -169,7 +169,6 @@
       bList += "<th id='num' class='boardtd'>NO</th>";
       bList += "<th class='boardtd'>카테고리</th>";
       bList += "<th class='boardtd'>제목</th>";
-      bList += "<th class='boardtd'>내용</th>";
       bList += "<th class='boardtd'>작성자</th>";
       bList += "<th class='boardtd'>작성 시간</th>";
       bList += "</tr>";
@@ -185,7 +184,6 @@
          // a태그를 눌렀을때 새로운 페이지X, 새로운요청X, 다른 JS함수로 보내겠다~
          // javascript: 함수이름
          bList += "<td class='boardtd'><a href='javascript:void(0);' onclick='goToContent(" + obj.bd_NO + ")'>" + obj.bd_T + "</a></td>";
-         bList += "<td class='boardtd'>"+ obj.bd_C + "</td>";
          bList += "<td class='boardtd'>"+ obj.mem_ID+ "</td>";
          bList += "<td class='boardtd'>"+ obj.bd_DATE+ "</td>";
          bList += "</tr>";   
@@ -237,7 +235,6 @@
           <th id="num" class="boardtd">NO</th>
           <th class="boardtd">카테고리</th>
           <th class="boardtd">제목</th>
-          <th class="boardtd">내용</th>
           <th class="boardtd">작성자</th>
           <th class="boardtd">작성 시간</th>
       </tr>
@@ -249,7 +246,6 @@
           <td class="boardtd">${b.BD_HEAD}</td>
           <c:url var="contentLink" value="/boardContent.do/${b.BD_NO}" />
           <td class="boardtd"><a href="${contentLink}">${b.BD_T}</a></td>
-          <td class="boardtd">${b.BD_C}</td>
           <td class="boardtd">${b.MEM_ID}</td>
           <td class="boardtd">${b.BD_DATE}</td>
       </tr>

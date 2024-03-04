@@ -109,7 +109,6 @@
           <th id="num" class="boardtd">NO</th>
           <th class="boardtd">카테고리</th>
           <th class="boardtd">제목</th>
-          <th class="boardtd">내용</th>
           <th class="boardtd">작성자</th>
           <th class="boardtd">작성 시간</th>
       </tr>
@@ -121,7 +120,6 @@
           <td class="boardtd">${b.BD_HEAD}</td>
           <c:url var="contentLink" value="/boardContent.do/${b.BD_NO}" />
           <td class="boardtd"><a href="${contentLink}">${b.BD_T}</a></td>
-          <td class="boardtd">${b.BD_C}</td>
           <td class="boardtd">${b.MEM_ID}</td>
           <td class="boardtd">${b.BD_DATE}</td>
       </tr>

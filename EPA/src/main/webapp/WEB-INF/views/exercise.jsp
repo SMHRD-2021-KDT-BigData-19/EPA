@@ -5,10 +5,6 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <c:set var="memId" value="${sessionScope.loginMember.MEM_ID}" />
 
-<script>
-    var cpath = "${pageContext.request.contextPath}";
-</script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,7 +97,7 @@
 
 <canvas id="canvasElement" width="400" height="300" style="display: none;"></canvas>
 <div id="resultDisplay" style="display: none; position: fixed; top: 10px; left: 50%; transform: translateX(-50%); background-color: #4CAF50; color: white; padding: 10px; border-radius: 5px;">
-
+</div>
 
 <footer>
     <div class="inner">
