@@ -22,6 +22,14 @@
 body > div.additional-content > h3{
 color:red;}
 
+
+#info_img> a:nth-child(1) > img{
+border: 2px solid black;}
+
+#info_img > a:nth-child(2) > img{
+margin-left:50px;
+
+border: 2px solid black;}
 #com_img > a:nth-child(1) > img{
 border: 2px solid black;}
 
@@ -95,7 +103,16 @@ function adjustFooterPosition() {
 		사용자의 운동 자세를 실시간으로 분석하여 올바른 자세로 운동할 수 있도록 도움을 주는 사이트입니다.</h2><br>
 	<h1>- 서비스 이용방법</h1>
 	<h3>* EPA의 모든 서비스는 로그인 후 사용가능합니다!</h3><br>
-	<h2 style="color:blue;">· 운동 정보</h2><br>
+	<h2 style="color:blue;">· 운동 정보</h2>
+	<h2> - 운동 정보 메뉴에서는 자세 분석을 할 수 있습니다.<br><br>
+		 - 운동 전 스트레칭하기 버튼을 클릭하면 간단한 스트레칭 영상이 제공됩니다.<br><br>
+		 - 스탠딩 사이드 크런치, 푸쉬업 등 해당 운동을 클릭하면 카메라 허용 알림이 뜹니다. 허용을 누르면, 화면 좌측에 사용자의 웹 카메라가 켜집니다.<br><br> 
+		 - 우측에 예시 영상을 보고 운동을 따라하면, EPA에서 자세 분석을 제공합니다.
+	</h2>
+	<div id="info_img">
+	<a><img src="${cpath}/resources/img/운동정보.png" style = "width:600px; height:500px;"></img></a>
+	<a><img src="${cpath}/resources/img/운동분석.png" style = "width:600px; height:500px;"></img></a>
+	</div>
 	<h2 style="color:blue;">· 커뮤니티</h2>
 	<h2>- 커뮤니티 탭에서 카테고리별로 글을 작성할 수 있습니다.<br><br>
 		- "검색할 내용을 입력해주세요."에 검색어를 입력하면, 해당 검색어가 포함된 게시물을 확인 할 수 있습니다.  </h2>
