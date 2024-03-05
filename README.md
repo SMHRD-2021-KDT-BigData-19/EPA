@@ -32,7 +32,7 @@
 <div markdown="1">
 
 ### 1️⃣  전체 흐름
-
+![image](https://github.com/SMHRD-2021-KDT-BigData-19/EPA/assets/151595284/0ce162ac-6b75-4877-8e5d-1f5008a482b2)
 
 ### 2️⃣  사용자 요청
 
