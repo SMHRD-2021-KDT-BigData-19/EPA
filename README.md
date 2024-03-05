@@ -54,8 +54,13 @@
 </br>
 
 ## 🌟 핵심 트러블 슈팅
-### 1️⃣ 
+### 1️⃣ 트러블 슈팅
+<details>
+	
+Spring의 web cam에서 이미지 형태로 flask로 전송을 하여 실시간 MediaPipe가 적용된 화면을 출력하고자 하였으나  MediaPipe가 적용되지 않는 현상이 발생하였고, MediaPipe가 적용된 이미지를 저장하여 출력한 결과 매우 심한 딜레이가 발생함
 
+=> 웹소켓을 통해 Web cam에서 이미지 데이터를 flask로 전송하여 flask에서 MediaPipe가 적용된 이미지 데이터를 바로 JSP 파일로 전송하여 딜레이를 줄일 수 있었음
+</details>
 ## 📍그외 트러블슈팅
 <details>
   <summary><b>출석 기능오류</b></summary>
