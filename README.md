@@ -54,7 +54,6 @@
 </br>
 
 ## 🌟 핵심 트러블 슈팅
-### 1️⃣ 
 <details>
   <summary><b>Flask MediaPipe 오류, 딜레이</b></summary>
 <div markdown="1">
