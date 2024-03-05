@@ -258,3 +258,6 @@ Spring의 web cam에서 이미지 형태로 flask로 전송을 하여 실시간 
 ![스크린샷 2024-02-27 165811](https://github.com/SMHRD-2021-KDT-BigData-19/EPA/assets/151595284/30eb0bbd-8d29-4cc7-90be-d5c102699ac0)
 </div>
 </details>
+
+## 📺시연 영상
+https://youtu.be/Q3Po9jLjGHc
