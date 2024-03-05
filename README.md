@@ -65,6 +65,7 @@ Spring의 web cam에서 이미지 형태로 flask로 전송을 하여 실시간 
 
 </div>
 </details>
+
 ## 📍그외 트러블슈팅
 
 <details>
