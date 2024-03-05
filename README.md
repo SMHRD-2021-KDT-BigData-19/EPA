@@ -55,9 +55,6 @@
 
 ## 🌟 핵심 트러블 슈팅
 ### 1️⃣ 
-
-## 📍그외 트러블슈팅
-
 <details>
   <summary><b>Flask MediaPipe 오류, 딜레이</b></summary>
 <div markdown="1">
@@ -69,6 +66,7 @@ Spring의 web cam에서 이미지 형태로 flask로 전송을 하여 실시간 
 
 </div>
 </details>
+## 📍그외 트러블슈팅
 
 <details>
   <summary><b>출석 기능오류</b></summary>
