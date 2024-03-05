@@ -217,7 +217,7 @@
                 video.play();
 
                 // 비디오 캡처 및 전송 간격 설정
-                intervalId = setInterval(captureFrame, 200);
+                intervalId = setInterval(captureFrame, 220);
 
                 function captureFrame() {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);

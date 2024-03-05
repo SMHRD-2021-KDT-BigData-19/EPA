@@ -5,10 +5,6 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <c:set var="memId" value="${sessionScope.loginMember.MEM_ID}" />
 
-<script>
-    var cpath = "${pageContext.request.contextPath}";
-</script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +52,6 @@
         cursor: pointer;
         border-radius: 5px;
         margin-bottom: 10px;
-
     }
 
     #startButton:hover, #stopButton:hover {
@@ -73,6 +68,18 @@
         margin: 0 auto;
     }
 
+    #countDisplay {
+        position: fixed;
+        top: 30%;
+        left: 75%;
+        transform: translateX(-50%);
+        color: red;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
     footer {
         position: absolute;
         margin-top: auto;
@@ -87,8 +94,10 @@
 </header>
 <div class="navbar">
     <a href="${cpath}/mainLogin.do"><img id="icon" src="${cpath}/resources/img/mainlogo.png" width="150" height="80"></a>
-    <a href="${cpath}/info.do">운동정보</a> <a href="${cpath}/boardList.do">커뮤니티</a>
-    <a href="${cpath}/use.do">EPA이용방법</a> <a href="${cpath}/mypage.do">마이페이지</a>
+    <a href="${cpath}/info.do">운동정보</a>
+    <a href="${cpath}/boardList.do">커뮤니티</a>
+    <a href="${cpath}/use.do">EPA이용방법</a>
+    <a href="${cpath}/mypage.do">마이페이지</a>
 </div>
 <button id="startButton">시작하기</button>
 <button id="stopButton" style="display: none;">종료하기</button>
@@ -96,12 +105,11 @@
 <!-- 초기에는 이미지를 숨김 처리 -->
 <video id="videoElement" autoplay></video>
 <video id="ex_video" autoplay muted loop>
-    <source src="${cpath}/resources/video/스탠딩 사이드 크런치.mp4" type="video/mp4">
+    <source src="${cpath}/resources/video/런지.mp4" type="video/mp4">
 </video>
-
 <canvas id="canvasElement" width="400" height="300" style="display: none;"></canvas>
-<div id="resultDisplay" style="display: none; position: fixed; top: 10px; left: 50%; transform: translateX(-50%); background-color: #4CAF50; color: white; padding: 10px; border-radius: 5px;">
-
+<div id="resultDisplay" style="display: none; position: fixed; top: 25%; left: 75%; transform: translateX(-50%); color: red; padding: 10px; border-radius: 5px; font-size: 25px; font-weight: bold;"></div>
+<div id="countDisplay" style="position: fixed; top: 30%; left: 75%; transform: translateX(-50%); color: black; padding: 10px; border-radius: 5px; font-size: 25px; font-weight: bold;">Count: <span id="count">0</span></div>
 
 <footer>
     <div class="inner">
@@ -111,36 +119,73 @@
     </div>
 </footer>
 <script>
-    //이미지 요소 가져오기
+	var cpath = "${pageContext.request.contextPath}";
+	
+    // 이미지 요소 가져오기
     const processedImageElement = document.getElementById('processedImage');
+    // count를 나타내는 요소 가져오기
+    const countElement = document.getElementById('count');
 
-    
     // Socket.IO 클라이언트 생성
     const socket = io('http://localhost:5000');
 
-    // 'exercise_result' 이벤트를 수신하여 결과를 처리
-    socket.on('exercise_result2', function(result) {
-        console.log('Exercise Result2:', result);
+    // 초기에 한 번만 이벤트를 받기 위한 플래그
+    let isFirstResult = true;
+    // Count 값
+    let count = 0;
+    // 이전에 카운트를 증가시킨 시간
+    let lastCountTime = 0;
+
+    socket.on('exercise_result2', function handleExerciseResult(result) {
+        console.log('Exercise Result:', result);
 
         // 결과를 동적으로 생성한 div에 표시
         const resultDisplay = document.getElementById('resultDisplay');
-        resultDisplay.innerHTML = result;
+        resultDisplay.innerHTML = result.message;
         resultDisplay.style.display = 'block';
 
-        // 5초 후에 결과를 숨김
-        setTimeout(function() {
+        // 여기서 result.exercise로 감지된 운동을 사용할 수 있습니다.
+        console.log('Detected Exercise:', result.exercise);
+
+        // 'good!'이 출력되면 count를 증가시키고 3초간 증가하지 못하도록 설정
+        if (result.message.trim().length > 0 && (Date.now() - lastCountTime) > 3000) { // 수정된 부분
+            count += 1; // 수정된 부분
+            lastCountTime = Date.now(); // 수정된 부분
+
+            countElement.textContent = count;
+        }
+
+        // 3초 후에 결과를 숨김
+        setTimeout(function () {
             resultDisplay.style.display = 'none';
-        }, 1000);
+
+            // 3초 동안은 다시 결과를 받아오지 못하도록 이벤트 핸들러를 제거
+            socket.off('exercise_result2', handleExerciseResult);
+
+            // 일정 시간이 지난 후에 이벤트 핸들러를 다시 등록
+            setTimeout(function () {
+                socket.on('exercise_result2', handleExerciseResult);
+            }, 3000);
+        }, 3000);
+
+        // 처음 이벤트를 받았을 때 플래그를 해제
+        if (isFirstResult) {
+            isFirstResult = false;
+            // 일정 시간이 지난 후에 이벤트 핸들러를 다시 등록
+            setTimeout(function () {
+                socket.on('exercise_result2', handleExerciseResult);
+            }, 3000);
+        }
     });
-    
+
     // 이미지가 로드되었을 때 호출되는 이벤트 핸들러
-    processedImageElement.onload = function() {
+    processedImageElement.onload = function () {
         // 이미지가 로드되면 보여주기
         processedImageElement.style.display = 'block';
     };
 
     // 이미지가 로드되지 않았을 때 호출되는 이벤트 핸들러
-    processedImageElement.onerror = function() {
+    processedImageElement.onerror = function () {
         // 이미지가 없으면 숨기기
         processedImageElement.style.display = 'none';
     };
@@ -151,9 +196,10 @@
     const stopButton = document.getElementById('stopButton');
 
     let startTime;
+    let timerIntervalId;
 
-    //시작하기 버튼 클릭 이벤트 핸들러 추가
-    startButton.addEventListener('click', function() {
+    // 시작하기 버튼 클릭 이벤트 핸들러 추가
+    startButton.addEventListener('click', function () {
         // 비디오 실행
         startVideo();
         // 시작한 시간 기록
@@ -164,15 +210,13 @@
 
         // 타이머 업데이트 간격 설정 (1초마다)
         timerIntervalId = setInterval(updateTimer, 1000);
-        
-        socket.emit('start_exercise', { exercise: 'pushup' });
     });
 
-    stopButton.addEventListener('click', function() {
+    stopButton.addEventListener('click', function () {
         // 비디오 종료
         stopVideo();
         // setInterval 함수 종료
-        clearInterval(intervalId);
+        clearInterval(timerIntervalId);
 
         // 비동기로 운동 종료 요청 보내기
         fetch(cpath + '/stopExercise', {
@@ -197,18 +241,11 @@
         stopButton.style.display = 'none';
     });
 
-    function updateTimer() {
-        const currentTime = new Date().getTime();
-        const elapsedTime = Math.floor((currentTime - startTime) / 1000); // 경과 시간 계산 (초 단위)
-
-        // 타이머를 화면에 표시 (예: 아래는 콘솔에 출력하는 예시)
-        console.log(`경과 시간: ${elapsedTime}초`);
-    }
 
     // 비디오 실행 함수
     function startVideo() {
         navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function(stream) {
+            .then(function (stream) {
                 const video = document.getElementById('videoElement');
                 const canvas = document.getElementById('canvasElement');
                 const ctx = canvas.getContext('2d');
@@ -217,7 +254,7 @@
                 video.play();
 
                 // 비디오 캡처 및 전송 간격 설정
-                intervalId = setInterval(captureFrame, 200);
+                intervalId = setInterval(captureFrame, 220);
 
                 function captureFrame() {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -230,7 +267,7 @@
                 }
 
                 function captureAndSend() {
-                    canvas.toBlob(function(blob) {
+                    canvas.toBlob(function (blob) {
                         const formData = new FormData();
                         formData.append('image', blob, 'captured_image.jpg');
 
@@ -252,7 +289,7 @@
                     }, 'image/jpeg');
                 }
             })
-            .catch(function(err) {
+            .catch(function (err) {
                 console.error('웹카메라 액세스 오류:', err);
             });
     }
@@ -266,5 +303,6 @@
         video.srcObject = null;
     }
 </script>
+
 </body>
 </html>

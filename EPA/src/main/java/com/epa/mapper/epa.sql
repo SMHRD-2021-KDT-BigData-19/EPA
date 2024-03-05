@@ -72,7 +72,7 @@ LIMIT 1;
 
 desc MEM_TB;
 
-select * from PROFILE;
+select * from BOARD_TB;
 select * from PROFILE where mem_id='2'
 
 insert into PROFILE (PROFILEIMG,PROFILEPATH,MEM_ID)
@@ -122,7 +122,7 @@ LAST_ATTEND_DATE
 );
 
 SELECT * FROM IMAGE_TB;
-DROP TABLE TEAR_TB
+delete FROM IMAGE_TB WHERE file_NO = '4';
 -- 만들어진 테이블 보는 곳
 SHOW TABLES;
 
@@ -130,9 +130,12 @@ ALTER TABLE PLAN_TB
 CHANGE COLUMN P_COLOR PN_COLOR
 VARCHAR(20);
 
+UPDATE IMAGE_TB
+SET BD_NO = 5
+WHERE BD_NO = '6'
 
 -- 테이블 정보 보는 곳
 SELECT * FROM PLAN_TB; -- 테이블명 바꾸면 됨
 
 
-TRUNCATE TABLE COMMENT_TB;
+TRUNCATE TABLE IMAGE_TB;
