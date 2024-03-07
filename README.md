@@ -17,8 +17,7 @@
 
 ### 2️⃣  데이터 수집 및 전처리 
 
-<details>
-<div markdown="1">
+
 - AI-Hub의 피트니스 자세 이미지 수집	
 	<details>
 <div markdown="1">
@@ -29,8 +28,7 @@
 
  - 데이터 Numpy 배열로 변환 및 csv 파일 변환
  - OpenCV 및 MediaPipe를 이용한 사용자 데이터 수집
- </div>
-</details>
+
 
  </br>
  
