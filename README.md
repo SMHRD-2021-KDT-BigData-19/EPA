@@ -126,8 +126,8 @@
   <summary><b>Flask MediaPipe 오류, 딜레이</b></summary>
 <div markdown="1">
 
-Spring의 web cam에서 이미지 형태로 flask로 전송을 하여 실시간 MediaPipe가 적용된 화면을 출력하고자 하였으나  MediaPipe가 적용되지 않는 현상이 발생하였고, MediaPipe가 적용된 이미지를 저장하여 출력한 결과 매우 심한 딜레이가 발생함
-![flask 딜레이](https://github.com/SMHRD-2021-KDT-BigData-19/EPA/assets/151595343/6ec100cc-bfd3-457d-8363-895c8f3bd7b3)
+Spring의 web cam에서 이미지 형태로 flask로 전송을 하여 실시간 MediaPipe가 적용된 화면을 출력하고자 하였으나  MediaPipe가 적용되지 않는 현상이 발생하였고, MediaPipe가 적용된 이미지를 저장하여 출력한 결과 매우 심한 딜레이가 발생함<br>
+![flask 딜레이](https://github.com/SMHRD-2021-KDT-BigData-19/EPA/assets/151595343/6ec100cc-bfd3-457d-8363-895c8f3bd7b3)<br>
 => 웹소켓을 통해 Web cam에서 이미지 데이터를 flask로 전송하여 flask에서 MediaPipe가 적용된 이미지 데이터를 바로 JSP 파일로 전송하여 딜레이를 줄일 수 있었음
 <br>
 
