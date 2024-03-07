@@ -18,7 +18,7 @@
 ### 2️⃣  데이터 수집 및 전처리 
 - AI-Hub의 피트니스 자세 이미지 수집
 <details>
- <summary><b>이미지 펼치기</b></summary>
+ <summary><b>### 2️⃣  데이터 수집 및 전처리 </b></summary>
 <div markdown="1">
 	
 ![KakaoTalk_20240307_094019221](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/f7743ae8-ff71-415e-b951-e67121a09c78)
