@@ -9,7 +9,6 @@
 ### 1️⃣  프로젝트 기획 
 
 - 기획 및 시장 조사 
-- 기술 조사
 - 프로젝트 목표 및 진행 단계 설정
 - 서비스 흐름도 및 화면 구성도 구성 
 - 기획서 및 개요서 작성
@@ -95,23 +94,27 @@
 <div markdown="1">
 
 ### ⭐  전체 흐름
-![image](https://github.com/SMHRD-2021-KDT-BigData-19/EPA/assets/151595284/0ce162ac-6b75-4877-8e5d-1f5008a482b2)
+![KakaoTalk_20240307_100505469](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/9fdcbaed-6b4e-4565-aec5-6a45c5cbac60)
 
 ### ⭐  유스케이스
 ![KakaoTalk_20240307_094045219](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/51ab79ec-010d-44ec-b7dc-57e3506df3dc)
 
 
-
-
-### 3️⃣
-
-
-
-### 4️⃣ 
+### ⭐ 자세분석
+![KakaoTalk_20240307_100519447](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/5db4f721-d8f7-4ace-bf6a-c4a8ba223152)
 
 
 
-### 5️⃣ 
+### ⭐ 캘린더
+![KakaoTalk_20240307_100540315](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/b167c5d9-bd13-477a-8c66-95976c5970f1)
+
+
+### ⭐ 커뮤니티
+![KakaoTalk_20240307_100553392](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/46ff9dfa-8443-4ebe-b5f9-32c1ba2f4c5d)
+
+### ⭐ 출석
+![KakaoTalk_20240307_100604111](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/9a3af21b-9eb7-4e47-b5db-3f56bce79c1d)
+
 
 </div>
 </details>
@@ -326,3 +329,7 @@ Spring의 web cam에서 이미지 형태로 flask로 전송을 하여 실시간 
 
 ## 📺시연 영상
 https://youtu.be/Q3Po9jLjGHc
+
+## 👨‍👩‍👧‍👦팀원소개
+
+![KakaoTalk_20240307_100619673](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/dac2dcf5-a781-4eb9-85ef-8cd8e7fae9d8)
