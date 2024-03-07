@@ -7,7 +7,7 @@
 ## 📌 수행방법
 
 <details>
- <summary><b>### 1️⃣  프로젝트 기획 </b></summary>
+ <summary><b>## 1️⃣  프로젝트 기획 </b></summary>
 <div markdown="1">
 
 - 기획 및 시장 조사 
