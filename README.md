@@ -17,7 +17,12 @@
 
 ### 2️⃣  데이터 수집 및 전처리 
 
- - AI-Hub의 피트니스 자세 이미지 수집
+ - <details>
+  <summary><b>AI-Hub의 피트니스 자세 이미지 수집</b></summary>
+<div markdown="1">
+![KakaoTalk_20240307_094019221](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/f7743ae8-ff71-415e-b951-e67121a09c78)
+ </div>
+</details>
  - 데이터 Numpy 배열로 변환 및 csv 파일 변환
  - OpenCV 및 MediaPipe를 이용한 사용자 데이터 수집
  </br>
@@ -90,7 +95,9 @@
 ### ⭐  전체 흐름
 ![image](https://github.com/SMHRD-2021-KDT-BigData-19/EPA/assets/151595284/0ce162ac-6b75-4877-8e5d-1f5008a482b2)
 
-### ⭐  운동자세 분석기능
+### ⭐  유스케이스
+![KakaoTalk_20240307_094045219](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/51ab79ec-010d-44ec-b7dc-57e3506df3dc)
+
 
 
 
