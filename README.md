@@ -19,12 +19,12 @@
 
 
 - AI-Hub의 피트니스 자세 이미지 수집	
-<details>
-<div markdown="1">
-	
-  ![KakaoTalk_20240307_094019221](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/f7743ae8-ff71-415e-b951-e67121a09c78)
-   </div>
-</details>
+	<details>
+	<div markdown="1">
+		
+	  ![KakaoTalk_20240307_094019221](https://github.com/SMHRD-2021-KDT-BigData-19/dicogram/assets/151595284/f7743ae8-ff71-415e-b951-e67121a09c78)
+	   </div>
+	</details>
 
  - 데이터 Numpy 배열로 변환 및 csv 파일 변환
  - OpenCV 및 MediaPipe를 이용한 사용자 데이터 수집
